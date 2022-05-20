@@ -1,0 +1,13 @@
+
+.navbar-light {
+    background: #231d53!important;
+}
+
+.navbar-light .navbar-nav>.active>.nav-link{
+    font-weight: bold;
+    filter: drop-shadow(1px 1px 10px white);
+}
+
+.navbar-brand .title {
+    color: #fff;
+}
