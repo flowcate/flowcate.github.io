@@ -1,0 +1,20 @@
+.. _deep-hub-ov-license-mechanism:
+
+License Mechanism
+-----------------
+
+.. card:: The DeepHub® comes with a simple license mechanism:
+   :img-bottom: images/licensing_technical.svg
+
+   * Once a day, the DeepHub sends consumption and usage statistics to a *Flowcate License Server* on SSL/HTTPS port 443 and gets a "lease" back in response.
+
+   * The latter contains all necessary information for the DeepHub, including when to contact the license server again.
+
+   * This mechanism is always in place, regardless of whether you have an industrial-grade production system or a first trial installation.
+
+
+Configuration
+~~~~~~~~~~~~~
+The configuration of a DeepHub with this license mechanism is straightforward:
+
+For every subscription, you will receive a trial license key, a development license key, and a production license key. These would have to be defined in the DeepHub configuration.

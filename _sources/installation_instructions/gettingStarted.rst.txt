@@ -1,0 +1,10 @@
+
+Getting Started
+===============
+
+This tutorial is designed for partners and customers as a step-by-step guide when working with the DeepHub®.
+It includes the following sections\ **:**
+
+- **System Prerequisites for the DeepHub®** - This section provides information on prerequisites of the system in terms of the software tools and technical knowledge needed for the DeepHub® installation.
+- **Install the DeepHub®** - This section provides step-by-step instructions on how to install the DeepHub®. 
+- **User Instructions for the DeepHub®** - This section provides essential information on how to operate the DeepHub® from the end user perspective.

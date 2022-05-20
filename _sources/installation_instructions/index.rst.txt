@@ -1,0 +1,22 @@
+Running the DeepHub® Locally
+****************************
+
+.. _deep-hub-install-getting-started:
+.. include:: gettingStarted.rst
+
+.. _deep-hub-install-system_prerequisites:
+.. include:: SystemPrerequisites.rst
+
+.. _deep-hub-install-docker-compose:
+.. include:: installation.rst
+
+.. include:: installSpecificVersion.rst
+
+.. mdinclude:: serverConfiguration.md
+
+
+.. toctree::
+   :hidden:
+
+   serverConfiguration.md
+

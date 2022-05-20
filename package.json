@@ -1,0 +1,23 @@
+{
+  "name": "flowcate.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "searchindex.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowcate/flowcate.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://flowcate.github.io",
+  "bugs": {
+    "url": "https://github.com/flowcate/flowcate.github.io/issues"
+  },
+  "dependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}

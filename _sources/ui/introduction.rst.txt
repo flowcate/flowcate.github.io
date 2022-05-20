@@ -1,0 +1,14 @@
+
+Introduction
+++++++++++++
+
+The user interface of the DeepHub® consists of five system components:
+
+* :ref:`Live View <deep-hub-ui-live-view>` - logs information of triggered events when trackables propagate through fences. Event information in the log consists of the fence name through which a trackable is moving, along with entry and exit timestamps.
+* :ref:`Zone Setup <deep-hub-ui-zones>` - used to define the localization zones on the map for multiple positioning technologies (ex. WiFi, UWB, RFID, etc.). The individual responsible for installing and implementing the localization infrastructure would set up the zones based on localization techniques. Zones need to be set up once for each site.
+* :ref:`Fence Management <deep-hub-ui-fences>` - allows users to locate numerous fences in one or multiple localization zones. Trackables entering and exiting fences would trigger an event. Different fences could be associated with different localization zones. The system operator and moderator would be responsible for creating and monitoring fences.
+* :ref:`Trackables <deep-hub-ui-trackables>` - allows users to assign trackables to the asset being tracked and attach the associated positioning providers. Trackable parameters such as it’s radius, exit delay, and collision tolerance can be defined as per requirements. Additionally, custom properties such as information about the asset can be assigned in this section.
+* :ref:`Location Providers <deep-hub-ui-location-providers>` - allows users to create location providers for different positioning technologies (ex. GPS, WiFi, UWB, etc.). Parameters such as the fence timeout, exit delay, and collision tolerance can be defined as per requirements. Additionally, custom properties for the location provider can be assigned in this section.
+
+.. image:: images/hub_interface.png
+    :class: screenshot
