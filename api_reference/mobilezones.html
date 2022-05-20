@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Zone Extension &#8212; DeepHub® 2022 R1  documentation</title>
+    
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/hub.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/root.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/header.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/index-site.css" />
+    
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cisco CMX Location Notification Adapter" href="ciscocmx.html" />
+    <link rel="prev" title="WebSocket API" href="websocket.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../index.html">
+<p class="title">DeepHub® 2022 R1</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../overview/index.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  DeepHub® API
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../ui/index.html">
+  DeepHub® UI
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../demo_access/index.html">
+  Accessing Demo Instances
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../installation_instructions/index.html">
+  Running the DeepHub® Locally
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <div class="col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+            
+          
+
+          
+    <div class="d-none d-xl-block col-xl-2 bd-toc"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+        
+          
+          <div class="toc-item">
+            
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-and-configuration">
+   Setup and Configuration
+  </a>
+ </li>
+</ul>
+
+</nav>
+          </div>
+          
+          <div class="toc-item">
+            
+          </div>
+          
+        
+    </div>
+
+
+          
+    
+
+    
+        
+    
+
+    <main class="col-12 col-md-12 col-xl-10 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+        
+        <div>
+        
+  <div class="section" id="mobile-zone-extension">
+<h1>Mobile Zone Extension</h1>
+<p>The Mobile Zone Extension (MZE) of the DeepHub® allows for the seamless integration of proximity-based positioning solutions that change their position. The MZE changes the position of your proximity zone by connecting the zone with location updates of a real-time locating system - via an omlox Location Provider or an omlox Trackable.</p>
+<p>As an example use case, consider you have assets equipped with RFID tags, and you want to keep track of the exact location of your assets in your warehouse. The RFID tags do not provide exact location information. However, with omlox, you can combine multiple positioning technologies and thereby add location information. For example, you could combine an UWB positioning system with proximity information provided by an RFID positioning system.</p>
+<p>To illustrate this further, consider you have a forklift equipped with an RFID scanner and an UWB tag. The UWB tag provides exact real-time location information about the forklift, while the RFID scanner provides information about the assets the forklift is carrying. The RFID scanner will receive proximity information as long as your forklift carries assets with RFID tags attached to them.</p>
+<p>Normally, the position of a proximity-based zone has to be updated manually, because it cannot generate location information on its own. However, with the DeepHub MZE, you can keep track of the position where assets were dropped off by matching the location information of the forklift with the last-received proximity information of carried assets.</p>
+<p>The DeepHub MZE makes this task as simple as possible.</p>
+<div class="section" id="setup-and-configuration">
+<h2>Setup and Configuration</h2>
+<p>Setting up the MZE is done in two steps. First, a zone needs to be created representing each available proximity positioning system (e.g. RFID scanner). Next, an omlox trackable (e.g. representing a forklift) or an omlox location provider (e.g. an UWB tag) needs to be assigned to the zone in order to enable the MZE. By linking the trackable or location provider with the zone of the installed proximity system, the position of the proximity system will be updated in real-time as the trackable or location provider relocates.</p>
+<p><strong>Setting up a proximity zone in the DeepHub:</strong></p>
+<p>You may create a zone through the DeepHub API or the DeepHub UI. To do so in the UI:</p>
+<ul class="simple">
+<li><p>Login to the DeepHub UI.</p></li>
+<li><p>Choose Zones.</p></li>
+<li><p>Create a new zone by setting a proper zone type (rfid or ibeacon) and floor level. You do not need to choose an exact position on the map, as the position will be updated automatically. Simply choose a nearby location.</p></li>
+<li><p>Set a unique Foreign ID, for example “forklift-123-rfid”.</p></li>
+<li><p>Click Save to create the zone.</p></li>
+</ul>
+<p>You should now see location updates in real-time in the Live View of the DeepHub UI when location updates are received.</p>
+<p>In order to enable the MZE for this zone, you must assign a location provider or trackable to the zone by adding a location provider or trackable to the zone’s properties. This is currently only possible through the DeepHub API. The member variables available for the zone properties are the following:</p>
+<ul class="simple">
+<li><p>“com.hdm.hub.zone.autozoneupdate.trackables”: A list containing IDs of trackables. The zone’s position is updated whenever a trackable’s location is updated.</p></li>
+<li><p>“com.hdm.hub.zone.autozoneupdate.providers”: A list containing IDs of location providers. The zone’s position is updated whenever one of the locations is updated.</p></li>
+</ul>
+<p>An example zone with location providers and trackables configured for auto position updating of the zone:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ffffffff-bce8-6c23-e342-80bd5c938775&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;foreign_id&quot;</span><span class="p">:</span> <span class="s2">&quot;rfid-provider-autozone&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;rfid&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;floor&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+  <span class="nt">&quot;need_transformation&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone R (RFID)&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mi">0</span><span class="p">,</span>
+        <span class="mi">0</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;radius&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+  <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;com.hdm.hub.zone.autozoneupdate.providers&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;autozone-provider-123&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;com.hdm.hub.zone.autozoneupdate.trackables&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;5EE9265B-EFDF-4EDB-98AD-9D01E11B687F&quot;</span>
+      <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+        </div>
+        
+        
+    </main>
+
+
+      </div>
+    </div>
+  
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022 Flowcate.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

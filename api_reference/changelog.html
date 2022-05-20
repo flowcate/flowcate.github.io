@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Changelog &#8212; DeepHub® 2022 R1  documentation</title>
+    
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/hub.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/root.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/header.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/index-site.css" />
+    
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DeepHub® UI" href="../ui/index.html" />
+    <link rel="prev" title="Changelog" href="changelogApi.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../index.html">
+<p class="title">DeepHub® 2022 R1</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../overview/index.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  DeepHub® API
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../ui/index.html">
+  DeepHub® UI
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../demo_access/index.html">
+  Accessing Demo Instances
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../installation_instructions/index.html">
+  Running the DeepHub® Locally
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <div class="col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+            
+          
+
+          
+    <div class="d-none d-xl-block col-xl-2 bd-toc"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+        
+          
+          <div class="toc-item">
+            
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deephub-2022-r1-2-0-0">
+   DeepHub® 2022 R1, 2.0.0
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deephub-2021-r2-1-3-1">
+   DeepHub® 2021 R2, 1.3.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deephub-2021-r2-1-3-0">
+   DeepHub® 2021 R2, 1.3.0
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deephub-2021-r1-1-2-1">
+   DeepHub® 2021 R1, 1.2.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deephub-2021-r1-1-2-0">
+   DeepHub® 2021 R1, 1.2.0
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deephub-2021-r1-1-1-9">
+   DeepHub® 2021 R1, 1.1.9
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deephub-2021-r1-1-1-8">
+   DeepHub® 2021 R1, 1.1.8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   1.1.7
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   1.1.6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   1.1.4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   1.0.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   1.0.0
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   0.9.7
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   0.9.5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   0.9.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   0.9.0
+  </a>
+ </li>
+</ul>
+
+</nav>
+          </div>
+          
+          <div class="toc-item">
+            
+          </div>
+          
+        
+    </div>
+
+
+          
+    
+
+    
+        
+    
+
+    <main class="col-12 col-md-12 col-xl-10 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+        
+        <div>
+        
+  <div class="section" id="changelog">
+<h1>Changelog</h1>
+<div class="section" id="deephub-2022-r1-2-0-0">
+<h2>DeepHub® 2022 R1, 2.0.0</h2>
+<ol class="arabic simple">
+<li><p>Added a rule engine with locating rules and the API endpoint /trackables/rules/locating.</p></li>
+<li><p>Added a validator API /validator/rules/locating to check rule expressions.</p></li>
+<li><p>Added Cassandra support.</p></li>
+<li><p>Added new configurable parameter “db_fast_writes” to be able to increase the rate at which location updates can be processed.</p></li>
+<li><p>Fixed Trackable Removal Events.</p></li>
+<li><p>Transformations to EPSG:32661 (UPS north) and EPSG:32761 (UPS south) are now supported.</p></li>
+<li><p>Fixed timestamp for GeoJSON locations.</p></li>
+<li><p>Fixed trackables id array for GeoJSON locations and fence events.</p></li>
+<li><p>Fixed a memory leak when assigning an empty string to the properties member of a location.</p></li>
+<li><p>DeepHub now aborts starting without a stack trace, presenting the underlying error message more prominently.</p></li>
+<li><p>A location without a timestamp_generated will default to “now”, instead of 01.01.1970.</p></li>
+<li><p>Outdated location updates no longer produce trackable motions.</p></li>
+<li><p>Added support for ISO-24730 based RTLS systems.</p></li>
+<li><p>Map configurations can now be received via lease.</p></li>
+<li><p>Added health API endpoints: /health, /health/system, /health/ws, /health/zones/summary, /health/zones/:zone_id, /health/sources/summary, and /health/sources/:source_id.</p></li>
+</ol>
+</div>
+<div class="section" id="deephub-2021-r2-1-3-1">
+<h2>DeepHub® 2021 R2, 1.3.1</h2>
+<ol class="arabic simple">
+<li><p>Updated error handling for environment variables.</p></li>
+</ol>
+</div>
+<div class="section" id="deephub-2021-r2-1-3-0">
+<h2>DeepHub® 2021 R2, 1.3.0</h2>
+<ol class="arabic simple">
+<li><p>Added auto-zone-extension (APE) feature to the zones API, allowing to automatically update mobile zones.</p></li>
+<li><p>Added API to query trackables which are considered within a given fence according to their last reported location.</p></li>
+<li><p>Added fine grained permission management for WebSocket subscriptions and messages. Refer to the Security &amp; Authorization documentation for details.</p></li>
+<li><p>Added the ability to configure via environment variables.</p></li>
+<li><p>Added new parameter “spatial_query” to the API endpoints /fences/:fence_id/providers, /fences/:fence_id/trackables, /fences/:fence_id/locations, /trackables/:trackable_id/fences and /providers/:provider_id/fences allowing to choose between a spatial query (based on the last reported location) and the default query (taking into account timeouts).</p></li>
+<li><p>Implemented coordinate transformations for endpoints which were missing these options.</p></li>
+<li><p>Added new /trackable/:trackable_id/fences API endpoint. This returns the list of fences which contain the given trackable.</p></li>
+<li><p>The file hub_config.yaml will no longer be created by default. Instead an example file is included in the bundle. Also, an empty configuration file no longer causes problems.</p></li>
+<li><p>Added API to query motions which are considered within a given fence. (/fences/:fence_id/motions)</p></li>
+<li><p>Fixed handling of infinite fence timeouts</p></li>
+<li><p>Added new parameter “force_location_update” to the API endpoint POST /trackables and PUT /trackables/:trackable_id, to be able to update the respective TrackableMotion according to the assigned Location Providers if a more recent Location is available.</p></li>
+<li><p>Added optional boolean property “incomplete_configuration” to zones. If true, the zone will be accepted by POST and PUT even if it is missing some configuration (e.g. missing position).</p></li>
+<li><p>Added new parameter “foreign_id” to API endpoints GET /zones and /zones/summary to retrieve the zone with the given foreign ID.</p></li>
+<li><p>DeepHub now enforces the restriction that proximity zones must not have ground control points.</p></li>
+<li><p>Added the API endpoint /license/info to retrieve license information and warnings.</p></li>
+<li><p>The value “-1” can be used to set the timeout/ fence_timeout, tolerance_timeout and exit_delay to infinite for providers, trackables and fences.</p></li>
+<li><p>Added the API endpoint /license/info to retrieve license information and warnings.</p></li>
+<li><p>The respective “ANY” and “OWN” permissions are now mutually exclusive. Furthermore, paths for a role must not occur more than once. This might require updating your permissions.yaml.</p></li>
+<li><p>Updated the Cisco CMX Location Notification endpoint to accept both PUT and POST requests.</p></li>
+<li><p>Fixed READ_OWN permissions for summary and root REST endpoints (e.g. /fences and /fences/summary) in case authentication is used. The returned lists are now filtered based on the roles ownership.</p></li>
+<li><p>Fixed handling for erroneous consumption reporting.</p></li>
+<li><p>Added support for https communication via proxy servers by configuring the environment variables “https_proxy” and “no_proxy”.</p></li>
+<li><p>Fixed z coordinates being lost for invalid but repairable polygons.</p></li>
+</ol>
+</div>
+<div class="section" id="deephub-2021-r1-1-2-1">
+<h2>DeepHub® 2021 R1, 1.2.1</h2>
+<ol class="arabic simple">
+<li><p>Corrected mismatch to spec: “provider_id must be null in case the event was triggered by a Trackable”</p></li>
+<li><p>Fixed return code handling for consumption reporting</p></li>
+</ol>
+</div>
+<div class="section" id="deephub-2021-r1-1-2-0">
+<h2>DeepHub® 2021 R1, 1.2.0</h2>
+<ol class="arabic simple">
+<li><p>Added filter and transform functionality to WebSocket subscriptions. Please refer to the WebSocket API documentation.</p></li>
+<li><p>Internal changes and improvements related to event processing.</p></li>
+<li><p>Added consumption and usage statistic API.</p></li>
+</ol>
+</div>
+<div class="section" id="deephub-2021-r1-1-1-9">
+<h2>DeepHub® 2021 R1, 1.1.9</h2>
+<ol class="arabic simple">
+<li><p>Log IP address in HTTP and WebSocket handlers on error.</p></li>
+<li><p>Added /health API for health checking</p></li>
+<li><p>Added a new special role named guest. This role allows to bypass authorization when assigned to endpoint in the permissions settings (e.g., for the /health endpoint).</p></li>
+</ol>
+</div>
+<div class="section" id="deephub-2021-r1-1-1-8">
+<h2>DeepHub® 2021 R1, 1.1.8</h2>
+<ol class="arabic simple">
+<li><p>Updated Zone and Fence API to include exit delay.</p></li>
+<li><p>Fixed TrackableMotion does contain a point geometry instead of a polygon in case the Trackable does not define a radius.</p></li>
+<li><p>Reject erroneous Trackable configurations with duplicate provider ID references.</p></li>
+<li><p>Added trackable_motions:geojson topic to subscribe to geojson encoded motion updates.</p></li>
+<li><p>Updated WebSocket session idle timeout configuration.</p></li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2>1.1.7</h2>
+<ol class="arabic simple">
+<li><p>Fixed an issue caused by an external library where the docker container might get into a startup loop.</p></li>
+<li><p>Fixed an issue where trackable motions did not get certain values assigned from the related trackable.</p></li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>1.1.6</h2>
+<ol class="arabic simple">
+<li><p>IMPORTANT CHANGE: The /v1/zones API was adapted to the latest version of the omlox™ specification. Most importantly, proximity based positioning systems (RFID or iBeacon) require the position to be defined when creating a zone, while ground control points must not be set. The position was previously optional, which allowed to create invalid proximity zones. For other types of RTLS systems ground control points are still required, and the position is still optional.</p></li>
+<li><p>IMPORTANT CHANGE: The property collision_tolerance in the Trackable object has been renamed to exit_tolerance in the latest version of the specification, aligning property names between omlox™ Fences and omlox™ Trackables. This implementation of the Hub has been updated accordingly and may require to adapt the name of this property for client requests.</p></li>
+<li><p>Added REST endpoints for handling omlox™ proximity events at /v1/providers/proximities and /v1/providers/:provider_id/proximity. Proximity events allow easier integrations of proximity based positioning systems (e.g. RFID or iBeacon). A proximity positioning system simply sends an omlox™ Proximity object and the Hub resolves the proximity information into a location by referring to the position defined for the zone which relates to the proximity positioning system.</p></li>
+<li><p>Added REST endpoints to request trackable motions at /v1/trackables/motions and /v1/trackables/:trackable_id/motion.</p></li>
+<li><p>Added WebSocket pub/sub topic trackable_motions according to the omlox™ motion specification. This topic provides real-time updates for trackable movements, also considering the trackable’s shape.</p></li>
+<li><p>Added Hub configuration option persist_locations which enables to persist all location updates to the database. Previous locations will be loaded when the Hub starts. This option is now enabled by default. Please note that persisting locations affects overall performance.</p></li>
+<li><p>Updated several configuration options.</p></li>
+<li><p>Fixed an issue where a wrong crs was displayed in the location object for a certain API request.</p></li>
+<li><p>Updated parsing the elevation_ref parameter of an omlox™ Location object according to the specification.</p></li>
+<li><p>Fixed an issue where a trackable was not correctly removed from the spatial index after it was deleted.</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>1.1.4</h2>
+<ol class="arabic simple">
+<li><p>Updated RPC support. See RPC Interface.md for documentation and usage.</p></li>
+<li><p>Updated the admin frontend, added new features.</p></li>
+<li><p>Updated trackable and collision API. See the api_draft folder with documentation and examples.</p></li>
+<li><p>Added query parameters to conveniently update and select location and fence objects in various projections (local coordinates related to a zone, GPS and UTM projections supported throughout the API).</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>1.0.1</h2>
+<ol class="arabic simple">
+<li><p>OpenID based authorization and Role Based Access Control (refer to Security Authorization.md)</p></li>
+<li><p>Added admin frontend to /v1/web</p></li>
+<li><p>Flexible server configuration options (refer to Server Configuration.md)</p></li>
+<li><p>Fixed: Provider type was always “unknown” instead of actual type.</p></li>
+<li><p>Added trackables array to location object. This allows to identify to which trackable(s) a location update belongs to for example for websocket location update subscriptions.</p></li>
+<li><p>Added properties field to trackable object. This allows to add custom information associated to a trackable.</p></li>
+<li><p>Improvements and fixes to the GeoFence engine.</p></li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h2>1.0.0</h2>
+<ol class="arabic simple">
+<li><p>Support for customizable IoT Sensors data:</p>
+<ul class="simple">
+<li><p>Added „sensors“ property. The content of the sensors data is application defined.</p></li>
+<li><p>New API endpoints /providers/$id/sensors (GET/PUT) and /trackables/$id/sensors (GET, returning a data array from sensors of all providers belonging to that trackable)</p></li>
+</ul>
+</li>
+<li><p>Added properties to allow fine grained event controls to the Fence object:</p>
+<ul class="simple">
+<li><p>timeout: Timeout in milliseconds after which a FenceExit event should be triggered when no location updates are sent anymore. Infinite when 0 or null (default).</p></li>
+<li><p>exit_tolerance: The distance tolerance to the geometry of a fence in meters before a fence exit event should be triggered when leaving the fence. Useful to avoid fluctuating entry / exit events due to positioning accuracy at the borders of a fence.</p></li>
+<li><p>tolerance_timeout: Timeout in milliseconds after which a position outside of a fence, but still within exit_tolerance distance from the fence, should trigger an exit event when it’s not seeing any position update inside the fence.</p></li>
+</ul>
+</li>
+<li><p>Added params member to Websocket Subscribe request object to allow for parameters related to websocket subscriptions (e.g. crs and geojson parameters, same as query params available for location and fence REST API).</p></li>
+<li><p>Basic Authentication and Security Support</p></li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h2>0.9.7</h2>
+<ol class="arabic simple">
+<li><p>Advanced 3D fence events and general improvements to fence event API. Fence events can now also overlap.</p></li>
+<li><p>Added properties to Provider and Fence objects, allowing applications to set generic data.</p></li>
+<li><p>Forward properties with FenceEvent, allowing applications to act on associated events (e.g. easily build a relationship between a MES production step and a fence event).</p></li>
+<li><p>Fixed an issue when requesting GeoJson objects where the object might be invalid.</p></li>
+</ol>
+</div>
+<div class="section" id="id7">
+<h2>0.9.5</h2>
+<ol class="arabic simple">
+<li><p>Added Websocket publish / subscribe API /ws/socket for location updates and fence events. Available topics: location_updates, location_updates:geojson, fence_events, fence_events:geojson.</p></li>
+<li><p>Added parameter “crs” to all location APIs to query location data for a given projection (e.g. “EPSG:4326” or “local”).</p></li>
+<li><p>Extended /trackables API. You can now create a trackable and locate the most recent location(s) of any of it’s assigned location providers via /trackables/:trackable_id/location(s)</p></li>
+<li><p>Changed position type in Location object to use a GeoJson Point geometry. This simplifies the API and avoids use of differing geometry types in other parts of the API.</p></li>
+<li><p>Updated /providers API</p></li>
+<li><p>Improved data persistence</p></li>
+<li><p>Added HTTP DELETE method to all API resources to clear current data</p></li>
+<li><p>Added /zones/:zone_id/transform and SimpleTransform object specification to allow easy zone setup workflows (useful for example for RFID zone setup to locate scanners)</p></li>
+<li><p>Added /fences/:fence_id/events API to generate FenceEvents via API instead of location based fence event generation by DeepHub. This may be useful for RFID scanners or general applications where a 3rd party server may generate its own fence events. This allows to use foreign generated fence events with a DeepHub fence to relate fence events to real world places.</p></li>
+<li><p>Added /zones/:zone_id/createfence to allow easy creation from an approximated polygon of an existing zone definition.</p></li>
+</ol>
+</div>
+<div class="section" id="id8">
+<h2>0.9.1</h2>
+<ol class="arabic simple">
+<li><p>Fixed geometry type definition for the fence region in the OAS specification and updated example data accordingly. Also provided more detailed description of Position, GeographicPoint and GeographicPolygon types.</p></li>
+<li><p>Improved handling of invalid fence geometries and give more detailed error descriptions to a user for invalid geometry data.</p></li>
+<li><p>Fixed “fence_name” should be “name” in the OAS Fence object specification.</p></li>
+</ol>
+</div>
+<div class="section" id="id9">
+<h2>0.9.0</h2>
+<p>First public release</p>
+</div>
+</div>
+
+
+        </div>
+        
+        
+    </main>
+
+
+      </div>
+    </div>
+  
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022 Flowcate.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
