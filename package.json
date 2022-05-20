@@ -13,10 +13,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://flowcate.github.io",
-  "bugs": {
-    "url": "https://github.com/flowcate/flowcate.github.io/issues"
-  },
+  "homepage": "https://flowcate.github.io/",
   "dependencies": {
     "gh-pages": "^4.0.0"
   }
