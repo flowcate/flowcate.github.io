@@ -1,6 +1,0 @@
-Accessing Demo Instances
-========================
-
-.. include:: demo_account.rst
-.. include:: access.rst
-.. include:: api.rst

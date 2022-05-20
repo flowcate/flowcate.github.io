@@ -1,8 +1,0 @@
-.. _deep-hub-api-websocket:
-
-.. mdinclude:: websocket.md
-
-.. toctree::
-    :hidden:
-
-    websocket.md

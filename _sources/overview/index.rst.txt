@@ -1,7 +1,0 @@
-.. include:: introduction.rst
-
-.. include:: requirements.rst
-
-.. include:: pricing.rst
-
-.. include:: licensing.rst
