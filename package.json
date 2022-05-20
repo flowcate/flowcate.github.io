@@ -4,7 +4,7 @@
   "description": "",
   "main": "searchindex.js",
   "scripts": {
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages --dotfiles --dist dist"
   },
   "repository": {
     "type": "git",
