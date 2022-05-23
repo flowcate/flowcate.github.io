@@ -1,7 +1,7 @@
 # flowcate.github.io
 Flowcate, let location data flow.
 
-This package contains the latest generated official DeepHub docu for deployment towards docs.flowcate.io (which is a CNAME alias to flowcate.github.io; so this is "github page" of this repo). 
+This package contains the latest generated official DeepHub docu for deployment towards docs.flowcate.io (which is a CNAME alias to flowcate.github.io, the "github page" of this repo). 
 
 The prerequisites are:
 * build deep-hub-docs as usually with python and sphinx
