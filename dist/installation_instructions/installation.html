@@ -154,7 +154,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#getting-the-latest-docker-compose-file">
-   Getting the latest Docker Compose file
+   Getting the Latest Docker Compose File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -193,23 +193,27 @@
         
   <div class="section" id="docker-and-docker-compose">
 <h1>Docker and Docker Compose</h1>
-<p>Using Docker or Docker Compose on Windows and Linux is done via a command line shell and is almost identical on both platforms. You can use the PowerShell or Command Prompt on Windows and a shell like bash or zsh on Linux.
-Have a look into <a class="reference internal" href="index.html#deep-hub-install-system-prerequisites"><span class="std std-ref">deep hub system prerequisites</span></a> for details.</p>
+<p>Using Docker or Docker Compose on Windows and Linux is done via a command line shell and is almost identical on both platforms. You can use PowerShell or Command Prompt on Windows and a shell like bash or zsh on Linux.
+Refer to <a class="reference internal" href="index.html#deep-hub-install-system-prerequisites"><span class="std std-ref">DeepHub System Prerequisites</span></a> for details.</p>
 <div class="section" id="using-docker-or-docker-compose">
 <h2>Using Docker or Docker Compose</h2>
 <p>We recommend using Docker Compose because this way you will get a completely configured “system” consisting of the DeepHub®, the DeepHub® UI and a containerized web server, acting as a reverse proxy, to simplify
 the overall usage and interaction of these components.</p>
 <p>We provide a Docker Compose file that configures the necessary orchestration between these three containers. Refer to the next section in this documentation concerning more details on this.</p>
-<p>Nevertheless, you are able to pull just the Docker container that you need instead of all three. The DeepHub® itself, as well as the corresponding DeepHub® UI, are available at the official docker repository here: <a class="reference external" href="https://hub.docker.com/u/flowcate">Flowcate&#64;docker</a>.</p>
+<p>Nevertheless, you are able to pull just the Docker container that you need instead of all three.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker pull flowcate/deephub:&lt;tag of release you want to pull&gt;
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The DeepHub® itself, as well as the corresponding DeepHub® UI, are available at the official docker repository here: <a class="reference external" href="https://hub.docker.com/u/flowcate">Flowcate&#64;docker</a>.</p>
+</div>
 </div>
 <div class="section" id="getting-the-latest-docker-compose-file">
-<h2>Getting the latest Docker Compose file</h2>
-<p>We provide a docker-compose.yml as well as additional configuration files for orchestration of the DeepHub® itself, as well as the corresponding DeepHub® UI, in our github repository:  <a class="reference external" href="https://github.com/Flowcate">Flowcate&#64;github</a>.</p>
-<p>We recommend to create a dedicated directory locally on your filesystem where you store the docker-compose.yml and the aforementioned configuration files. The DeepHub® needs to create some additional files during operations and
-writes them to directories mounted from your host filesystem. This is done relatively to the location of the docker-compose.yml.</p>
+<h2>Getting the Latest Docker Compose File</h2>
+<p>We provide a docker-compose.yml file and additional configuration files for orchestration of the DeepHub® itself, as well as the corresponding DeepHub® UI, in our Github repository:  <a class="reference external" href="https://github.com/Flowcate">Flowcate&#64;github</a>.</p>
+<p>We recommend creating a dedicated local directory on your filesystem where you store the docker-compose.yml and the aforementioned configuration files. The DeepHub® needs to create some additional files during operations and
+writes them to directories mounted from your host filesystem. This is done relative to the location of the docker-compose.yml file.</p>
 </div>
 <div class="section" id="start-a-deephub">
 <span id="id1"></span><h2>Start a DeepHub®</h2>
@@ -227,12 +231,16 @@ docker-compose up -d
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<ol class="arabic simple">
-<li><p>On Linux, it may be necessary to call the docker-compose as superuser via the sudo command.</p></li>
-</ol>
+<p>On Linux, it may be necessary to call docker-compose as superuser via the sudo command.</p>
 </div>
-<p>Now you have your own running DeepHub® instance that can be accessed with any modern web browser at the address <a class="reference external" href="http://localhost:8081">http://localhost:8081</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now you have your own running DeepHub® instance that can be accessed with any modern web browser at the address: <a class="reference external" href="http://localhost:8081">http://localhost:8081</a></p>
 <img alt="../_images/deephub-ui.jpg" src="../_images/deephub-ui.jpg" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <p>To complement the DeepHub UI shown above, you may also make API calls to the DeepHub REST API while running the DeepHub locally. This can be done with a tool such as Postman or cURL.</p>
 <p>The containerized web server included in the Docker Compose bundle acts as a reverse proxy - forwarding requests to either the DeepHub UI or DeepHub containers.</p>
 <p>To interact with the REST API, you will need to use the following baseURL: <a class="reference external" href="http://localhost:8081/deephub/v1">http://localhost:8081/deephub/v1</a></p>
@@ -254,7 +262,7 @@ docker-compose up -d
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>On Linux, it may be necessary to call the docker-compose as superuser via the sudo command.</p>
+<p>On Linux, it may be necessary to call docker-compose as superuser via the sudo command.</p>
 </div>
 </div>
 </div>

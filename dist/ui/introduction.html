@@ -141,9 +141,24 @@
           
           <div class="toc-item">
             
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+</ul>
+
 </nav>
           </div>
           
@@ -168,7 +183,21 @@
         
   <div class="section" id="introduction">
 <h1>Introduction</h1>
-<p>The user interface of the DeepHub® consists of five system components:</p>
+<p>The DeepHub® UI is a web application that can run in every modern web browser, on any OS. It fulfills several tasks:</p>
+<ul class="simple">
+<li><p>Provides an overview of the current status of the overall system</p></li>
+<li><p>Allows for easy configuration of zones, location providers, trackables and fences</p></li>
+<li><p>Visualizes a live view of tracked objects and their movement</p></li>
+</ul>
+<p>In addition to these functional features, the UI represents a kind of showcase: the DeepHub UI only uses the documented REST and WebSocket APIs of the DeepHub locating middleware. Therefore, any partner or customer could build their own UI, tailored to their unique needs and requirements. Our UI is simply one possible implementation of a solution.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The DeepHub UI visualizes the entities of the whole system on top of a web map. The latter is delivered online by a mapping service provider. We recommend using <a class="reference external" href="https://www.maptiler.com/cloud/">Maptiler</a> as our preferred provider, and therefore use their maps by default. If you intend to use the DeepHub UI in a production environment, you will need to order your own Maptiler license key: <a class="reference external" href="https://www.maptiler.com/cloud/">Maptiler Cloud</a>.</p>
+</div>
+</div>
+<div class="section" id="overview">
+<h1>Overview</h1>
+<p>The user interface consists of five system components:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="index.html#deep-hub-ui-live-view"><span class="std std-ref">Live View</span></a> - logs information of triggered events when trackables propagate through fences. Event information in the log consists of the fence name through which a trackable is moving, along with entry and exit timestamps.</p></li>
 <li><p><a class="reference internal" href="index.html#deep-hub-ui-zones"><span class="std std-ref">Zone Setup</span></a> - used to define the localization zones on the map for multiple positioning technologies (ex. WiFi, UWB, RFID, etc.). The individual responsible for installing and implementing the localization infrastructure would set up the zones based on localization techniques. Zones need to be set up once for each site.</p></li>
@@ -176,6 +205,9 @@
 <li><p><a class="reference internal" href="index.html#deep-hub-ui-trackables"><span class="std std-ref">Trackables</span></a> - allows users to assign trackables to the asset being tracked and attach the associated positioning providers. Trackable parameters such as it’s radius, exit delay, and collision tolerance can be defined as per requirements. Additionally, custom properties such as information about the asset can be assigned in this section.</p></li>
 <li><p><a class="reference internal" href="index.html#deep-hub-ui-location-providers"><span class="std std-ref">Location Providers</span></a> - allows users to create location providers for different positioning technologies (ex. GPS, WiFi, UWB, etc.). Parameters such as the fence timeout, exit delay, and collision tolerance can be defined as per requirements. Additionally, custom properties for the location provider can be assigned in this section.</p></li>
 </ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <img alt="../_images/hub_interface.png" class="screenshot" src="../_images/hub_interface.png" />
 </div>
 

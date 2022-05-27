@@ -168,7 +168,7 @@
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   1.3.0
+   2.0.0
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -185,7 +185,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   1.2.0
+   1.3.0
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -202,7 +202,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   1.1.8
+   1.2.0
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -219,6 +219,23 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
+   1.1.8
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Bugfixes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
    1.1.6
   </a>
  </li>
@@ -249,8 +266,31 @@
   <div class="section" id="changelog">
 <span id="deep-hub-ui-changelog"></span><h1>Changelog</h1>
 <div class="section" id="id1">
-<h2>1.3.0</h2>
+<h2>2.0.0</h2>
 <div class="section" id="features">
+<h3>Features</h3>
+<ul class="simple">
+<li><p>New color theme for UI</p></li>
+<li><p>New UI for usage of location providers</p></li>
+<li><p>Make DeepHub UI docker container usable in read-only mode</p></li>
+<li><p>Support fence definition with negative local coordinates</p></li>
+<li><p>Use vertical color bar to mark different fence event triggers in different colors</p></li>
+</ul>
+</div>
+<div class="section" id="bugfixes">
+<h3>Bugfixes</h3>
+<ul class="simple">
+<li><p>Check timestamp during updates to avoid usage of outdated information</p></li>
+<li><p>Two “next” buttons during fence creation</p></li>
+<li><p>Crash in UI when using a semicolon in search bar of live view</p></li>
+<li><p>UI is unable to work with zones and fences without names</p></li>
+<li><p>UI for fence editing overwrites z-coordinates of corner points on backend</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>1.3.0</h2>
+<div class="section" id="id3">
 <h3>Features</h3>
 <ul class="simple">
 <li><p>New checkbox in UI (“Trackable Update/Create”) to allow for disabling of “force_location_update”.</p></li>
@@ -261,7 +301,7 @@
 <li><p>Support -1 as infinite value for several “timeout fields” in UI.</p></li>
 </ul>
 </div>
-<div class="section" id="bugfixes">
+<div class="section" id="id4">
 <h3>Bugfixes</h3>
 <ul class="simple">
 <li><p>Editing a point of a fence does not work.</p></li>
@@ -272,9 +312,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id2">
+<div class="section" id="id5">
 <h2>1.2.0</h2>
-<div class="section" id="id3">
+<div class="section" id="id6">
 <h3>Features</h3>
 <ul class="simple">
 <li><p><strong>Choose the mapping service</strong>
@@ -306,7 +346,7 @@ The list is now sorted alphanumerically.</p>
 </li>
 </ul>
 </div>
-<div class="section" id="id4">
+<div class="section" id="id7">
 <h3>Bugfixes</h3>
 <ul class="simple">
 <li><dl class="simple">
@@ -352,9 +392,9 @@ The list is now sorted alphanumerically.</p>
 </ul>
 </div>
 </div>
-<div class="section" id="id5">
+<div class="section" id="id8">
 <h2>1.1.8</h2>
-<div class="section" id="id6">
+<div class="section" id="id9">
 <h3>Features</h3>
 <ul class="simple">
 <li><dl class="simple">
@@ -395,7 +435,7 @@ The list is now sorted alphanumerically.</p>
 </li>
 </ul>
 </div>
-<div class="section" id="id7">
+<div class="section" id="id10">
 <h3>Bugfixes</h3>
 <ul class="simple">
 <li><p>Zone &amp; Fence: Fix New dialog next button</p></li>
@@ -410,7 +450,7 @@ The list is now sorted alphanumerically.</p>
 </ul>
 </div>
 </div>
-<div class="section" id="id8">
+<div class="section" id="id11">
 <h2>1.1.6</h2>
 <p>First public release.</p>
 </div>
