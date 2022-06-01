@@ -1,0 +1,1110 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Running the DeepHub® Locally &#8212; DeepHub® 2022 R1  documentation</title>
+    
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/hub.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/root.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/header.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/index-site.css" />
+    
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Server Configuration" href="serverConfiguration.html" />
+    <link rel="prev" title="Accessing Demo Instances" href="../demo_access/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../index.html">
+<p class="title">DeepHub® 2022 R1</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../overview/index.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api_reference/index.html">
+  DeepHub® API
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../ui/index.html">
+  DeepHub® UI
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../demo_access/index.html">
+  Accessing Demo Instances
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Running the DeepHub® Locally
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <div class="col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+            
+          
+
+          
+    <div class="d-none d-xl-block col-xl-2 bd-toc"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+        
+          
+          <div class="toc-item">
+            
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#system-prerequisites">
+   System Prerequisites
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#docker">
+     Docker
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#windows-powershell-or-command-prompt">
+     Windows PowerShell or Command Prompt
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#terminal-for-linux-macos">
+     Terminal for Linux &amp; macOS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docker-and-docker-compose">
+   Docker and Docker Compose
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-docker-or-docker-compose">
+     Using Docker or Docker Compose
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-the-latest-docker-compose-file">
+     Getting the Latest Docker Compose File
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#start-a-deephub">
+     Start a DeepHub®
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stop-a-running-deephub">
+     Stop a running DeepHub®
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-specific-version">
+   Install Specific Version
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pulling-specific-containers">
+     Pulling Specific Containers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#server-configuration">
+   Server Configuration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#available-configuration-options">
+     Available configuration options
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#license-key">
+       license_key
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#config-path">
+       config_path
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#port">
+       port
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#host">
+       host
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#doc-root">
+       doc_root
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#num-threads">
+       num_threads
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#record-path">
+       record_path
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#playback-path">
+       playback_path
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#playback-speed">
+       playback_speed
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cors">
+       cors
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#severity-level">
+       severity_level
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#require-authorization">
+       require_authorization
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#openid-config-url">
+       openid_config_url
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#openid-client-name">
+       openid_client_name
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#openid-client-secret">
+       openid_client_secret
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#authserver-public-key-path">
+       authserver_public_key_path
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#verify-authserver">
+       verify_authserver
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#public-key-path">
+       public_key_path
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#private-key-path">
+       private_key_path
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#private-key-password">
+       private_key_password
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dh-params-path">
+       dh_params_path
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#force-https">
+       force_https
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#persist-locations">
+       persist_locations
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#db-fast-writes">
+       db_fast_writes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#license-server-address">
+       license_server_address
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#license-server-port">
+       license_server_port
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#db-type">
+       db_type
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-hosts">
+       cassandra_hosts
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-port">
+       cassandra_port
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-username">
+       cassandra_username
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-password">
+       cassandra_password
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-keyspace">
+       cassandra_keyspace
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-connect-timeout">
+       cassandra_connect_timeout
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-request-timeout">
+       cassandra_request_timeout
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-read-consistency">
+       cassandra_read_consistency
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-write-consistency">
+       cassandra_write_consistency
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-keep-alive">
+       cassandra_keep_alive
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-latency-aware-routing">
+       cassandra_latency_aware_routing
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-token-aware-routing">
+       cassandra_token_aware_routing
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-load-balancing">
+       cassandra_load_balancing
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-io-threads">
+       cassandra_io_threads
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-replication-strategy">
+       cassandra_replication_strategy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-use-tls">
+       cassandra_use_tls
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-tls-pem">
+       cassandra_tls_pem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iso-24730-connections">
+       iso_24730_connections
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-proxy-server-for-outside-communication">
+     Using a proxy server for outside communication
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preparing-self-signed-certificates-for-development">
+     Preparing self signed certificates for development
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+          </div>
+          
+          <div class="toc-item">
+            
+          </div>
+          
+        
+    </div>
+
+
+          
+    
+
+    
+        
+    
+
+    <main class="col-12 col-md-12 col-xl-10 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+        
+        <div>
+        
+  <div class="section" id="running-the-deephub-locally">
+<h1>Running the DeepHub® Locally</h1>
+<div class="section" id="getting-started">
+<span id="deep-hub-install-getting-started"></span><h2>Getting Started</h2>
+<p>This tutorial is designed for partners and customers as a step-by-step guide when working with the DeepHub®.
+It includes the following sections<strong>:</strong></p>
+<ul class="simple">
+<li><p><strong>System Prerequisites for the DeepHub®</strong> - This section provides information on prerequisites of the system in terms of the software tools and technical knowledge needed for the DeepHub® installation.</p></li>
+<li><p><strong>Install the DeepHub®</strong> - This section provides step-by-step instructions on how to install the DeepHub®.</p></li>
+<li><p><strong>User Instructions for the DeepHub®</strong> - This section provides essential information on how to operate the DeepHub® from the end user perspective.</p></li>
+</ul>
+</div>
+<div class="section" id="system-prerequisites">
+<span id="deep-hub-install-system-prerequisites"></span><h2>System Prerequisites</h2>
+<div class="section" id="docker">
+<span id="system-pre-requisites-docker"></span><h3>Docker</h3>
+<p>Docker is an open-source project for automating the deployment of applications as portable, self-sufficient containers that can run on the cloud or on-premises.
+Docker image containers can run natively on Linux and Windows. Developers can use development environments on Windows, Linux, or macOS. On the development computer, the developer may run a Docker host where Docker images are deployed.</p>
+<ul class="simple">
+<li><p>Image : A Docker image is a file, comprised of multiple layers, that is used to execute code in a Docker container. It is a package that contains all necessary files for a containerized application to run. When the Docker user runs an image, it can become one or multiple instances of the container.</p></li>
+<li><p>Container : An instance of a Docker image. A container represents the execution of a single application, process, or service. It consists of the contents of a Docker image, an execution environment, and a standard set of instructions.</p></li>
+<li><p>Docker Compose : A tool for defining and running multi-container Docker applications.</p></li>
+</ul>
+<p>Based on your operating system, you can download and install Docker Desktop here: <a class="reference external" href="https://docs.docker.com/desktop/">Docker Desktop</a>.
+While installing Docker on your machine, ensure you allow the installation to bypass any firewall settings (if prompted). Once the installation process is complete, your machine will restart.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When Docker Desktop is installed on Windows, the entire package is installed (including the Docker Compose). With Ubuntu, the user needs to install Docker and the Docker Compose separately.</p>
+</div>
+</div>
+<div class="section" id="windows-powershell-or-command-prompt">
+<span id="system-pre-requisites-windows"></span><h3>Windows PowerShell or Command Prompt</h3>
+<p>A shell is a user interface that gives you access to various services of an operating system.
+A shell can be command-line based, or it can include a graphical user interface (GUI).
+Windows PowerShell is a shell developed by Microsoft for task automation and configuration management.
+It is cross-platform and consists of a command-line shell and scripting language.
+PowerShell capabilities allow users to simplify and automate repetitive tasks by creating scripts and combining multiple commands.
+The Windows operating system comes with Windows PowerShell pre-installed. However, Windows PowerShell can be installed for other operating systems here: <a class="reference external" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7">Windows PowerShell</a>.
+Aside from Windows PowerShell, the classic Windows Command Prompt is also pre-installed and can be used for tasks at hand.</p>
+</div>
+<div class="section" id="terminal-for-linux-macos">
+<h3>Terminal for Linux &amp; macOS</h3>
+<p>A terminal is a program that allows the use of the command-line in a graphical environment.
+In a Linux system, the shell is a command-line interface that interprets a user’s commands and script files, and notifies the server’s operating system what to do with them.
+Terminal is pre-installed on Linux and macOS. For more information, please read   <a class="reference external" href="https://ubuntu.com/tutorials/command-line-for-beginners#1-overview">Ubuntu Tutorials</a>.</p>
+</div>
+</div>
+<div class="section" id="docker-and-docker-compose">
+<span id="deep-hub-install-docker-compose"></span><h2>Docker and Docker Compose</h2>
+<p>Using Docker or Docker Compose on Windows and Linux is done via a command line shell and is almost identical on both platforms. You can use PowerShell or Command Prompt on Windows and a shell like bash or zsh on Linux.
+Refer to <a class="reference internal" href="#deep-hub-install-system-prerequisites"><span class="std std-ref">DeepHub System Prerequisites</span></a> for details.</p>
+<div class="section" id="using-docker-or-docker-compose">
+<h3>Using Docker or Docker Compose</h3>
+<p>We recommend using Docker Compose because this way you will get a completely configured “system” consisting of the DeepHub®, the DeepHub® UI and a containerized web server, acting as a reverse proxy, to simplify
+the overall usage and interaction of these components.</p>
+<p>We provide a Docker Compose file that configures the necessary orchestration between these three containers. Refer to the next section in this documentation concerning more details on this.</p>
+<p>Nevertheless, you are able to pull just the Docker container that you need instead of all three.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker pull flowcate/deephub:&lt;tag of release you want to pull&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The DeepHub® itself, as well as the corresponding DeepHub® UI, are available at the official docker repository here: <a class="reference external" href="https://hub.docker.com/u/flowcate">Flowcate&#64;docker</a>.</p>
+</div>
+</div>
+<div class="section" id="getting-the-latest-docker-compose-file">
+<h3>Getting the Latest Docker Compose File</h3>
+<p>We provide a docker-compose.yml file and additional configuration files for orchestration of the DeepHub® itself, as well as the corresponding DeepHub® UI, in our Github repository:  <a class="reference external" href="https://github.com/Flowcate">Flowcate&#64;github</a>.</p>
+<p>We recommend creating a dedicated local directory on your filesystem where you store the docker-compose.yml and the aforementioned configuration files. The DeepHub® needs to create some additional files during operations and
+writes them to directories mounted from your host filesystem. This is done relative to the location of the docker-compose.yml file.</p>
+</div>
+<div class="section" id="start-a-deephub">
+<span id="id1"></span><h3>Start a DeepHub®</h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Open a shell (PowerShell or Command Prompt on Windows, a terminal on Linux)</p></li>
+<li><p>Change to the directory where your docker-compose.yml file resides. <strong>Docker Compose won’t work if invoked outside this directory.</strong></p></li>
+<li><p>Invoke Docker Compose. It will take a few minutes to download the Docker images and set up the DeepHub®.</p></li>
+</ul>
+</div></blockquote>
+<p>Example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;directory where the docker-compose.yml is&gt;
+docker-compose up -d
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Linux, it may be necessary to call docker-compose as superuser via the sudo command.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now you have your own running DeepHub® instance that can be accessed with any modern web browser at the address: <a class="reference external" href="http://localhost:8081">http://localhost:8081</a></p>
+<img alt="../_images/deephub-ui.jpg" src="../_images/deephub-ui.jpg" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>To complement the DeepHub UI shown above, you may also make API calls to the DeepHub REST API while running the DeepHub locally. This can be done with a tool such as Postman or cURL.</p>
+<p>The containerized web server included in the Docker Compose bundle acts as a reverse proxy - forwarding requests to either the DeepHub UI or DeepHub containers.</p>
+<p>To interact with the REST API, you will need to use the following baseURL: <a class="reference external" href="http://localhost:8081/deephub/v1">http://localhost:8081/deephub/v1</a></p>
+<p>For example, retrieve an array of all zones:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl http://localhost:8081/deephub/v1/zones/summary <span class="p">|</span> json_pp
+</pre></div>
+</div>
+</div>
+<div class="section" id="stop-a-running-deephub">
+<span id="id2"></span><h3>Stop a running DeepHub®</h3>
+<p>Please make sure you are in the same directory where you invoked docker-compose.</p>
+<p>To stop a running DeepHub®, execute ‘docker-compose down’. This ensures the running DeepHub® is stopped and allows the user to modify the configuration data.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Example:</span></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>  <span class="nb">cd</span> &lt;directory where the docker-compose.yml is&gt;
+  docker-compose down
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Linux, it may be necessary to call docker-compose as superuser via the sudo command.</p>
+</div>
+</div>
+</div>
+<div class="section" id="install-specific-version">
+<h2>Install Specific Version</h2>
+<p>It is possible to switch to a specific version of the DeepHub® instead of the latest one, if required.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before installing a specific version of the DeepHub®, it is mandatory to stop a running hub as described previously in the <a class="reference internal" href="installation.html#stop-a-running-deephub"><span class="std std-ref">Stop a running DeepHub®</span></a> section of the <a class="reference internal" href="#deep-hub-install-docker-compose"><span class="std std-ref">docker compose</span></a> chapter of this guide.</p>
+</div>
+<div class="section" id="pulling-specific-containers">
+<h3>Pulling Specific Containers</h3>
+<p>Open the “docker-compose.yml” file. Edit the version of the DeepHub® from “latest” to the desired version. For example, it can be modified from “latest” to “2.0.0”.
+Similarly, the version of DeepHub® UI can be adapted accordingly.</p>
+<img alt="../_images/docker_yml_edit.png" src="../_images/docker_yml_edit.png" />
+<p>Now, the specified version is pulled when executing the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker-compose pull
+</pre></div>
+</div>
+<p>To start the pulled version, use the typical command as described in section <a class="reference internal" href="installation.html#start-a-deephub"><span class="std std-ref">Start a DeepHub®</span></a> of the <a class="reference internal" href="#deep-hub-install-docker-compose"><span class="std std-ref">docker compose</span></a> chapter.</p>
+</div>
+</div>
+<div class="section" id="server-configuration">
+<h2>Server Configuration</h2>
+<p>The DeepHub® server can be configured in three different ways. Listed from most to least specific, these ways are:</p>
+<ol class="arabic simple">
+<li><p>Environment variables</p></li>
+<li><p>Command line arguments</p></li>
+<li><p>Configration file</p></li>
+</ol>
+<p>Options provided multiple times via different ways will be overriden according to the aforementioned specificity.</p>
+<p>The configuration file is a YAML based file, stored in the data directory of the Docker container (or in the directory provided with config_path).
+The configuration is loaded once on startup. For every configuration option the respective environment variable is fully capitalized and prepended with DEEPHUB, separated by an underscore.</p>
+<p>As an example, <strong>license_key</strong> becomes <strong>DEEPHUB_LICENSE_KEY</strong>.</p>
+<div class="section" id="available-configuration-options">
+<h3>Available configuration options</h3>
+<div class="section" id="license-key">
+<h4>license_key</h4>
+<p>The license key used to authenticate this DeepHub instance with the license server. This parameter is mandatory!</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: not set<span class="raw-html-m2r"><br></span>
+Example: BE7B7835-F2B3-4F40-90C7-458AC95D4859</p>
+</div>
+<div class="section" id="config-path">
+<h4>config_path</h4>
+<p>The directory used by DeepHub to store the database and configuration files. This directory needs read and write permissions.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: .<span class="raw-html-m2r"><br></span></p>
+</div>
+<div class="section" id="port">
+<h4>port</h4>
+<p>The port on which to listen for incoming connections. Note that the server is capable to upgrade requests, thus only a single port is used by the server for HTTP, HTTPS and Websocket (both plain and TLS).</p>
+<p>Expected value type: number<span class="raw-html-m2r"><br></span>
+Default: 8081</p>
+</div>
+<div class="section" id="host">
+<h4>host</h4>
+<p>The servers host name.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: localhost</p>
+</div>
+<div class="section" id="doc-root">
+<h4>doc_root</h4>
+<p>The document root directory of the web server.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: .</p>
+</div>
+<div class="section" id="num-threads">
+<h4>num_threads</h4>
+<p>The number of worker threads to spwan for HTTP(s) and websocket connections.</p>
+<p>Expected value type: number<span class="raw-html-m2r"><br></span>
+Default: Number of available CPU cores.</p>
+</div>
+<div class="section" id="record-path">
+<h4>record_path</h4>
+<p>A path to the session record. When this path is set, the server will write all requests to the specified file for later playback. Note: This functionality is meant for demonstration and testing purposes. Do not use this in production mode, as it will slow down overall operation of the server and keep the recorded file growing over time.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: Not set</p>
+</div>
+<div class="section" id="playback-path">
+<h4>playback_path</h4>
+<p>A path to a file containing a recorded session. The session will be played back in a loop.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: Not set</p>
+</div>
+<div class="section" id="playback-speed">
+<h4>playback_speed</h4>
+<p>The speed at which the recorded session will be played back.</p>
+<p>Expected value type: number<span class="raw-html-m2r"><br></span>
+Default: 1.0</p>
+</div>
+<div class="section" id="cors">
+<h4>cors</h4>
+<p>Wether the server should accept cross site origin requests (cors).</p>
+<p>Expected value type: boolean<span class="raw-html-m2r"><br></span>
+Default: true</p>
+</div>
+<div class="section" id="severity-level">
+<h4>severity_level</h4>
+<p>In order to be able to control the verbosity of our logging, we
+differentiate between the following six <em>severity levels</em>:</p>
+<ul class="simple">
+<li><p><strong>Fatal</strong>:   error that is fatal for the application</p></li>
+<li><p><strong>Error</strong>:   error that is fatal for the current operation</p></li>
+<li><p><strong>Warning</strong>: error that is recoverable</p></li>
+<li><p><strong>Info</strong>:    state of the program</p></li>
+<li><p><strong>Debug</strong>:   diagnostic information of error-prone code paths</p></li>
+<li><p><strong>Trace</strong>:   describes the complete program flow</p></li>
+</ul>
+<p>The DeepHub will log all messages from the chosen severity level and higher. If you
+specify <code class="docutils literal notranslate"><span class="pre">Error</span></code>, you will get messages of type <em>Error</em> and <em>Fatal</em>. An exemplary
+logging output looks like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I20200630</span> <span class="mi">15</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mf">45.783285</span> <span class="mi">104390656</span> <span class="n">HubController</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">425</span><span class="p">]</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">info</span> <span class="n">message</span>
+<span class="n">E20200630</span> <span class="mi">15</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mf">45.784117</span> <span class="mi">104390656</span> <span class="n">HubController</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">426</span><span class="p">]</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">error</span> <span class="n">message</span>
+</pre></div>
+</div>
+<p>and correspond to this pattern</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">L</span> <span class="n">yyyymmdd</span> <span class="n">hh</span><span class="p">:</span><span class="n">mm</span><span class="p">:</span><span class="n">ss</span><span class="o">.</span><span class="n">uuuuuu</span> <span class="n">threadid</span> <span class="n">file</span><span class="p">:</span><span class="n">line</span><span class="p">]</span> <span class="n">msg</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>where the fields are defined as follows:</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">L</span></code></p></td>
+<td><p>A single character, representing the log level (eg ‘I’ for INFO)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">yyyy</span></code></p></td>
+<td><p>The year</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mm</span></code></p></td>
+<td><p>The month (zero padded; ie May is ‘05’)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dd</span></code></p></td>
+<td><p>The day (zero padded)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hh:mm:ss.uuuuuu</span></code></p></td>
+<td><p>Time in hours, minutes and fractional seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">threadid</span></code></p></td>
+<td><p>The space-padded thread ID as returned by GetTID() (this matches the PID on Linux)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">file</span></code></p></td>
+<td><p>The file name</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">line</span></code></p></td>
+<td><p>The line number</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">msg</span></code></p></td>
+<td><p>The user-supplied message</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> Even though we can specify six different severity levels, the output
+will only mark four different severity levels (<strong>F</strong>atal, <strong>E</strong>rror,
+<strong>W</strong>arning, <strong>I</strong>nfo). If the severity level is set accordingly, <code class="docutils literal notranslate"><span class="pre">Trace</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Debug</span></code> messages will also appear as <strong>I</strong>nfo in the output.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: <code class="docutils literal notranslate"><span class="pre">Info</span></code></p>
+</div>
+<div class="section" id="require-authorization">
+<h4>require_authorization</h4>
+<p>Whether authorization is required or not. If authorization is required openid_config_url must be configured, and the optional parameters authserver_public_key_path and verify_authserver are strongly advised to be set for a production environment.</p>
+<p>Expected value type: boolean<span class="raw-html-m2r"><br></span>
+Default: false</p>
+</div>
+<div class="section" id="openid-config-url">
+<h4>openid_config_url</h4>
+<p>The OpenID configuration URL which contains information about OpenID authentication and authorization endpoints. Check your OpenID server documentation for details. This setting is mandatory when require_authorization is used.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: not set<span class="raw-html-m2r"><br></span>
+Example: <a class="reference external" href="http://127.0.0.1:8080/auth/realms/omlox/.well-known/openid-configuration">http://127.0.0.1:8080/auth/realms/omlox/.well-known/openid-configuration</a></p>
+</div>
+<div class="section" id="openid-client-name">
+<h4>openid_client_name</h4>
+<p>The client name of the DeepHub. The parameter is mandatory when using OpenID, in order to verify client token claims (mandatory by OpenID standard). Please refer to “API Security.md” for an audience claim mapping example.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: not set<span class="raw-html-m2r"><br></span>
+Example: deephub-service</p>
+</div>
+<div class="section" id="openid-client-secret">
+<h4>openid_client_secret</h4>
+<p>The OpenID client secret to be used for the DeepHub service.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: not set</p>
+</div>
+<div class="section" id="authserver-public-key-path">
+<h4>authserver_public_key_path</h4>
+<p>The path to the PEM file containing the public key of the authentication server. This public key is used to verify requests to the OpenID config service.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: not set</p>
+</div>
+<div class="section" id="verify-authserver">
+<h4>verify_authserver</h4>
+<p>Whether to verify the OpenID server’s certificate. This should be set to true in production mode.</p>
+<p>Expected value type: boolean<span class="raw-html-m2r"><br></span>
+Default: false</p>
+</div>
+<div class="section" id="public-key-path">
+<h4>public_key_path</h4>
+<p>Path to the PEM file containing the server’s public key required for secure communication over HTTPS / wss. This parameter is mandatory when using force_https.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: not set</p>
+</div>
+<div class="section" id="private-key-path">
+<h4>private_key_path</h4>
+<p>Path to the PEM file containing the server’s private key required for secure communication over HTTPS / wss. This parameter is mandatory when using force_https.</p>
+</div>
+<div class="section" id="private-key-password">
+<h4>private_key_password</h4>
+<p>The private key’s password.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: not set</p>
+</div>
+<div class="section" id="dh-params-path">
+<h4>dh_params_path</h4>
+<p>Path to the DH params file for secure communication over HTTPS / wss.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: not set</p>
+</div>
+<div class="section" id="force-https">
+<h4>force_https</h4>
+<p>Wether the server should enforce to use HTTPS / wss (secure websocket) and disallow non-encrypted requests. Requires public and private certificates.</p>
+<p>Expected value type: boolean<span class="raw-html-m2r"><br></span>
+Default: false</p>
+</div>
+<div class="section" id="persist-locations">
+<h4>persist_locations</h4>
+<p>Whether the server should write last locations and motions to the database. Note: When enabled, server performance might decrease. See db_fast_writes for mitigating some of the performance loss.</p>
+<p>Expected value type: boolean<span class="raw-html-m2r"><br></span>
+Default: true</p>
+</div>
+<div class="section" id="db-fast-writes">
+<h4>db_fast_writes</h4>
+<p>Whether the server should merge multiple location and motion updates for the same entity into a single database update. Only works if persist_locations is enabled.</p>
+<p>This option can significantly increase the rate at which location updates can be processed.
+As a side effect, API calls for such updates can not report database errors immidiately (e.g. lost connection).
+Accepted and confirmed updates will be retried und submitted once the error is resolved.</p>
+<p>Expected value type: boolean<span class="raw-html-m2r"><br></span>
+Default: true</p>
+</div>
+<div class="section" id="license-server-address">
+<h4>license_server_address</h4>
+<p>The address at which the Flowcate license server is reachable.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: <a class="reference external" href="https://license.deephub.io">https://license.deephub.io</a></p>
+</div>
+<div class="section" id="license-server-port">
+<h4>license_server_port</h4>
+<p>The port at which the Flowcate license server is reachable.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: 443</p>
+</div>
+<div class="section" id="db-type">
+<h4>db_type</h4>
+<p>The database type the DeepHub uses. Supported values are <strong>sqlite</strong> and <strong>cassandra</strong>.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: sqlite</p>
+</div>
+<div class="section" id="cassandra-hosts">
+<h4>cassandra_hosts</h4>
+<p>List of host names for the cluster.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: localhost</p>
+</div>
+<div class="section" id="cassandra-port">
+<h4>cassandra_port</h4>
+<p>Port of the cluster.</p>
+<p>Expected value type: number<span class="raw-html-m2r"><br></span>
+Default: 9042</p>
+</div>
+<div class="section" id="cassandra-username">
+<h4>cassandra_username</h4>
+<p>Username used to authenticate to the Cassandra cluster.
+This user needs full access to the DeepHub related namespaces.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: not set</p>
+</div>
+<div class="section" id="cassandra-password">
+<h4>cassandra_password</h4>
+<p>Password used to authenticate to the Cassandra cluster.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: not set</p>
+</div>
+<div class="section" id="cassandra-keyspace">
+<h4>cassandra_keyspace</h4>
+<p>Base name of the Cassandra keyspace. DeepHub will use two namespaces, one named as provided by this option, and a second one appended with “_stats”.
+For the default namespace this gives the following to namespaces: “deephub”, “deephub_stats”.<span class="raw-html-m2r"><br></span>
+The user provided as cassandra_username needs full access to both namespaces.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: deephub</p>
+</div>
+<div class="section" id="cassandra-connect-timeout">
+<h4>cassandra_connect_timeout</h4>
+<p>Connection timeout, in milliseconds.</p>
+<p>Expected value type: number<span class="raw-html-m2r"><br></span>
+Default: 5000</p>
+</div>
+<div class="section" id="cassandra-request-timeout">
+<h4>cassandra_request_timeout</h4>
+<p>Request timeout, in milliseconds.</p>
+<p>Expected value type: number<span class="raw-html-m2r"><br></span>
+Default: 12000</p>
+</div>
+<div class="section" id="cassandra-read-consistency">
+<h4>cassandra_read_consistency</h4>
+<p>In order to be able to control the read consistency the DeepHub supports the following Cassandra consistencies:</p>
+<ul class="simple">
+<li><p><strong>UNKNOWN</strong></p></li>
+<li><p><strong>ANY</strong></p></li>
+<li><p><strong>ONE</strong></p></li>
+<li><p><strong>TWO</strong></p></li>
+<li><p><strong>QUORUM</strong></p></li>
+<li><p><strong>ALL</strong></p></li>
+<li><p><strong>LOCAL_QUORUM</strong></p></li>
+<li><p><strong>EACH_QUORUM</strong></p></li>
+<li><p><strong>SERIAL</strong></p></li>
+<li><p><strong>LOCAL_SERIAL</strong></p></li>
+<li><p><strong>QUORUM</strong></p></li>
+<li><p><strong>LOCAL_ONE</strong></p></li>
+</ul>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: <code class="docutils literal notranslate"><span class="pre">LOCAL_QUORUM</span></code></p>
+</div>
+<div class="section" id="cassandra-write-consistency">
+<h4>cassandra_write_consistency</h4>
+<p>In order to be able to control the write consistency the DeepHub supports the following Cassandra consistencies:</p>
+<ul class="simple">
+<li><p><strong>UNKNOWN</strong></p></li>
+<li><p><strong>ANY</strong></p></li>
+<li><p><strong>ONE</strong></p></li>
+<li><p><strong>TWO</strong></p></li>
+<li><p><strong>QUORUM</strong></p></li>
+<li><p><strong>ALL</strong></p></li>
+<li><p><strong>LOCAL_QUORUM</strong></p></li>
+<li><p><strong>EACH_QUORUM</strong></p></li>
+<li><p><strong>SERIAL</strong></p></li>
+<li><p><strong>LOCAL_SERIAL</strong></p></li>
+<li><p><strong>QUORUM</strong></p></li>
+<li><p><strong>LOCAL_ONE</strong></p></li>
+</ul>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: <code class="docutils literal notranslate"><span class="pre">LOCAL_QUORUM</span></code></p>
+</div>
+<div class="section" id="cassandra-keep-alive">
+<h4>cassandra_keep_alive</h4>
+<p>Cassandra connection keep-alive interval in seconds.</p>
+<p>Expected value type: number<span class="raw-html-m2r"><br></span>
+Default: 7200</p>
+</div>
+<div class="section" id="cassandra-latency-aware-routing">
+<h4>cassandra_latency_aware_routing</h4>
+<p>Whether Cassandra latency aware routing is enabled.</p>
+<p>Expected value type: boolean<span class="raw-html-m2r"><br></span>
+Default: true</p>
+</div>
+<div class="section" id="cassandra-token-aware-routing">
+<h4>cassandra_token_aware_routing</h4>
+<p>Whether Cassandra token aware routing is enabled.</p>
+<p>Expected value type: boolean<span class="raw-html-m2r"><br></span>
+Default: true</p>
+</div>
+<div class="section" id="cassandra-load-balancing">
+<h4>cassandra_load_balancing</h4>
+<p>Whether Cassandra load balancing is enabled.</p>
+<p>Expected value type: boolean<span class="raw-html-m2r"><br></span>
+Default: true</p>
+</div>
+<div class="section" id="cassandra-io-threads">
+<h4>cassandra_io_threads</h4>
+<p>Number of Cassandra IO threads.</p>
+<p>Expected value type: number<span class="raw-html-m2r"><br></span>
+Default: 4</p>
+</div>
+<div class="section" id="cassandra-replication-strategy">
+<h4>cassandra_replication_strategy</h4>
+<p>Cassandra replication strategy.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: {‘class’: ‘SimpleStrategy’, ‘replication_factor’: ‘1’}</p>
+</div>
+<div class="section" id="cassandra-use-tls">
+<h4>cassandra_use_tls</h4>
+<p>Whether the Cassandra connection enforces TLS.</p>
+<p>Expected value type: boolean<span class="raw-html-m2r"><br></span>
+Default: false</p>
+</div>
+<div class="section" id="cassandra-tls-pem">
+<h4>cassandra_tls_pem</h4>
+<p>Path to the PEM file for a TLS enabled connection to Cassandra.</p>
+<p>Expected value type: string<span class="raw-html-m2r"><br></span>
+Default: not set</p>
+</div>
+<div class="section" id="iso-24730-connections">
+<h4>iso_24730_connections</h4>
+<p>A list of configurations for connections to ISO-24730 RTLS systems. The following properties are used for a connection:<span class="raw-html-m2r"><br></span>
+<code class="docutils literal notranslate"><span class="pre">host</span></code> - The host to connect to.<span class="raw-html-m2r"><br></span>
+<code class="docutils literal notranslate"><span class="pre">port</span></code> - The port used for the connection.<span class="raw-html-m2r"><br></span>
+<code class="docutils literal notranslate"><span class="pre">type</span></code> - The location provider type reported used for location updates from this system.<span class="raw-html-m2r"><br></span>
+<code class="docutils literal notranslate"><span class="pre">zone_id</span></code> or <code class="docutils literal notranslate"><span class="pre">foreign_id</span></code> - The identifier of a zone with which all location updates from this system will be associated with. <strong>Exactly one</strong> of these two ids must be provided.<span class="raw-html-m2r"><br></span></p>
+<p>Expected value type: YAML list<span class="raw-html-m2r"><br></span>
+Default: not set<span class="raw-html-m2r"><br></span>
+Example:<span class="raw-html-m2r"><br></span>
+<em>Configuration file:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">host</span><span class="p">:</span> <span class="n">server</span>
+  <span class="n">port</span><span class="p">:</span> <span class="mi">4000</span>
+  <span class="nb">type</span><span class="p">:</span> <span class="n">uwb</span>
+  <span class="n">zone_id</span><span class="p">:</span> <span class="n">FDE56BB8</span><span class="o">-</span><span class="mi">64</span><span class="n">B1</span><span class="o">-</span><span class="mi">4</span><span class="n">B95</span><span class="o">-</span><span class="n">ADEB</span><span class="o">-</span><span class="n">AB189EE937FE</span>
+<span class="o">-</span> <span class="n">host</span><span class="p">:</span> <span class="n">otherserver</span>
+  <span class="n">port</span><span class="p">:</span> <span class="mi">4000</span>
+  <span class="nb">type</span><span class="p">:</span> <span class="n">gps</span>
+  <span class="n">foreign_id</span><span class="p">:</span> <span class="n">some_id</span>
+</pre></div>
+</div>
+<p><em>Command line</em> or <em>environment variable:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="s1">&#39;host&#39;</span><span class="p">:</span><span class="n">server</span><span class="p">,</span><span class="s1">&#39;port&#39;</span><span class="p">:</span><span class="mi">4000</span><span class="p">,</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="n">uwb</span><span class="p">,</span><span class="s1">&#39;zone_id&#39;</span><span class="p">:</span><span class="n">FDE56BB8</span><span class="o">-</span><span class="mi">64</span><span class="n">B1</span><span class="o">-</span><span class="mi">4</span><span class="n">B95</span><span class="o">-</span><span class="n">ADEB</span><span class="o">-</span><span class="n">AB189EE937FE</span><span class="p">},{</span><span class="s1">&#39;host&#39;</span><span class="p">:</span><span class="n">otherserver</span><span class="p">,</span><span class="s1">&#39;port&#39;</span><span class="p">:</span><span class="mi">4000</span><span class="p">,</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="n">gps</span><span class="p">,</span><span class="s1">&#39;foreign_id&#39;</span><span class="p">:</span><span class="n">some_id</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-a-proxy-server-for-outside-communication">
+<h3>Using a proxy server for outside communication</h3>
+<p>DeepHub allows for https communication via a proxy server which supports the HTTP CONNECT method.
+This primarily concerns the access to the license server and OpenID server.
+DeepHub thereby respects the environment variables <strong>https_proxy</strong> and <strong>no_proxy</strong> with the following syntax and limitations:</p>
+<ul class="simple">
+<li><p>The environment variables have to be lower case</p></li>
+<li><p>The proxy server must be the root target of its domain</p></li>
+<li><p>Login credentials must be provided as username:password in the <strong>https_proxy</strong> variable</p></li>
+<li><p>The exclusion via <strong>no_proxy</strong> is based on a comma separated list of sub.domain strings. IP address and range based filtering are currently not supported.</p></li>
+<li><p>Traffic to localhost/0.0.0.0/127.0.0.1 will not be routed through the proxy.</p></li>
+</ul>
+<p>The following is an example configuration where a proxy server is used to access the license server, while the OpenID server is accessed directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Route outgoing traffic via this proxy server</span>
+<span class="n">https_proxy</span><span class="o">=</span><span class="s2">&quot;username:password@local.proxy.server:80&quot;</span>
+
+<span class="c1"># Access the OpenID server directly</span>
+<span class="n">no_proxy</span><span class="o">=</span><span class="s2">&quot;local.openid.server:443&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="preparing-self-signed-certificates-for-development">
+<h3>Preparing self signed certificates for development</h3>
+<p>Below is an example using OpenSSL to create self-signed certificates for enabling HTTPS for development and testing purpose.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create public key cert.pem and private key key.pem</span>
+<span class="n">openssl</span> <span class="n">req</span> <span class="o">-</span><span class="n">newkey</span> <span class="n">rsa</span><span class="p">:</span><span class="mi">2048</span> <span class="o">-</span><span class="n">nodes</span> <span class="o">-</span><span class="n">keyout</span> <span class="n">key</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">x509</span> <span class="o">-</span><span class="n">days</span> <span class="mi">10000</span> <span class="o">-</span><span class="n">out</span> <span class="n">cert</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">subj</span> <span class="s2">&quot;/C=DE/ST=BW/L=Heidelberg/O=Flowcate/CN=www.flowcate.com&quot;</span>
+
+<span class="c1"># Create DH Params</span>
+<span class="n">openssl</span> <span class="n">dhparam</span> <span class="o">-</span><span class="n">out</span> <span class="n">dh</span><span class="o">.</span><span class="n">pem</span> <span class="mi">2048</span>
+</pre></div>
+</div>
+<p>Place the files inside the DeepHub’s data directory, and edit the hub_config.yaml file accordingly. Example configuration using above mentioned file names:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">license_key</span><span class="p">:</span> <span class="n">BE7B7835</span><span class="o">-</span><span class="n">F2B3</span><span class="o">-</span><span class="mi">4</span><span class="n">F40</span><span class="o">-</span><span class="mi">90</span><span class="n">C7</span><span class="o">-</span><span class="mi">458</span><span class="n">AC95D4859</span>
+<span class="n">port</span><span class="p">:</span> <span class="mi">8081</span>
+<span class="n">host</span><span class="p">:</span> <span class="n">localhost</span>
+<span class="n">cors</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">verify_authserver</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">force_https</span><span class="p">:</span> <span class="n">false</span>
+<span class="n">public_key_path</span><span class="p">:</span> <span class="n">cert</span><span class="o">.</span><span class="n">pem</span>
+<span class="n">private_key_path</span><span class="p">:</span> <span class="n">key</span><span class="o">.</span><span class="n">pem</span>
+<span class="n">dh_params_path</span><span class="p">:</span> <span class="n">dh</span><span class="o">.</span><span class="n">pem</span>
+</pre></div>
+</div>
+<p>Note: Setting force_https to false will accept both HTTP and HTTPS requests. For security reasons this should be changed to true in production.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+
+        </div>
+        
+        
+    </main>
+
+
+      </div>
+    </div>
+  
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022 Flowcate.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

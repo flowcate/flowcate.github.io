@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docker and Docker Compose &#8212; DeepHub® 2022 R1  documentation</title>
+    
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/hub.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/root.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/header.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/index-site.css" />
+    
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../index.html">
+<p class="title">DeepHub® 2022 R1</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../overview/index.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api_reference/index.html">
+  DeepHub® API
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../ui/index.html">
+  DeepHub® UI
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../demo_access/index.html">
+  Accessing Demo Instances
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Running the DeepHub® Locally
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <div class="col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+            
+          
+
+          
+    <div class="d-none d-xl-block col-xl-2 bd-toc"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+        
+          
+          <div class="toc-item">
+            
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-docker-or-docker-compose">
+   Using Docker or Docker Compose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-the-latest-docker-compose-file">
+   Getting the Latest Docker Compose File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#start-a-deephub">
+   Start a DeepHub®
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stop-a-running-deephub">
+   Stop a running DeepHub®
+  </a>
+ </li>
+</ul>
+
+</nav>
+          </div>
+          
+          <div class="toc-item">
+            
+          </div>
+          
+        
+    </div>
+
+
+          
+    
+
+    
+        
+    
+
+    <main class="col-12 col-md-12 col-xl-10 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+        
+        <div>
+        
+  <div class="section" id="docker-and-docker-compose">
+<h1>Docker and Docker Compose</h1>
+<p>Using Docker or Docker Compose on Windows and Linux is done via a command line shell and is almost identical on both platforms. You can use PowerShell or Command Prompt on Windows and a shell like bash or zsh on Linux.
+Refer to <a class="reference internal" href="index.html#deep-hub-install-system-prerequisites"><span class="std std-ref">DeepHub System Prerequisites</span></a> for details.</p>
+<div class="section" id="using-docker-or-docker-compose">
+<h2>Using Docker or Docker Compose</h2>
+<p>We recommend using Docker Compose because this way you will get a completely configured “system” consisting of the DeepHub®, the DeepHub® UI and a containerized web server, acting as a reverse proxy, to simplify
+the overall usage and interaction of these components.</p>
+<p>We provide a Docker Compose file that configures the necessary orchestration between these three containers. Refer to the next section in this documentation concerning more details on this.</p>
+<p>Nevertheless, you are able to pull just the Docker container that you need instead of all three.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker pull flowcate/deephub:&lt;tag of release you want to pull&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The DeepHub® itself, as well as the corresponding DeepHub® UI, are available at the official docker repository here: <a class="reference external" href="https://hub.docker.com/u/flowcate">Flowcate&#64;docker</a>.</p>
+</div>
+</div>
+<div class="section" id="getting-the-latest-docker-compose-file">
+<h2>Getting the Latest Docker Compose File</h2>
+<p>We provide a docker-compose.yml file and additional configuration files for orchestration of the DeepHub® itself, as well as the corresponding DeepHub® UI, in our Github repository:  <a class="reference external" href="https://github.com/Flowcate">Flowcate&#64;github</a>.</p>
+<p>We recommend creating a dedicated local directory on your filesystem where you store the docker-compose.yml and the aforementioned configuration files. The DeepHub® needs to create some additional files during operations and
+writes them to directories mounted from your host filesystem. This is done relative to the location of the docker-compose.yml file.</p>
+</div>
+<div class="section" id="start-a-deephub">
+<span id="id1"></span><h2>Start a DeepHub®</h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Open a shell (PowerShell or Command Prompt on Windows, a terminal on Linux)</p></li>
+<li><p>Change to the directory where your docker-compose.yml file resides. <strong>Docker Compose won’t work if invoked outside this directory.</strong></p></li>
+<li><p>Invoke Docker Compose. It will take a few minutes to download the Docker images and set up the DeepHub®.</p></li>
+</ul>
+</div></blockquote>
+<p>Example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;directory where the docker-compose.yml is&gt;
+docker-compose up -d
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Linux, it may be necessary to call docker-compose as superuser via the sudo command.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now you have your own running DeepHub® instance that can be accessed with any modern web browser at the address: <a class="reference external" href="http://localhost:8081">http://localhost:8081</a></p>
+<img alt="../_images/deephub-ui.jpg" src="../_images/deephub-ui.jpg" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>To complement the DeepHub UI shown above, you may also make API calls to the DeepHub REST API while running the DeepHub locally. This can be done with a tool such as Postman or cURL.</p>
+<p>The containerized web server included in the Docker Compose bundle acts as a reverse proxy - forwarding requests to either the DeepHub UI or DeepHub containers.</p>
+<p>To interact with the REST API, you will need to use the following baseURL: <a class="reference external" href="http://localhost:8081/deephub/v1">http://localhost:8081/deephub/v1</a></p>
+<p>For example, retrieve an array of all zones:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl http://localhost:8081/deephub/v1/zones/summary <span class="p">|</span> json_pp
+</pre></div>
+</div>
+</div>
+<div class="section" id="stop-a-running-deephub">
+<span id="id2"></span><h2>Stop a running DeepHub®</h2>
+<p>Please make sure you are in the same directory where you invoked docker-compose.</p>
+<p>To stop a running DeepHub®, execute ‘docker-compose down’. This ensures the running DeepHub® is stopped and allows the user to modify the configuration data.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Example:</span></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>  <span class="nb">cd</span> &lt;directory where the docker-compose.yml is&gt;
+  docker-compose down
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Linux, it may be necessary to call docker-compose as superuser via the sudo command.</p>
+</div>
+</div>
+</div>
+
+
+        </div>
+        
+        
+    </main>
+
+
+      </div>
+    </div>
+  
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022 Flowcate.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+:root {
+    --pst-font-family-base-system: Open Sans, sans-serif;
+    --pst-color-navbar-link: 201, 232, 251;
+    --pst-color-navbar-link-hover: 255, 255, 255;
+    --pst-color-navbar-link-active: 255, 255, 255;
+
+    --pst-color-h1: 26,174,232;
+    --pst-color-h2: 107, 127, 146;
+    --pst-color-h3: 107, 127, 146;
+    --pst-color-h4: 107, 127, 146;
+
+    --pst-color-text-base: 107 127 146;
+    --pst-font-family-base-system: Open Sans, sans-serif;
+}
+
+.startsite {
+    --pst-color-text-base: 201, 232, 251;
+    --pst-color-h1: 26, 174, 232;
+    --pst-color-link: 26, 174, 232;
+    --pst-color-link-hover: 201, 232, 251;
+}

@@ -1,0 +1,71 @@
+.swagger-ui .try-out__btn,
+.swagger-ui .scheme-container {
+    display: none;
+}
+.swagger-ui select.content-type {
+    border:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -ms-appearance: none; /* get rid of default appearance for IE8, 9 and 10*/
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+.swagger-ui .info .title small pre {
+    box-shadow: none;
+}
+
+#websocket-api div#overview > p {
+    width: auto;
+}
+
+/* img.screenshot {
+    border: 1px solid #b4b7b5;
+    margin: 16px 0;
+} */
+
+/*
+ Test
+*/
+body {
+    background-color: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+}
+
+.section > .section {
+    color: #6B7F92;
+    background-color: #fff;
+    margin-top: 0;
+    padding: 2% 10% 5%;
+}
+
+.section > .section > .section {
+    padding: 0;
+    margin-top: 0;
+}
+
+.section ~ .section {
+    margin-top: 100px;
+}
+
+.start-image {
+    width: 70%;
+    margin-bottom: 100px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.sd-card-body img {
+    margin: 16px -15px 0;
+    width: calc(100% + 2em);
+    display: block;
+    max-width: none;
+}
+
+.no-sidebar {
+    display: none;
+}
