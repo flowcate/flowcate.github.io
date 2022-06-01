@@ -1,7 +1,7 @@
 {
   "name": "flowcate.github.io",
   "version": "1.0.0",
-  "description": "",
+  "description": "This package contains the latest generated official **DeepHub docu** for deployment towards docs.flowcate.io (which is a CNAME alias to flowcate.github.io, the \"github page\" of this repo).",
   "main": "searchindex.js",
   "scripts": {
     "deploy": "gh-pages --dotfiles --dist dist"
