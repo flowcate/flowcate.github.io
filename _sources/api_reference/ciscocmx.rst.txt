@@ -1,0 +1,39 @@
+Cisco CMX Location Notification Adapter
+=======================================
+
+The Cisco CMX Location Notification Adapter enables the DeepHub® to be integrated with existing Cisco infrastructure, without the need for an additional middleware.
+
+The DeepHub REST API endpoint /adapters/cisco/locations can be configured as a webhook in the Cisco CMX settings. The DeepHub supports version 10.6+ of Cisco CMX.
+
+
+Setup and Configuration
+-----------------------
+
+Setting up the Cisco CMX adapter is done by first defining a webhook in the Cisco CMX settings. If the Cisco infrastructure is set up to provide GPS location data, this is the only configuration step.
+
+If the Cisco infrastructure is set up to only send local coordinates, a zone configuration in the DeepHub is required to match the Cisco floor plan. This allows for the translation of incoming location data to projections supported by the DeepHub.
+
+
+**Setting up a Notification Webhook in Cisco CMX for the DeepHub:**
+
+You may create a new webhook through the Cisco CMX configuration page. To do so in the UI:
+
+1. Login to Cisco CMX
+2. Choose Manage → Notifications
+3. Create a new notification and enter the host and port to your DeepHub instance and enter the URL /v1/adapters/cisco/locations
+4. Save changes and exit
+
+If your Cisco infrastructure is set up to only deliver local coordinates, you need to perform these additional steps:
+
+1. Login to the DeepHub UI
+2. Choose Zone Setup
+3. Click to create a new zone
+4. Select wifi as the zone type
+5. Draw the zone using the drawing tool, or any of the available zone creation tools. The zone shape and location should match the location hierarchy (map) as defined in your Cisco CMX.
+6. Enter the floor level for the zone and the address (optional).
+7. In the Foreign ID field, enter the CMX location hierarchy name for this map. For example, "Mathematikon>Berliner Str. 41>5. OG komplett [f.4]". Note: This field is used to link incoming data from your Cisco CMX with this omlox zone. Therefore, please ensure this field matches the value of your CMX location hierarchy.
+8. Click save to create and activate the new zone.
+
+Repeat the steps above for each floor plan in your Cisco CMX for which you want to get location data in the DeepHub.
+
+.. note:: Setting up a zone in the DeepHub is optional if Cisco CMX is set up to deliver data in WGS84. Nevertheless, it's strongly advised to create a zone for each CMX location hierarchy in order to assign correct floor level information to incoming locations from the corresponding CMX location hierarchies. Otherwise, some features that depend on correct floor information, such as geofencing and collision detection, may not behave as expected.

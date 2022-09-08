@@ -1,0 +1,115 @@
+
+DeepHub® UI Configuration
+=========================
+
+Adding a Floorplan Image to the Map
+-----------------------------------
+
+The DeepHub UI can be configured so that a floorplan image of a building or a site can be displayed. You may choose to display the image by itself, or overlayed on top of the basemap of the mapping service provider (ex. MapTiler).
+
+To begin, you will need to determine the latitude and longitude of your floorplan images' corners.
+
+Once this is done, navigate to the '/hub-web/nginx/webapp' directory of your DeepHub bundle on your local filesystem. Create a new directory (ex. named 'floorplan-image') and add your floorplan image to this directory.
+
+Next, download the Open Sans Semibold font by cloning `this repository <https://github.com/openmaptiles/fonts>`_ to your local filesystem. Follow the steps in the README.md to install the required packages and generate the fonts. The fonts will be in the '_output' directory.
+
+.. code-block:: json
+
+    user@fc:~/projects/fonts/_output$ ls
+    'Metropolis Black'               'Metropolis Light'             'Metropolis Thin'         'Open Sans Extra Bold Italic'  'PT Sans Bold Italic'       'Roboto Black Italic'            'Roboto Condensed Regular'  'Roboto Thin Italic'
+    'Metropolis Black Italic'        'Metropolis Light Italic'      'Metropolis Thin Italic'  'Open Sans Italic'             'PT Sans Caption Regular'   'Roboto Bold'                    'Roboto Italic'
+    'Metropolis Bold'                'Metropolis Medium'            'Noto Sans Bold'          'Open Sans Light'              'PT Sans Caption Web Bold'  'Roboto Bold Italic'             'Roboto Light'
+    'Metropolis Bold Italic'         'Metropolis Medium Italic'     'Noto Sans Italic'        'Open Sans Light Italic'       'PT Sans Italic'            'Roboto Condensed Bold'          'Roboto Light Italic'
+    'Metropolis Extra Bold'          'Metropolis Regular'           'Noto Sans Regular'       'Open Sans Regular'            'PT Sans Narrow Bold'       'Roboto Condensed Bold Italic'   'Roboto Medium'
+    'Metropolis Extra Bold Italic'   'Metropolis Regular Italic'    'Open Sans Bold'          'Open Sans Semibold'           'PT Sans Narrow Regular'    'Roboto Condensed Italic'        'Roboto Medium Italic'
+    'Metropolis Extra Light'         'Metropolis Semi Bold'         'Open Sans Bold Italic'   'Open Sans Semibold Italic'    'PT Sans Regular'           'Roboto Condensed Light'         'Roboto Regular'
+    'Metropolis Extra Light Italic'  'Metropolis Semi Bold Italic'  'Open Sans Extra Bold'    'PT Sans Bold'                 'Roboto Black'              'Roboto Condensed Light Italic'  'Roboto Thin'
+
+
+Within your newly-created 'floorplan-image' directory, create a new directory named 'fonts'. Copy the 'Open Sans Semibold' font from the repository you just cloned to this new 'fonts' directory.
+
+Displaying a Floorplan Image by Itself
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Create a JSON file in your 'floorplan-image' directory that defines your map style. To display the floorplan image without the surrounding basemap, your file must be structured like the following:
+
+.. code-block:: json
+    
+    {
+        "version": 8,
+        "id": "floorplan-style",
+        "name": "Floorplan Style",
+        "attribution": "Floorplan map",
+        "glyphs": "floorplan-image/fonts/{fontstack}/{range}.pbf",
+        "sources": {
+          "image": {
+            "type": "image",
+            "url": "floorplan-image/<YOUR FLOORPLAN IMAGE FILE>",
+            "coordinates": [
+                [
+                -115.16786551712569,
+                36.11988219161837
+                ],
+                [
+                -115.1654992,
+                36.119895
+                ],
+                [
+                -115.1649202,
+                36.118001
+                ],
+                [
+                -115.1684502,
+                36.118023
+                ]
+            ]
+          }
+        },
+        "layers": [
+          {
+            "id": "background",
+            "type": "background",
+            "paint": {
+                "background-color": "rgba(0,0,0,0)"
+            }
+          },
+          {
+            "id": "image-layer",
+            "type": "raster",
+            "source": "image",
+            "paint": {
+                "raster-fade-duration": 0
+            }
+          }
+        ]
+    }
+
+.. note::
+  
+  You will need to change the coordinates in your JSON file to match the coordinates of your floorplan images' corners. The first coordinate corresponds to the top left corner of the image, the 2nd coordinate corresponds to the top right corner of the image, etc.
+
+Finally, the 'deephub-ui' service within the docker-compose.yml file of your DeepHub instance needs to be modified:
+
+  * Set DOCKER_MAP_DEFAULT_STYLE=floorplan-image/<YOUR MAP STYLE JSON FILE>
+  * Ensure that the "./hub-web/nginx/webapp/" volume on your local filesystem is mounted to "/webapp" of the Docker container
+
+Start your DeepHub instance by invoking Docker Compose. When you open the DeepHub UI in your browser, you will need to modify the URL by including one pair of latitude and longitude coordinates. For example, to navigate to the location of the floorplan image in the example above, the following URL would be used:
+
+.. code-block:: shell
+
+    http://localhost:8081/deephub-ui/map/system/live/(show//left:list)?lng=-115.16786551712569&lat=36.11988219161837&zoom=17
+
+.. image:: images/floorplan_alone.png
+
+Displaying a Floorplan Image over a Basemap
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To display your floorplan image on top of a basemap from a mapping service provider, you will need to modify your JSON file above, or create a new one. 
+
+Combine the properties associated with your floorplan image with the map style JSON of the mapping service provider. By default, MapTiler is used as the mapping service provider with this map style: https://api.maptiler.com/maps/bright/style.json. 
+
+In addition, you will need to ensure that the docker-compose.yml file of your DeepHub instance has the correct value for DOCKER_MAP_DEFAULT_STYLE. This environment variable should point to the location of the updated map style JSON file on your local filesystem. For example:
+
+    * DOCKER_MAP_DEFAULT_STYLE=floorplan-image/<YOUR UPDATED MAP STYLE JSON FILE>
+
+.. image:: images/floorplan_basemap.png

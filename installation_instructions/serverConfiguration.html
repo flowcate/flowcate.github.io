@@ -96,7 +96,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../demo_access/index.html">
-  Accessing Demo Instances
+  Accessing Trial Instances
  </a>
 </li>
 
@@ -420,7 +420,7 @@
 <ol class="arabic simple">
 <li><p>Environment variables</p></li>
 <li><p>Command line arguments</p></li>
-<li><p>Configration file</p></li>
+<li><p>Configuration file</p></li>
 </ol>
 <p>Options provided multiple times via different ways will be overriden according to the aforementioned specificity.</p>
 <p>The configuration file is a YAML based file, stored in the data directory of the Docker container (or in the directory provided with config_path).
@@ -661,7 +661,21 @@ Default: sqlite</p>
 </div>
 <div class="section" id="cassandra-hosts">
 <h3>cassandra_hosts</h3>
-<p>List of host names for the cluster.</p>
+<p>List of host names for the cluster.<span class="raw-html-m2r"><br></span>
+In the config file, a YAML array is expected:<span class="raw-html-m2r"><br></span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cassandra_hosts</span><span class="p">:</span>
+  <span class="o">-</span> <span class="s1">&#39;127.0.0.1&#39;</span>
+  <span class="o">-</span> <span class="s1">&#39;localhost&#39;</span>
+</pre></div>
+</div>
+<p>On the command line, this parameter can be given multiple times:<span class="raw-html-m2r"><br></span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deephub</span> <span class="o">--</span><span class="n">cassandra_hosts</span> <span class="s2">&quot;localhost&quot;</span> <span class="o">--</span><span class="n">cassandra_hosts</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+</pre></div>
+</div>
+<p>As an environment variable, a comma separated list of hosts is expected:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DEEPHUB_CASSANDRA_HOSTS</span><span class="o">=</span><span class="s2">&quot;localhost,127.0.0.1&quot;</span> <span class="n">deephub</span>
+</pre></div>
+</div>
 <p>Expected value type: string<span class="raw-html-m2r"><br></span>
 Default: localhost</p>
 </div>

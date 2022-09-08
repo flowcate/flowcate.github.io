@@ -1,0 +1,42 @@
+
+System Prerequisites
+====================
+
+.. _system-pre-requisites_docker:
+
+Docker
+------
+
+Docker is an open-source project for automating the deployment of applications as portable, self-sufficient containers that can run on the cloud or on-premises.
+Docker image containers can run natively on Linux and Windows. Developers can use development environments on Windows, Linux, or macOS. On the development computer, the developer may run a Docker host where Docker images are deployed.
+
+- Image : A Docker image is a file, comprised of multiple layers, that is used to execute code in a Docker container. It is a package that contains all necessary files for a containerized application to run. When the Docker user runs an image, it can become one or multiple instances of the container.
+
+- Container : An instance of a Docker image. A container represents the execution of a single application, process, or service. It consists of the contents of a Docker image, an execution environment, and a standard set of instructions.
+
+- Docker Compose : A tool for defining and running multi-container Docker applications.
+
+Based on your operating system, you can download and install Docker Desktop here: `Docker Desktop <https://docs.docker.com/desktop/>`_.
+While installing Docker on your machine, ensure you allow the installation to bypass any firewall settings (if prompted). Once the installation process is complete, your machine will restart.
+
+.. note:: When Docker Desktop is installed on Windows, the entire package is installed (including the Docker Compose). With Ubuntu, the user needs to install Docker and the Docker Compose separately.
+
+.. _system-pre-requisites_windows:
+
+Windows PowerShell or Command Prompt
+------------------------------------
+
+A shell is a user interface that gives you access to various services of an operating system.
+A shell can be command-line based, or it can include a graphical user interface (GUI).
+Windows PowerShell is a shell developed by Microsoft for task automation and configuration management.
+It is cross-platform and consists of a command-line shell and scripting language.
+PowerShell capabilities allow users to simplify and automate repetitive tasks by creating scripts and combining multiple commands.
+The Windows operating system comes with Windows PowerShell pre-installed. However, Windows PowerShell can be installed for other operating systems here: `Windows PowerShell <https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7>`_.
+Aside from Windows PowerShell, the classic Windows Command Prompt is also pre-installed and can be used for tasks at hand.
+
+Terminal for Linux & macOS
+--------------------------
+
+A terminal is a program that allows the use of the command-line in a graphical environment.
+In a Linux system, the shell is a command-line interface that interprets a user’s commands and script files, and notifies the server’s operating system what to do with them.
+Terminal is pre-installed on Linux and macOS. For more information, please read   `Ubuntu Tutorials <https://ubuntu.com/tutorials/command-line-for-beginners#1-overview>`_.

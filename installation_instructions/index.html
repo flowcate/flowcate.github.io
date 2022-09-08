@@ -42,7 +42,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Server Configuration" href="serverConfiguration.html" />
-    <link rel="prev" title="Accessing Demo Instances" href="../demo_access/index.html" />
+    <link rel="prev" title="Accessing Trial Instances" href="../demo_access/index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -97,7 +97,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../demo_access/index.html">
-  Accessing Demo Instances
+  Accessing Trial Instances
  </a>
 </li>
 
@@ -212,6 +212,30 @@
     <a class="reference internal nav-link" href="#pulling-specific-containers">
      Pulling Specific Containers
     </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deephub-ui-configuration">
+   DeepHub® UI Configuration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-floorplan-image-to-the-map">
+     Adding a Floorplan Image to the Map
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#displaying-a-floorplan-image-by-itself">
+       Displaying a Floorplan Image by Itself
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#displaying-a-floorplan-image-over-a-basemap">
+       Displaying a Floorplan Image over a Basemap
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -629,13 +653,117 @@ Similarly, the version of DeepHub® UI can be adapted accordingly.</p>
 <p>To start the pulled version, use the typical command as described in section <a class="reference internal" href="installation.html#start-a-deephub"><span class="std std-ref">Start a DeepHub®</span></a> of the <a class="reference internal" href="#deep-hub-install-docker-compose"><span class="std std-ref">docker compose</span></a> chapter.</p>
 </div>
 </div>
+<div class="section" id="deephub-ui-configuration">
+<span id="deep-hub-install-ui-configuration"></span><h2>DeepHub® UI Configuration</h2>
+<div class="section" id="adding-a-floorplan-image-to-the-map">
+<h3>Adding a Floorplan Image to the Map</h3>
+<p>The DeepHub UI can be configured so that a floorplan image of a building or a site can be displayed. You may choose to display the image by itself, or overlayed on top of the basemap of the mapping service provider (ex. MapTiler).</p>
+<p>To begin, you will need to determine the latitude and longitude of your floorplan images’ corners.</p>
+<p>Once this is done, navigate to the ‘/hub-web/nginx/webapp’ directory of your DeepHub bundle on your local filesystem. Create a new directory (ex. named ‘floorplan-image’) and add your floorplan image to this directory.</p>
+<p>Next, download the Open Sans Semibold font by cloning <a class="reference external" href="https://github.com/openmaptiles/fonts">this repository</a> to your local filesystem. Follow the steps in the README.md to install the required packages and generate the fonts. The fonts will be in the ‘_output’ directory.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>user@fc:~/projects/fonts/_output$ ls
+&#39;Metropolis Black&#39;               &#39;Metropolis Light&#39;             &#39;Metropolis Thin&#39;         &#39;Open Sans Extra Bold Italic&#39;  &#39;PT Sans Bold Italic&#39;       &#39;Roboto Black Italic&#39;            &#39;Roboto Condensed Regular&#39;  &#39;Roboto Thin Italic&#39;
+&#39;Metropolis Black Italic&#39;        &#39;Metropolis Light Italic&#39;      &#39;Metropolis Thin Italic&#39;  &#39;Open Sans Italic&#39;             &#39;PT Sans Caption Regular&#39;   &#39;Roboto Bold&#39;                    &#39;Roboto Italic&#39;
+&#39;Metropolis Bold&#39;                &#39;Metropolis Medium&#39;            &#39;Noto Sans Bold&#39;          &#39;Open Sans Light&#39;              &#39;PT Sans Caption Web Bold&#39;  &#39;Roboto Bold Italic&#39;             &#39;Roboto Light&#39;
+&#39;Metropolis Bold Italic&#39;         &#39;Metropolis Medium Italic&#39;     &#39;Noto Sans Italic&#39;        &#39;Open Sans Light Italic&#39;       &#39;PT Sans Italic&#39;            &#39;Roboto Condensed Bold&#39;          &#39;Roboto Light Italic&#39;
+&#39;Metropolis Extra Bold&#39;          &#39;Metropolis Regular&#39;           &#39;Noto Sans Regular&#39;       &#39;Open Sans Regular&#39;            &#39;PT Sans Narrow Bold&#39;       &#39;Roboto Condensed Bold Italic&#39;   &#39;Roboto Medium&#39;
+&#39;Metropolis Extra Bold Italic&#39;   &#39;Metropolis Regular Italic&#39;    &#39;Open Sans Bold&#39;          &#39;Open Sans Semibold&#39;           &#39;PT Sans Narrow Regular&#39;    &#39;Roboto Condensed Italic&#39;        &#39;Roboto Medium Italic&#39;
+&#39;Metropolis Extra Light&#39;         &#39;Metropolis Semi Bold&#39;         &#39;Open Sans Bold Italic&#39;   &#39;Open Sans Semibold Italic&#39;    &#39;PT Sans Regular&#39;           &#39;Roboto Condensed Light&#39;         &#39;Roboto Regular&#39;
+&#39;Metropolis Extra Light Italic&#39;  &#39;Metropolis Semi Bold Italic&#39;  &#39;Open Sans Extra Bold&#39;    &#39;PT Sans Bold&#39;                 &#39;Roboto Black&#39;              &#39;Roboto Condensed Light Italic&#39;  &#39;Roboto Thin&#39;
+</pre></div>
+</div>
+<p>Within your newly-created ‘floorplan-image’ directory, create a new directory named ‘fonts’. Copy the ‘Open Sans Semibold’ font from the repository you just cloned to this new ‘fonts’ directory.</p>
+<div class="section" id="displaying-a-floorplan-image-by-itself">
+<h4>Displaying a Floorplan Image by Itself</h4>
+<p>Create a JSON file in your ‘floorplan-image’ directory that defines your map style. To display the floorplan image without the surrounding basemap, your file must be structured like the following:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-style&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Floorplan Style&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;attribution&quot;</span><span class="p">:</span> <span class="s2">&quot;Floorplan map&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;glyphs&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-image/fonts/{fontstack}/{range}.pbf&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sources&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-image/&lt;YOUR FLOORPLAN IMAGE FILE&gt;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">[</span>
+            <span class="mf">-115.16786551712569</span><span class="p">,</span>
+            <span class="mf">36.11988219161837</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+            <span class="mf">-115.1654992</span><span class="p">,</span>
+            <span class="mf">36.119895</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+            <span class="mf">-115.1649202</span><span class="p">,</span>
+            <span class="mf">36.118001</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+            <span class="mf">-115.1684502</span><span class="p">,</span>
+            <span class="mf">36.118023</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;layers&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;background&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;background&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;paint&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;background-color&quot;</span><span class="p">:</span> <span class="s2">&quot;rgba(0,0,0,0)&quot;</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;image-layer&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;raster&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;paint&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;raster-fade-duration&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will need to change the coordinates in your JSON file to match the coordinates of your floorplan images’ corners. The first coordinate corresponds to the top left corner of the image, the 2nd coordinate corresponds to the top right corner of the image, etc.</p>
+</div>
+<p>Finally, the ‘deephub-ui’ service within the docker-compose.yml file of your DeepHub instance needs to be modified:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Set DOCKER_MAP_DEFAULT_STYLE=floorplan-image/&lt;YOUR MAP STYLE JSON FILE&gt;</p></li>
+<li><p>Ensure that the “./hub-web/nginx/webapp/” volume on your local filesystem is mounted to “/webapp” of the Docker container</p></li>
+</ul>
+</div></blockquote>
+<p>Start your DeepHub instance by invoking Docker Compose. When you open the DeepHub UI in your browser, you will need to modify the URL by including one pair of latitude and longitude coordinates. For example, to navigate to the location of the floorplan image in the example above, the following URL would be used:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>http://localhost:8081/deephub-ui/map/system/live/<span class="o">(</span>show//left:list<span class="o">)</span>?lng<span class="o">=</span>-115.16786551712569<span class="p">&amp;</span><span class="nv">lat</span><span class="o">=</span><span class="m">36</span>.11988219161837<span class="p">&amp;</span><span class="nv">zoom</span><span class="o">=</span><span class="m">17</span>
+</pre></div>
+</div>
+<img alt="../_images/floorplan_alone.png" src="../_images/floorplan_alone.png" />
+</div>
+<div class="section" id="displaying-a-floorplan-image-over-a-basemap">
+<h4>Displaying a Floorplan Image over a Basemap</h4>
+<p>To display your floorplan image on top of a basemap from a mapping service provider, you will need to modify your JSON file above, or create a new one.</p>
+<p>Combine the properties associated with your floorplan image with the map style JSON of the mapping service provider. By default, MapTiler is used as the mapping service provider with this map style: <a class="reference external" href="https://api.maptiler.com/maps/bright/style.json">https://api.maptiler.com/maps/bright/style.json</a>.</p>
+<p>In addition, you will need to ensure that the docker-compose.yml file of your DeepHub instance has the correct value for DOCKER_MAP_DEFAULT_STYLE. This environment variable should point to the location of the updated map style JSON file on your local filesystem. For example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>DOCKER_MAP_DEFAULT_STYLE=floorplan-image/&lt;YOUR UPDATED MAP STYLE JSON FILE&gt;</p></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/floorplan_basemap.png" src="../_images/floorplan_basemap.png" />
+</div>
+</div>
+</div>
 <div class="section" id="server-configuration">
 <h2>Server Configuration</h2>
 <p>The DeepHub® server can be configured in three different ways. Listed from most to least specific, these ways are:</p>
 <ol class="arabic simple">
 <li><p>Environment variables</p></li>
 <li><p>Command line arguments</p></li>
-<li><p>Configration file</p></li>
+<li><p>Configuration file</p></li>
 </ol>
 <p>Options provided multiple times via different ways will be overriden according to the aforementioned specificity.</p>
 <p>The configuration file is a YAML based file, stored in the data directory of the Docker container (or in the directory provided with config_path).
@@ -876,7 +1004,21 @@ Default: sqlite</p>
 </div>
 <div class="section" id="cassandra-hosts">
 <h4>cassandra_hosts</h4>
-<p>List of host names for the cluster.</p>
+<p>List of host names for the cluster.<span class="raw-html-m2r"><br></span>
+In the config file, a YAML array is expected:<span class="raw-html-m2r"><br></span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cassandra_hosts</span><span class="p">:</span>
+  <span class="o">-</span> <span class="s1">&#39;127.0.0.1&#39;</span>
+  <span class="o">-</span> <span class="s1">&#39;localhost&#39;</span>
+</pre></div>
+</div>
+<p>On the command line, this parameter can be given multiple times:<span class="raw-html-m2r"><br></span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deephub</span> <span class="o">--</span><span class="n">cassandra_hosts</span> <span class="s2">&quot;localhost&quot;</span> <span class="o">--</span><span class="n">cassandra_hosts</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+</pre></div>
+</div>
+<p>As an environment variable, a comma separated list of hosts is expected:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DEEPHUB_CASSANDRA_HOSTS</span><span class="o">=</span><span class="s2">&quot;localhost,127.0.0.1&quot;</span> <span class="n">deephub</span>
+</pre></div>
+</div>
 <p>Expected value type: string<span class="raw-html-m2r"><br></span>
 Default: localhost</p>
 </div>

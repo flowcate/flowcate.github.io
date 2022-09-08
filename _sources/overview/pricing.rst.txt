@@ -1,0 +1,27 @@
+Pricing Model
+-------------
+
+The pricing model of the DeepHub® is subscription-based. For each end-customer and project, you acquire a subscription with the necessary features and capabilities to build your tailored solution.
+
+You may deploy a DeepHub instance on-premise at your customer's site, or operate and maintain it yourself - this is entirely up to you.
+
+Our DeepHub is also available as a white label product if your intention is for product bundling.
+
+Subscriptions are purely entity-based, however we also offer consumption-based pricing models as part of individual contracts.
+
+Subscriptions
+~~~~~~~~~~~~~
+
+.. card:: Legend
+   :img-top: images/pricing_public.svg
+
+   * An *RTLS Zone* is a zone using UWB technology.
+   * A *Complementary Zone* is a zone using any other locating technology.
+   * *Mobile-Zone support* is the indirect tracking of objects based on temporary linking to an object with an active locating technology.
+
+You get even more
+~~~~~~~~~~~~~~~~~
+
+As a partner, you'll get access to the latest versions of the DeepHub via a Docker repository from which you can pull the latest images. Additionally, you'll get access to our `online support tool <https://support.flowcate.com/>`_, enabling you to request support, send feature requests, access the latest information on upcoming releases, share thoughts and insights in the DeepHub community, and get all the latest onboarding material.
+
+Get in touch with our Partner Management team at partners@flowcate.com and start your journey into the Deep Universe.

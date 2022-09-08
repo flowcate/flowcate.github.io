@@ -1,0 +1,6 @@
+Accessing Trial Instances
+=========================
+
+.. include:: demo_account.rst
+.. include:: access.rst
+.. include:: api.rst

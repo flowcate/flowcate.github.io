@@ -1,0 +1,5 @@
+
+Introduction
+============
+
+The DeepHub® offers a reference implementation of an omlox™ hub. The main part of the omlox™ standard is the REST API and the WebSocket API of an omlox™ hub. This chapter focuses on these APIs and includes an overview and description of DeepHub specifics.

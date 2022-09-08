@@ -1,0 +1,25 @@
+Install Specific Version
+========================
+
+It is possible to switch to a specific version of the DeepHub® instead of the latest one, if required.
+
+.. note:: Before installing a specific version of the DeepHub®, it is mandatory to stop a running hub as described previously in the :ref:`stop_a_running_deephub` section of the :ref:`docker compose <deep-hub-install-docker-compose>` chapter of this guide.
+
+Pulling Specific Containers
+---------------------------
+
+Open the “docker-compose.yml” file. Edit the version of the DeepHub® from “latest” to the desired version. For example, it can be modified from "latest" to “2.0.0”.
+Similarly, the version of DeepHub® UI can be adapted accordingly.
+
+.. image:: images/docker_yml_edit.png
+
+
+Now, the specified version is pulled when executing the following command:
+
+.. code-block:: shell
+
+  docker-compose pull
+
+
+To start the pulled version, use the typical command as described in section :ref:`start_a_deephub` of the :ref:`docker compose <deep-hub-install-docker-compose>` chapter.
+

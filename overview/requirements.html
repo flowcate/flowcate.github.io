@@ -95,7 +95,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../demo_access/index.html">
-  Accessing Demo Instances
+  Accessing Trial Instances
  </a>
 </li>
 
@@ -148,6 +148,11 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docker-engine">
+   Docker Engine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#virtualization">
    Virtualization
   </a>
@@ -189,9 +194,34 @@
 <li><p>In order to ensure uninterrupted installation, a Docker environment for running x86_64 containers is required.</p></li>
 <li><p>The containerized deployment of the DeepHub through Docker enables seamless integration in various scenarios, including isolated and secure environments, without the need for high-end device specifications.</p></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The DeepHub has a small digital footprint, allowing it to run on low power industry PCs and edge devices. However, if the DeepHub is deployed via Docker containers, it’s necessary to consider the basic requirements for running Docker Engine. Refer to the latest updates and requirements for <a class="reference external" href="https://docs.docker.com/desktop/windows/install/">Windows</a> and <a class="reference external" href="https://docs.docker.com/desktop/mac/install/">macOS</a>.</p>
+<div class="section" id="docker-engine">
+<h2>Docker Engine</h2>
+<p>The DeepHub has a small digital footprint, allowing it to run on low power industry PCs and edge devices. If the DeepHub is deployed via Docker containers, it’s necessary to consider the basic requirements for running Docker Engine. Refer to the latest updates and requirements for <a class="reference external" href="https://docs.docker.com/desktop/windows/install/">Windows</a> and <a class="reference external" href="https://docs.docker.com/desktop/mac/install/">macOS</a>.</p>
+<p>The host system operating the DeepHub must have Docker version 20.10.10 or higher. If this version is not available for your Linux distribution out-of-the-box, you can get it directly from Docker by following these steps:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Step 1:</span></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>  sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Step 2:</span></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>  curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Step 3:</span></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>  <span class="nb">echo</span> <span class="s2">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> stable&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Step 4:</span></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>  sudo apt-get install docker-ce docker-ce-cli containerd.io
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="virtualization">
 <h2>Virtualization</h2>

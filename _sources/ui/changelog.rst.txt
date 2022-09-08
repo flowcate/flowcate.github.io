@@ -1,0 +1,133 @@
+.. _deep-hub-ui-changelog:
+
+Changelog
++++++++++
+
+2.0.0
+-----
+
+Features
+~~~~~~~~
+* New color theme for UI
+* New UI for usage of location providers
+* Make DeepHub UI docker container usable in read-only mode
+* Support fence definition with negative local coordinates
+* Use vertical color bar to mark different fence event triggers in different colors
+
+Bugfixes
+~~~~~~~~
+* Check timestamp during updates to avoid usage of outdated information
+* Two "next" buttons during fence creation
+* Crash in UI when using a semicolon in search bar of live view
+* UI is unable to work with zones and fences without names
+* UI for fence editing overwrites z-coordinates of corner points on backend
+
+
+1.3.0
+-----
+
+Features
+~~~~~~~~
+* New checkbox in UI ("Trackable Update/Create") to allow for disabling of "force_location_update".
+* New property "fence_timeout" for trackables and location provider to overrule timeout set at fence.
+* Check if providers of trackable still exist.
+* Support for "uninitialized zones".
+* Show only one tool tip containing provider and trackable information at once.
+* Support -1 as infinite value for several "timeout fields" in UI.
+
+Bugfixes
+~~~~~~~~
+* Editing a point of a fence does not work.
+* Missing "connectivity" icon in case WebSocket connections can't be established at all.
+* Icons illustrating the technology in-use are missing in Firefox.
+* Unable to remove non-existing location provider from trackable.
+* Parameterization of links to DeepHub UI are not working with auth service.
+
+
+1.2.0
+-----
+
+Features
+~~~~~~~~
+
+* **Choose the mapping service**
+  Previously only support for Mapbox was implemented.
+  Now you can choose whether to use Mapbox or Maptiler as mapping service providing the background map and the styling.
+* **Handling of connection loss between DeepHub® UI and DeepHub®** 
+  The DeepHub® UI now has a visual indicator next to the “Live View” tab at the top that displays the connection status with the DeepHub®. The status may be one of the following:
+
+  #. “Connected” (green colored icon)
+  #. “Interrupted – Trying to reconnect automatically” (yellow colored icon)
+  #. “Not connected” (red colored icon)
+
+* **Consistent Detail View and Edit View**
+    #. New labelling for the menu tabs: "Zones", "Fences" and "Trackables"
+    #. "Delete" button within "Edit View" for fences and zones
+    #. Show “fence id” in "Edit View" for fences
+* **Sort fences and zones alphanumerically instead of spatially**
+    Previously, the list of fences and zones in the left panel appeared to be sorted in an arbitrary order.
+    In actuality, zones and fences were ordered spatially, but this was not obvious and did not allow for easy handling.
+    The list is now sorted alphanumerically.
+
+Bugfixes
+~~~~~~~~
+
+* Missing tooltips for control widgets of map
+    The control widgets on the right side of the map view now have explanatory tooltips when hovering over them with the mouse.
+* Creating two Zones or Fences not working
+    When trying to create a second zone or fence immediately after creating the first, the second creation process would fail, leaving a dark grey, non-functional representation on the map resembling the intended area.
+* Fences: Search not working
+    Searching for a fence via the search bar did not work.
+* Pressing return key to complete change of a value results in custom properties dialog
+    Previously, it was impossible to complete the editing of any field within the “Edit view” of a fence or zone by hitting the “return” key on the keyboard.
+* Selecting a fence on the map is not reflected in left view
+    Selecting a fence on the map with the mouse now causes the left-side list of all fences to scroll to the selected fence. Additionally, the entry of the selected fence is prominently highlighted in the left-side list.
+* Reset zoom level not working if no data is in DeepHub®
+    Previously, if a user clicked the “reset zoom” control widget while the DeepHub® contained no zones or fences, an error could occur within the browser console and the UI would not appear to react to the mouse click.
+* UI stores entered information even though it was rejected
+    After editing an object, such as a trackable, the list of all trackables would still show the altered values. However, this was only a bug with the UI; the correct values were stored in the DeepHub®.
+* Fence creation fails in case properties are involved
+    When creating a fence, trying to add properties by clicking on the “Add properties” button would lead to an interrupt of the creation process, leaving the fence in an incomplete state. Additionally, errors were visible in the browser console.
+
+
+1.1.8
+-----
+
+Features
+~~~~~~~~
+
+* Rework of map
+    #. Initialization happens only once
+    #. Map view is persisted in URL for easy share
+    #. New control "Initial State Controller" added to get back to view including all features
+* Enable RFID and iBeacon Zones
+    #. Create, read, update, delete
+    #. Filter Live View
+    #. Search and view on Live View
+* Trackables
+    #. Name is always visible in annotation
+    #. Trackables "not in motion" are always visible
+* UI/UX fine tuning
+    #. Put Trackables tab to right in main menu
+    #. Rework all error messages
+    #. Workaround for Material Design bug with wrong line height in input fields
+    #. Zone & Fence: Better wording compared to spec for corners, coordinates and ground control points
+
+Bugfixes
+~~~~~~~~
+
+* Zone & Fence: Fix New dialog next button
+* Zone & Fence: Fix editing on map
+* Zone & Fence: Fix reset of point fields
+* Zone & Fence: Fix Cancel behavior for Edit mode
+* Zone & Fence: Fix closing behavior of detail panel
+* Live: Fix Search list with multiple location provider
+* Live: Fix 401 error on get trackables/motions
+* Live: Fix showing trackables with point geometry
+* Global: Adopt all units according to spec
+
+
+1.1.6
+-----
+
+First public release.

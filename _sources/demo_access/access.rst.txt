@@ -1,0 +1,10 @@
+Accessing your Account
+++++++++++++++++++++++
+
+To access your trial account, please follow these steps:
+
+1. Contact your Flowcate Partner Manager. They will provide you with login credentials and the required URLs of your dedicated DeepHub instance.
+
+2. Login to the DeepHub using your login credentials. You will be prompted to update your password.
+
+3. You will now be able to access the DeepHub and its API with all features and unrestricted permissions.
