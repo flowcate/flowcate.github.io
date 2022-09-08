@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DeepHub® API &#8212; DeepHub® 2022 R1  documentation</title>
+    <title>RPC Interface &#8212; DeepHub® 2022 R1  documentation</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -41,8 +41,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="REST API" href="restApi.html" />
-    <link rel="prev" title="Overview" href="../overview/index.html" />
+    <link rel="next" title="Changelog" href="changelogApi.html" />
+    <link rel="prev" title="Cisco CMX Location Notification Adapter" href="ciscocmx.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -84,7 +84,7 @@
 </li>
 
 <li class="toctree-l1 current active nav-item">
- <a class="current reference internal nav-link" href="#">
+ <a class="reference internal nav-link" href="index.html">
   DeepHub® API
  </a>
 </li>
@@ -150,59 +150,8 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rest-api">
-   REST API
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#websocket">
-   WebSocket
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mobile-zone-extension">
-   Mobile Zone Extension
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup-and-configuration">
-     Setup and Configuration
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cisco-cmx-location-notification-adapter">
-   Cisco CMX Location Notification Adapter
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Setup and Configuration
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rpc-interface">
-   RPC Interface
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-message-flow">
-     Example Message Flow
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#changelog">
-   Changelog
+  <a class="reference internal nav-link" href="#example-message-flow">
+   Example Message Flow
   </a>
  </li>
 </ul>
@@ -229,111 +178,8 @@
         
         <div>
         
-  <div class="section" id="deephub-api">
-<span id="api-reference"></span><h1>DeepHub® API</h1>
-<div class="section" id="introduction">
-<span id="api-reference-introduction"></span><h2>Introduction</h2>
-<p>The DeepHub® offers a reference implementation of an omlox™ hub. The main part of the omlox™ standard is the REST API and the WebSocket API of an omlox™ hub. This chapter focuses on these APIs and includes an overview and description of DeepHub specifics.</p>
-</div>
-<div class="section" id="rest-api">
-<h2>REST API</h2>
-<p><a class="reference internal" href="restApi.html#deep-hub-api-rest-api"><span class="std std-ref">REST API</span></a></p>
-</div>
-<div class="section" id="websocket">
-<h2>WebSocket</h2>
-<p><a class="reference internal" href="websocketApi.html#deep-hub-api-websocket"><span class="std std-ref">WebSocket</span></a></p>
-</div>
-<div class="section" id="mobile-zone-extension">
-<h2>Mobile Zone Extension</h2>
-<p>The Mobile Zone Extension (MZE) of the DeepHub® allows for the seamless integration of proximity-based positioning solutions that change their position. The MZE changes the position of your proximity zone by connecting the zone with location updates of a real-time locating system - via an omlox Location Provider or an omlox Trackable.</p>
-<p>As an example use case, consider you have assets equipped with RFID tags, and you want to keep track of the exact location of your assets in your warehouse. The RFID tags do not provide exact location information. However, with omlox, you can combine multiple positioning technologies and thereby add location information. For example, you could combine an UWB positioning system with proximity information provided by an RFID positioning system.</p>
-<p>To illustrate this further, consider you have a forklift equipped with an RFID scanner and an UWB tag. The UWB tag provides exact real-time location information about the forklift, while the RFID scanner provides information about the assets the forklift is carrying. The RFID scanner will receive proximity information as long as your forklift carries assets with RFID tags attached to them.</p>
-<p>Normally, the position of a proximity-based zone has to be updated manually, because it cannot generate location information on its own. However, with the DeepHub MZE, you can keep track of the position where assets were dropped off by matching the location information of the forklift with the last-received proximity information of carried assets.</p>
-<p>The DeepHub MZE makes this task as simple as possible.</p>
-<div class="section" id="setup-and-configuration">
-<h3>Setup and Configuration</h3>
-<p>Setting up the MZE is done in two steps. First, a zone needs to be created representing each available proximity positioning system (e.g. RFID scanner). Next, an omlox trackable (e.g. representing a forklift) or an omlox location provider (e.g. an UWB tag) needs to be assigned to the zone in order to enable the MZE. By linking the trackable or location provider with the zone of the installed proximity system, the position of the proximity system will be updated in real-time as the trackable or location provider relocates.</p>
-<p><strong>Setting up a proximity zone in the DeepHub:</strong></p>
-<p>You may create a zone through the DeepHub API or the DeepHub UI. To do so in the UI:</p>
-<ul class="simple">
-<li><p>Login to the DeepHub UI.</p></li>
-<li><p>Choose Zones.</p></li>
-<li><p>Create a new zone by setting a proper zone type (rfid or ibeacon) and floor level. You do not need to choose an exact position on the map, as the position will be updated automatically. Simply choose a nearby location.</p></li>
-<li><p>Set a unique Foreign ID, for example “forklift-123-rfid”.</p></li>
-<li><p>Click Save to create the zone.</p></li>
-</ul>
-<p>You should now see location updates in real-time in the Live View of the DeepHub UI when location updates are received.</p>
-<p>In order to enable the MZE for this zone, you must assign a location provider or trackable to the zone by adding a location provider or trackable to the zone’s properties. This is currently only possible through the DeepHub API. The member variables available for the zone properties are the following:</p>
-<ul class="simple">
-<li><p>“com.hdm.hub.zone.autozoneupdate.trackables”: A list containing IDs of trackables. The zone’s position is updated whenever a trackable’s location is updated.</p></li>
-<li><p>“com.hdm.hub.zone.autozoneupdate.providers”: A list containing IDs of location providers. The zone’s position is updated whenever one of the locations is updated.</p></li>
-</ul>
-<p>An example zone with location providers and trackables configured for auto position updating of the zone:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ffffffff-bce8-6c23-e342-80bd5c938775&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;foreign_id&quot;</span><span class="p">:</span> <span class="s2">&quot;rfid-provider-autozone&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;rfid&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;floor&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-  <span class="nt">&quot;need_transformation&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone R (RFID)&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="mi">0</span><span class="p">,</span>
-        <span class="mi">0</span>
-    <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;radius&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
-  <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;com.hdm.hub.zone.autozoneupdate.providers&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;autozone-provider-123&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;com.hdm.hub.zone.autozoneupdate.trackables&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;5EE9265B-EFDF-4EDB-98AD-9D01E11B687F&quot;</span>
-      <span class="p">]</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="cisco-cmx-location-notification-adapter">
-<h2>Cisco CMX Location Notification Adapter</h2>
-<p>The Cisco CMX Location Notification Adapter enables the DeepHub® to be integrated with existing Cisco infrastructure, without the need for an additional middleware.</p>
-<p>The DeepHub REST API endpoint /adapters/cisco/locations can be configured as a webhook in the Cisco CMX settings. The DeepHub supports version 10.6+ of Cisco CMX.</p>
-<div class="section" id="id1">
-<h3>Setup and Configuration</h3>
-<p>Setting up the Cisco CMX adapter is done by first defining a webhook in the Cisco CMX settings. If the Cisco infrastructure is set up to provide GPS location data, this is the only configuration step.</p>
-<p>If the Cisco infrastructure is set up to only send local coordinates, a zone configuration in the DeepHub is required to match the Cisco floor plan. This allows for the translation of incoming location data to projections supported by the DeepHub.</p>
-<p><strong>Setting up a Notification Webhook in Cisco CMX for the DeepHub:</strong></p>
-<p>You may create a new webhook through the Cisco CMX configuration page. To do so in the UI:</p>
-<ol class="arabic simple">
-<li><p>Login to Cisco CMX</p></li>
-<li><p>Choose Manage → Notifications</p></li>
-<li><p>Create a new notification and enter the host and port to your DeepHub instance and enter the URL /v1/adapters/cisco/locations</p></li>
-<li><p>Save changes and exit</p></li>
-</ol>
-<p>If your Cisco infrastructure is set up to only deliver local coordinates, you need to perform these additional steps:</p>
-<ol class="arabic simple">
-<li><p>Login to the DeepHub UI</p></li>
-<li><p>Choose Zone Setup</p></li>
-<li><p>Click to create a new zone</p></li>
-<li><p>Select wifi as the zone type</p></li>
-<li><p>Draw the zone using the drawing tool, or any of the available zone creation tools. The zone shape and location should match the location hierarchy (map) as defined in your Cisco CMX.</p></li>
-<li><p>Enter the floor level for the zone and the address (optional).</p></li>
-<li><p>In the Foreign ID field, enter the CMX location hierarchy name for this map. For example, “Mathematikon&gt;Berliner Str. 41&gt;5. OG komplett [f.4]”. Note: This field is used to link incoming data from your Cisco CMX with this omlox zone. Therefore, please ensure this field matches the value of your CMX location hierarchy.</p></li>
-<li><p>Click save to create and activate the new zone.</p></li>
-</ol>
-<p>Repeat the steps above for each floor plan in your Cisco CMX for which you want to get location data in the DeepHub.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Setting up a zone in the DeepHub is optional if Cisco CMX is set up to deliver data in WGS84. Nevertheless, it’s strongly advised to create a zone for each CMX location hierarchy in order to assign correct floor level information to incoming locations from the corresponding CMX location hierarchies. Otherwise, some features that depend on correct floor information, such as geofencing and collision detection, may not behave as expected.</p>
-</div>
-</div>
-</div>
-<div class="section" id="rpc-interface">
-<h2>RPC Interface</h2>
+  <div class="section" id="rpc-interface">
+<h1>RPC Interface</h1>
 <p>The DeepHub® can act as a Remote Procedure Call (RPC) gateway via WebSocket, allowing local devices or services to connect with other devices or services over a local network infrastructure and the internet (which are normally separate from each other and not reachable). This allows for querying of sensor data and device capabilities, or initiating firmware updates as well as other types of information exchange which can be handled via RPC. The DeepHub RPC interface is based on the JSON-RPC exchange format version 2.0 [1].</p>
 <p>The image below illustrates the building blocks of the architecture with a simple example data flow:</p>
 <a class="reference external image-reference" href="rpc_architecture.png"><img alt="" src="../_images/rpc_architecture.png" /></a>
@@ -386,7 +232,7 @@
 </div>
 <p>In addition, an optional property “zone_id” with a UUID of an omlox™ zone in the params section of a register request can be used to register for RPC calls for a particular zone. This allows RPC handlers which only work within a zone to avoid processing unnecessary requests (e.g. trying to reach tags which can only be reached when in that zone).</p>
 <div class="section" id="example-message-flow">
-<h3>Example Message Flow</h3>
+<h2>Example Message Flow</h2>
 <p>Alice registers herself for a method named “hello” and answers everybody who says hello to her with “Hello World!”.</p>
 <p>Note: This example explains all intermediate steps of the message flow and thus looks longer-winded than it would be from an application perspective. From an application perspective, a client just sends a request and gets back a reply.</p>
 <ol class="arabic simple">
@@ -463,13 +309,6 @@
 </pre></div>
 </div>
 <p>[1] <a class="reference external" href="https://www.jsonrpc.org/specification">https://www.jsonrpc.org/specification</a></p>
-</div>
-</div>
-<div class="section" id="changelog">
-<h2>Changelog</h2>
-<p><a class="reference internal" href="changelogApi.html#deep-hub-api-changelog"><span class="std std-ref">Changelog</span></a></p>
-<div class="toctree-wrapper compound">
-</div>
 </div>
 </div>
 
