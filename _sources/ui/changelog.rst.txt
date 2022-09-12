@@ -3,6 +3,18 @@
 Changelog
 +++++++++
 
+2.1.0
+-----
+
+Features
+~~~~~~~~
+* Allow to use an image file as site map. On top of the map or as replacement of the latter.
+
+Bugfixes
+~~~~~~~~
+* Unable to edit properties of a fence within the UI
+
+
 2.0.0
 -----
 
