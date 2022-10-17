@@ -242,7 +242,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Swagger UI</title>
-    <link rel="stylesheet" type="text/css" href="./restApi/swagger-ui.css" />
+    <link rel="stylesheet" type="text/css" href="./restApi/swagger-ui.4.14.3.css" />
     <link
       rel="icon"
       type="image/png"
@@ -272,15 +272,23 @@
         margin: 0;
         background: #fafafa;
       }
+      .swagger-ui .info pre {
+        border: none;
+        background-color: inherit;
+      }
+      /** remove topbar **/
+      .swagger-ui .topbar {
+        display: none !important;
+      }
     </style>
   </head>
 
   <body>
     <div id="swagger-ui"></div>
 
-    <script src="./restApi/swagger-ui-bundle.js" charset="UTF-8"></script>
+    <script src="./restApi/swagger-ui-bundle.4.14.3.js" charset="UTF-8"></script>
     <script
-      src="./restApi/swagger-ui-standalone-preset.js"
+      src="./restApi/swagger-ui-standalone-preset.4.14.3.js"
       charset="UTF-8"
     ></script>
     <script>
@@ -289,7 +297,6 @@
         const ui = SwaggerUIBundle({
           url: "./restApi/deephub-openapi.json",
           dom_id: "#swagger-ui",
-          validatorUrl:'https://validator.swagger.io/validator/',
           deepLinking: true,
           presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
           plugins: [SwaggerUIBundle.plugins.DownloadUrl],
