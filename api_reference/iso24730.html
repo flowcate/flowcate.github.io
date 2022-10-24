@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction &#8212; DeepHub® 2022 R1  documentation</title>
+    <title>ISO-24730 Adapter &#8212; DeepHub® 2022 R1  documentation</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -141,9 +141,19 @@
           
           <div class="toc-item">
             
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-and-configuration">
+   Setup and Configuration
+  </a>
+ </li>
+</ul>
+
 </nav>
           </div>
           
@@ -166,9 +176,28 @@
         
         <div>
         
-  <div class="section" id="introduction">
-<h1>Introduction</h1>
-<p>The DeepHub® offers a reference implementation of an omlox™ hub, including a REST API and a WebSocket API. This chapter focuses on these APIs and includes an overview and description of DeepHub specifics.</p>
+  <div class="section" id="iso-24730-adapter">
+<h1>ISO-24730 Adapter</h1>
+<p>The ISO-24730 Adapter enables the DeepHub® to be integrated with ISO-24730-capable real-time locating systems. The ISO-24730 standard was created in the mid 2000s and revised in 2014. It is supported by
+several real-time locating systems e.g. utilizing ultra-wideband technology.</p>
+<p>The standard consists of several air interface protocols as well as a single API called “RTLS API”. It is the latter, that the DeepHub supports and that is subject of this configuration documentation.</p>
+<div class="section" id="setup-and-configuration">
+<h2>Setup and Configuration</h2>
+<p>A DeepHub can be configured to work together with several ISO-24739 locating systems at the same time, each one of them being treated as a separate zone.</p>
+<p>The DeepHub acts as a client towards a configured ISO-24730 service of an ISO-24730 locating system and therefore requires a separate configuration block consisting of the host, port, type of locating system as well as an identifier for the zone (zone_id or foreign_id) for each of them.</p>
+<p><em>Example:</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">server</span>
+  <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4000</span>
+  <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">uwb</span>
+  <span class="nt">zone_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FDE56BB8-64B1-4B95-ADEB-AB189EE937FE</span>
+<span class="p p-Indicator">-</span> <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">otherserver</span>
+  <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4000</span>
+  <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gps</span>
+  <span class="nt">foreign_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">some_id</span>
+</pre></div>
+</div>
+<p>An ISO-24730 configuration can be provided in the same way as other configuration parameters. See the chapter <a class="reference internal" href="../installation_instructions/index.html#deep-hub-install-server-configuration"><span class="std std-ref">Server Configuration</span></a> for details.</p>
+</div>
 </div>
 
 

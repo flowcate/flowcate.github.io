@@ -15,6 +15,7 @@ Running the DeepHub® Locally
 .. _deep-hub-install-ui-configuration:
 .. include:: uiConfiguration.rst
 
+.. _deep-hub-install-server-configuration:
 .. mdinclude:: serverConfiguration.md
 
 
