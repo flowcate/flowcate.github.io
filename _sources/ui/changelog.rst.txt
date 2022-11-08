@@ -3,6 +3,14 @@
 Changelog
 +++++++++
 
+2.1.1
+-----
+
+Bugfixes
+~~~~~~~~
+* Allow to use separate image files as site map per floor level.
+
+
 2.1.0
 -----
 
