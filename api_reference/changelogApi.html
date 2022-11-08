@@ -216,6 +216,11 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deephub-2022-r1-2-1-1">
+   DeepHub® 2022 R1, 2.1.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#deephub-2022-r1-2-1-0">
    DeepHub® 2022 R1, 2.1.0
   </a>
@@ -326,6 +331,13 @@
         
   <div class="section" id="changelog">
 <span id="deep-hub-api-changelog"></span><h1>Changelog</h1>
+<div class="section" id="deephub-2022-r1-2-1-1">
+<h2>DeepHub® 2022 R1, 2.1.1</h2>
+<ol class="arabic simple">
+<li><p>Fixed a bug where subsequent location updates were rejected if their distance was close to floating point precision.</p></li>
+<li><p>Enhanced the performance of SQlite operations.</p></li>
+</ol>
+</div>
 <div class="section" id="deephub-2022-r1-2-1-0">
 <h2>DeepHub® 2022 R1, 2.1.0</h2>
 <ol class="arabic simple">
@@ -350,7 +362,7 @@
 <li><p>Outdated location updates no longer produce trackable motions.</p></li>
 <li><p>Added support for ISO-24730 based RTLS systems.</p></li>
 <li><p>Added health API endpoints: /health, /health/system, /health/ws, /health/zones/summary, /health/zones/:zone_id, /health/sources/summary, and /health/sources/:source_id.</p></li>
-<li><p>Change docker base image to Ubuntu version 22.04.</p></li>
+<li><p>Changed docker base image to Ubuntu version 22.04.</p></li>
 </ol>
 </div>
 <div class="section" id="deephub-2021-r2-1-3-1">
