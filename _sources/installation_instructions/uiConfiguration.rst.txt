@@ -2,6 +2,8 @@
 DeepHub® UI Configuration
 =========================
 
+.. _add_floorplan:
+
 Adding a Floorplan Image to the Map
 -----------------------------------
 
@@ -13,7 +15,10 @@ Once this is done, navigate to the '/hub-web/nginx/webapp' directory of your Dee
 
 Next, download the Open Sans Semibold font by cloning `this repository <https://github.com/openmaptiles/fonts>`_ to your local filesystem. Follow the steps in the README.md to install the required packages and generate the fonts. The fonts will be in the '_output' directory.
 
-.. code-block:: json
+.. note::
+  Your machine will need Node.js installed to generate the fonts.
+
+.. code-block:: shell
 
     user@fc:~/projects/fonts/_output$ ls
     'Metropolis Black'               'Metropolis Light'             'Metropolis Thin'         'Open Sans Extra Bold Italic'  'PT Sans Bold Italic'       'Roboto Black Italic'            'Roboto Condensed Regular'  'Roboto Thin Italic'
@@ -35,54 +40,53 @@ Create a JSON file in your 'floorplan-image' directory that defines your map sty
 
 .. code-block:: json
     
-    {
-        "version": 8,
-        "id": "floorplan-style",
-        "name": "Floorplan Style",
-        "attribution": "Floorplan map",
-        "glyphs": "floorplan-image/fonts/{fontstack}/{range}.pbf",
-        "sources": {
-          "image": {
-            "type": "image",
-            "url": "floorplan-image/<YOUR FLOORPLAN IMAGE FILE>",
-            "coordinates": [
-                [
-                -115.16786551712569,
-                36.11988219161837
-                ],
-                [
-                -115.1654992,
-                36.119895
-                ],
-                [
-                -115.1649202,
-                36.118001
-                ],
-                [
-                -115.1684502,
-                36.118023
-                ]
-            ]
-          }
-        },
-        "layers": [
-          {
-            "id": "background",
-            "type": "background",
-            "paint": {
-                "background-color": "rgba(0,0,0,0)"
-            }
-          },
-          {
-            "id": "image-layer",
-            "type": "raster",
-            "source": "image",
-            "paint": {
-                "raster-fade-duration": 0
-            }
-          }
-        ]
-    }
+	{
+		"version": 8,
+		"id": "floorplan-style",
+		"name": "Floorplan Style",
+		"attribution": "Floorplan map",
+		"glyphs": "floorplan-image/fonts/{fontstack}/{range}.pbf",
+		"sources": {
+			"image": {
+				"type": "image",
+				"url": "floorplan-image/<YOUR FLOORPLAN IMAGE FILE>",
+				"coordinates": [
+					[
+						-115.16786551712569,
+						36.11988219161837
+					],
+					[
+						-115.1654992,
+						36.119895
+					],
+					[
+						-115.1649202,
+						36.118001
+					],
+					[
+						-115.1684502,
+						36.118023
+					]
+				]
+			}
+		},
+		"layers": [{
+				"id": "background",
+				"type": "background",
+				"paint": {
+					"background-color": "rgba(0,0,0,0)"
+				}
+			},
+			{
+				"id": "image-layer",
+				"type": "raster",
+				"source": "image",
+				"paint": {
+					"raster-fade-duration": 0
+				}
+			}
+		]
+	}
 
 .. note::
   
@@ -113,3 +117,103 @@ In addition, you will need to ensure that the docker-compose.yml file of your De
     * DOCKER_MAP_DEFAULT_STYLE=floorplan-image/<YOUR UPDATED MAP STYLE JSON FILE>
 
 .. image:: images/floorplan_basemap.png
+
+Multi-Level Floorplans
+^^^^^^^^^^^^^^^^^^^^^^
+If the building or site has multiple floors, you will need to include a floorplan image for each individual floor.
+
+.. note::
+  Your DeepHub instance will need to have zones, fences, trackables, or location providers on each floor that needs to display a floorplan image.
+
+:ref:`As described above <add_floorplan>`, you will first need to determine the latitude and longitude of the corners of each floorplan image and ensure each floorplan image is included in the 'floorplan-image' directory.
+
+Modify your map style JSON by including "minlevel" and "maxlevel" as properties. By default, the map starts at floor 0. 
+
+For example, to display a two-floor building without the surrounding basemap, your map style JSON would be structured in the following way:
+
+.. code-block:: json
+    
+	{
+		"version": 8,
+		"id": "floorplan-style",
+		"name": "Floorplan Style",
+		"attribution": "Floorplan map",
+		"glyphs": "floorplan-image/fonts/{fontstack}/{range}.pbf",
+		"sources": {
+			"floor0": {
+				"type": "image",
+				"url": "floorplan-image/<YOUR FLOORPLAN IMAGE FILE FOR FLOOR 0>",
+				"coordinates": [
+					[
+						-115.16786551712569,
+						36.11988219161837
+					],
+					[
+						-115.1654992,
+						36.119895
+					],
+					[
+						-115.1649202,
+						36.118001
+					],
+					[
+						-115.1684502,
+						36.118023
+					]
+				]
+			},
+			"floor1": {
+				"type": "image",
+				"url": "floorplan-image/<YOUR FLOORPLAN IMAGE FILE FOR FLOOR 1>",
+				"coordinates": [
+					[
+						-115.16786551712569,
+						36.11988219161837
+					],
+					[
+						-115.1654992,
+						36.119895
+					],
+					[
+						-115.1649202,
+						36.118001
+					],
+					[
+						-115.1684502,
+						36.118023
+					]
+				]
+			}
+		},
+		"layers": [{
+				"id": "background",
+				"type": "background",
+				"paint": {
+					"background-color": "rgba(0,0,0,0)"
+				}
+			},
+			{
+				"id": "floor0-layer",
+				"type": "raster",
+				"source": "floor0",
+				"paint": {
+					"raster-fade-duration": 0
+				},
+				"minlevel": 0,
+				"maxlevel": 1
+			},
+			{
+				"id": "floor1-layer",
+				"type": "raster",
+				"source": "floor1",
+				"paint": {
+					"raster-fade-duration": 0
+				},
+				"minlevel": 1,
+				"maxlevel": 2
+			}
+		]
+	}
+
+.. note::
+  The value of the "minlevel" property corresponds with the floor upon which the floorplan image is displayed in the DeepHub UI. The value of the "maxlevel" property is always the subsequent floor.

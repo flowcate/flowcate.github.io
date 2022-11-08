@@ -162,6 +162,11 @@
      Displaying a Floorplan Image over a Basemap
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multi-level-floorplans">
+     Multi-Level Floorplans
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -191,20 +196,24 @@
   <div class="section" id="deephub-ui-configuration">
 <h1>DeepHub® UI Configuration</h1>
 <div class="section" id="adding-a-floorplan-image-to-the-map">
-<h2>Adding a Floorplan Image to the Map</h2>
+<span id="add-floorplan"></span><h2>Adding a Floorplan Image to the Map</h2>
 <p>The DeepHub UI can be configured so that a floorplan image of a building or a site can be displayed. You may choose to display the image by itself, or overlayed on top of the basemap of the mapping service provider (ex. MapTiler).</p>
 <p>To begin, you will need to determine the latitude and longitude of your floorplan images’ corners.</p>
 <p>Once this is done, navigate to the ‘/hub-web/nginx/webapp’ directory of your DeepHub bundle on your local filesystem. Create a new directory (ex. named ‘floorplan-image’) and add your floorplan image to this directory.</p>
 <p>Next, download the Open Sans Semibold font by cloning <a class="reference external" href="https://github.com/openmaptiles/fonts">this repository</a> to your local filesystem. Follow the steps in the README.md to install the required packages and generate the fonts. The fonts will be in the ‘_output’ directory.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>user@fc:~/projects/fonts/_output$ ls
-&#39;Metropolis Black&#39;               &#39;Metropolis Light&#39;             &#39;Metropolis Thin&#39;         &#39;Open Sans Extra Bold Italic&#39;  &#39;PT Sans Bold Italic&#39;       &#39;Roboto Black Italic&#39;            &#39;Roboto Condensed Regular&#39;  &#39;Roboto Thin Italic&#39;
-&#39;Metropolis Black Italic&#39;        &#39;Metropolis Light Italic&#39;      &#39;Metropolis Thin Italic&#39;  &#39;Open Sans Italic&#39;             &#39;PT Sans Caption Regular&#39;   &#39;Roboto Bold&#39;                    &#39;Roboto Italic&#39;
-&#39;Metropolis Bold&#39;                &#39;Metropolis Medium&#39;            &#39;Noto Sans Bold&#39;          &#39;Open Sans Light&#39;              &#39;PT Sans Caption Web Bold&#39;  &#39;Roboto Bold Italic&#39;             &#39;Roboto Light&#39;
-&#39;Metropolis Bold Italic&#39;         &#39;Metropolis Medium Italic&#39;     &#39;Noto Sans Italic&#39;        &#39;Open Sans Light Italic&#39;       &#39;PT Sans Italic&#39;            &#39;Roboto Condensed Bold&#39;          &#39;Roboto Light Italic&#39;
-&#39;Metropolis Extra Bold&#39;          &#39;Metropolis Regular&#39;           &#39;Noto Sans Regular&#39;       &#39;Open Sans Regular&#39;            &#39;PT Sans Narrow Bold&#39;       &#39;Roboto Condensed Bold Italic&#39;   &#39;Roboto Medium&#39;
-&#39;Metropolis Extra Bold Italic&#39;   &#39;Metropolis Regular Italic&#39;    &#39;Open Sans Bold&#39;          &#39;Open Sans Semibold&#39;           &#39;PT Sans Narrow Regular&#39;    &#39;Roboto Condensed Italic&#39;        &#39;Roboto Medium Italic&#39;
-&#39;Metropolis Extra Light&#39;         &#39;Metropolis Semi Bold&#39;         &#39;Open Sans Bold Italic&#39;   &#39;Open Sans Semibold Italic&#39;    &#39;PT Sans Regular&#39;           &#39;Roboto Condensed Light&#39;         &#39;Roboto Regular&#39;
-&#39;Metropolis Extra Light Italic&#39;  &#39;Metropolis Semi Bold Italic&#39;  &#39;Open Sans Extra Bold&#39;    &#39;PT Sans Bold&#39;                 &#39;Roboto Black&#39;              &#39;Roboto Condensed Light Italic&#39;  &#39;Roboto Thin&#39;
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your machine will need Node.js installed to generate the fonts.</p>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>user@fc:~/projects/fonts/_output$ ls
+<span class="s1">&#39;Metropolis Black&#39;</span>               <span class="s1">&#39;Metropolis Light&#39;</span>             <span class="s1">&#39;Metropolis Thin&#39;</span>         <span class="s1">&#39;Open Sans Extra Bold Italic&#39;</span>  <span class="s1">&#39;PT Sans Bold Italic&#39;</span>       <span class="s1">&#39;Roboto Black Italic&#39;</span>            <span class="s1">&#39;Roboto Condensed Regular&#39;</span>  <span class="s1">&#39;Roboto Thin Italic&#39;</span>
+<span class="s1">&#39;Metropolis Black Italic&#39;</span>        <span class="s1">&#39;Metropolis Light Italic&#39;</span>      <span class="s1">&#39;Metropolis Thin Italic&#39;</span>  <span class="s1">&#39;Open Sans Italic&#39;</span>             <span class="s1">&#39;PT Sans Caption Regular&#39;</span>   <span class="s1">&#39;Roboto Bold&#39;</span>                    <span class="s1">&#39;Roboto Italic&#39;</span>
+<span class="s1">&#39;Metropolis Bold&#39;</span>                <span class="s1">&#39;Metropolis Medium&#39;</span>            <span class="s1">&#39;Noto Sans Bold&#39;</span>          <span class="s1">&#39;Open Sans Light&#39;</span>              <span class="s1">&#39;PT Sans Caption Web Bold&#39;</span>  <span class="s1">&#39;Roboto Bold Italic&#39;</span>             <span class="s1">&#39;Roboto Light&#39;</span>
+<span class="s1">&#39;Metropolis Bold Italic&#39;</span>         <span class="s1">&#39;Metropolis Medium Italic&#39;</span>     <span class="s1">&#39;Noto Sans Italic&#39;</span>        <span class="s1">&#39;Open Sans Light Italic&#39;</span>       <span class="s1">&#39;PT Sans Italic&#39;</span>            <span class="s1">&#39;Roboto Condensed Bold&#39;</span>          <span class="s1">&#39;Roboto Light Italic&#39;</span>
+<span class="s1">&#39;Metropolis Extra Bold&#39;</span>          <span class="s1">&#39;Metropolis Regular&#39;</span>           <span class="s1">&#39;Noto Sans Regular&#39;</span>       <span class="s1">&#39;Open Sans Regular&#39;</span>            <span class="s1">&#39;PT Sans Narrow Bold&#39;</span>       <span class="s1">&#39;Roboto Condensed Bold Italic&#39;</span>   <span class="s1">&#39;Roboto Medium&#39;</span>
+<span class="s1">&#39;Metropolis Extra Bold Italic&#39;</span>   <span class="s1">&#39;Metropolis Regular Italic&#39;</span>    <span class="s1">&#39;Open Sans Bold&#39;</span>          <span class="s1">&#39;Open Sans Semibold&#39;</span>           <span class="s1">&#39;PT Sans Narrow Regular&#39;</span>    <span class="s1">&#39;Roboto Condensed Italic&#39;</span>        <span class="s1">&#39;Roboto Medium Italic&#39;</span>
+<span class="s1">&#39;Metropolis Extra Light&#39;</span>         <span class="s1">&#39;Metropolis Semi Bold&#39;</span>         <span class="s1">&#39;Open Sans Bold Italic&#39;</span>   <span class="s1">&#39;Open Sans Semibold Italic&#39;</span>    <span class="s1">&#39;PT Sans Regular&#39;</span>           <span class="s1">&#39;Roboto Condensed Light&#39;</span>         <span class="s1">&#39;Roboto Regular&#39;</span>
+<span class="s1">&#39;Metropolis Extra Light Italic&#39;</span>  <span class="s1">&#39;Metropolis Semi Bold Italic&#39;</span>  <span class="s1">&#39;Open Sans Extra Bold&#39;</span>    <span class="s1">&#39;PT Sans Bold&#39;</span>                 <span class="s1">&#39;Roboto Black&#39;</span>              <span class="s1">&#39;Roboto Condensed Light Italic&#39;</span>  <span class="s1">&#39;Roboto Thin&#39;</span>
 </pre></div>
 </div>
 <p>Within your newly-created ‘floorplan-image’ directory, create a new directory named ‘fonts’. Copy the ‘Open Sans Semibold’ font from the repository you just cloned to this new ‘fonts’ directory.</p>
@@ -212,52 +221,51 @@
 <h3>Displaying a Floorplan Image by Itself</h3>
 <p>Create a JSON file in your ‘floorplan-image’ directory that defines your map style. To display the floorplan image without the surrounding basemap, your file must be structured like the following:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-style&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Floorplan Style&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;attribution&quot;</span><span class="p">:</span> <span class="s2">&quot;Floorplan map&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;glyphs&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-image/fonts/{fontstack}/{range}.pbf&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;sources&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-image/&lt;YOUR FLOORPLAN IMAGE FILE&gt;&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-            <span class="mf">-115.16786551712569</span><span class="p">,</span>
-            <span class="mf">36.11988219161837</span>
-            <span class="p">],</span>
-            <span class="p">[</span>
-            <span class="mf">-115.1654992</span><span class="p">,</span>
-            <span class="mf">36.119895</span>
-            <span class="p">],</span>
-            <span class="p">[</span>
-            <span class="mf">-115.1649202</span><span class="p">,</span>
-            <span class="mf">36.118001</span>
-            <span class="p">],</span>
-            <span class="p">[</span>
-            <span class="mf">-115.1684502</span><span class="p">,</span>
-            <span class="mf">36.118023</span>
-            <span class="p">]</span>
+        <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-style&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Floorplan Style&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;attribution&quot;</span><span class="p">:</span> <span class="s2">&quot;Floorplan map&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;glyphs&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-image/fonts/{fontstack}/{range}.pbf&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;sources&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-image/&lt;YOUR FLOORPLAN IMAGE FILE&gt;&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+                                <span class="p">[</span>
+                                        <span class="mf">-115.16786551712569</span><span class="p">,</span>
+                                        <span class="mf">36.11988219161837</span>
+                                <span class="p">],</span>
+                                <span class="p">[</span>
+                                        <span class="mf">-115.1654992</span><span class="p">,</span>
+                                        <span class="mf">36.119895</span>
+                                <span class="p">],</span>
+                                <span class="p">[</span>
+                                        <span class="mf">-115.1649202</span><span class="p">,</span>
+                                        <span class="mf">36.118001</span>
+                                <span class="p">],</span>
+                                <span class="p">[</span>
+                                        <span class="mf">-115.1684502</span><span class="p">,</span>
+                                        <span class="mf">36.118023</span>
+                                <span class="p">]</span>
+                        <span class="p">]</span>
+                <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;layers&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;background&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;background&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;paint&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;background-color&quot;</span><span class="p">:</span> <span class="s2">&quot;rgba(0,0,0,0)&quot;</span>
+                        <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;image-layer&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;raster&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;paint&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;raster-fade-duration&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
         <span class="p">]</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;layers&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;background&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;background&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;paint&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;background-color&quot;</span><span class="p">:</span> <span class="s2">&quot;rgba(0,0,0,0)&quot;</span>
-        <span class="p">}</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;image-layer&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;raster&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;paint&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;raster-fade-duration&quot;</span><span class="p">:</span> <span class="mi">0</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -289,6 +297,104 @@
 </ul>
 </div></blockquote>
 <img alt="../_images/floorplan_basemap.png" src="../_images/floorplan_basemap.png" />
+</div>
+<div class="section" id="multi-level-floorplans">
+<h3>Multi-Level Floorplans</h3>
+<p>If the building or site has multiple floors, you will need to include a floorplan image for each individual floor.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your DeepHub instance will need to have zones, fences, trackables, or location providers on each floor that needs to display a floorplan image.</p>
+</div>
+<p><a class="reference internal" href="#add-floorplan"><span class="std std-ref">As described above</span></a>, you will first need to determine the latitude and longitude of the corners of each floorplan image and ensure each floorplan image is included in the ‘floorplan-image’ directory.</p>
+<p>Modify your map style JSON by including “minlevel” and “maxlevel” as properties. By default, the map starts at floor 0.</p>
+<p>For example, to display a two-floor building without the surrounding basemap, your map style JSON would be structured in the following way:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-style&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Floorplan Style&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;attribution&quot;</span><span class="p">:</span> <span class="s2">&quot;Floorplan map&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;glyphs&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-image/fonts/{fontstack}/{range}.pbf&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;sources&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;floor0&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-image/&lt;YOUR FLOORPLAN IMAGE FILE FOR FLOOR 0&gt;&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+                                <span class="p">[</span>
+                                        <span class="mf">-115.16786551712569</span><span class="p">,</span>
+                                        <span class="mf">36.11988219161837</span>
+                                <span class="p">],</span>
+                                <span class="p">[</span>
+                                        <span class="mf">-115.1654992</span><span class="p">,</span>
+                                        <span class="mf">36.119895</span>
+                                <span class="p">],</span>
+                                <span class="p">[</span>
+                                        <span class="mf">-115.1649202</span><span class="p">,</span>
+                                        <span class="mf">36.118001</span>
+                                <span class="p">],</span>
+                                <span class="p">[</span>
+                                        <span class="mf">-115.1684502</span><span class="p">,</span>
+                                        <span class="mf">36.118023</span>
+                                <span class="p">]</span>
+                        <span class="p">]</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;floor1&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;floorplan-image/&lt;YOUR FLOORPLAN IMAGE FILE FOR FLOOR 1&gt;&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+                                <span class="p">[</span>
+                                        <span class="mf">-115.16786551712569</span><span class="p">,</span>
+                                        <span class="mf">36.11988219161837</span>
+                                <span class="p">],</span>
+                                <span class="p">[</span>
+                                        <span class="mf">-115.1654992</span><span class="p">,</span>
+                                        <span class="mf">36.119895</span>
+                                <span class="p">],</span>
+                                <span class="p">[</span>
+                                        <span class="mf">-115.1649202</span><span class="p">,</span>
+                                        <span class="mf">36.118001</span>
+                                <span class="p">],</span>
+                                <span class="p">[</span>
+                                        <span class="mf">-115.1684502</span><span class="p">,</span>
+                                        <span class="mf">36.118023</span>
+                                <span class="p">]</span>
+                        <span class="p">]</span>
+                <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;layers&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;background&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;background&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;paint&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;background-color&quot;</span><span class="p">:</span> <span class="s2">&quot;rgba(0,0,0,0)&quot;</span>
+                        <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;floor0-layer&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;raster&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;floor0&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;paint&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;raster-fade-duration&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                        <span class="p">},</span>
+                        <span class="nt">&quot;minlevel&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                        <span class="nt">&quot;maxlevel&quot;</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;floor1-layer&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;raster&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;floor1&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;paint&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;raster-fade-duration&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                        <span class="p">},</span>
+                        <span class="nt">&quot;minlevel&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="nt">&quot;maxlevel&quot;</span><span class="p">:</span> <span class="mi">2</span>
+                <span class="p">}</span>
+        <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The value of the “minlevel” property corresponds with the floor upon which the floorplan image is displayed in the DeepHub UI. The value of the “maxlevel” property is always the subsequent floor.</p>
+</div>
 </div>
 </div>
 </div>
