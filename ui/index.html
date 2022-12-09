@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DeepHub® UI &#8212; DeepHub® 2022 R1  documentation</title>
+    <title>DeepHub® UI &#8212; DeepHub® 2022 R2  documentation</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -61,7 +61,7 @@
     
     
 <a class="navbar-brand" href="../index.html">
-<p class="title">DeepHub® 2022 R1</p>
+<p class="title">DeepHub® 2022 R2</p>
 </a>
 
     
@@ -185,6 +185,16 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subscription">
+   Subscription
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api-of-the-deephub-ui">
+   “API” of the DeepHub UI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#changelog">
    Changelog
   </a>
@@ -234,10 +244,10 @@
 <p>The user interface consists of five system components:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#deep-hub-ui-live-view"><span class="std std-ref">Live View</span></a> - logs information of triggered events when trackables propagate through fences. Event information in the log consists of the fence name through which a trackable is moving, along with entry and exit timestamps.</p></li>
-<li><p><a class="reference internal" href="#deep-hub-ui-zones"><span class="std std-ref">Zone Setup</span></a> - used to define the localization zones on the map for multiple positioning technologies (ex. WiFi, UWB, RFID, etc.). The individual responsible for installing and implementing the localization infrastructure would set up the zones based on localization techniques. Zones need to be set up once for each site.</p></li>
-<li><p><a class="reference internal" href="#deep-hub-ui-fences"><span class="std std-ref">Fence Management</span></a> - allows users to locate numerous fences in one or multiple localization zones. Trackables entering and exiting fences would trigger an event. Different fences could be associated with different localization zones. The system operator and moderator would be responsible for creating and monitoring fences.</p></li>
 <li><p><a class="reference internal" href="#deep-hub-ui-trackables"><span class="std std-ref">Trackables</span></a> - allows users to assign trackables to the asset being tracked and attach the associated positioning providers. Trackable parameters such as it’s radius, exit delay, and collision tolerance can be defined as per requirements. Additionally, custom properties such as information about the asset can be assigned in this section.</p></li>
 <li><p><a class="reference internal" href="#deep-hub-ui-location-providers"><span class="std std-ref">Location Providers</span></a> - allows users to create location providers for different positioning technologies (ex. GPS, WiFi, UWB, etc.). Parameters such as the fence timeout, exit delay, and collision tolerance can be defined as per requirements. Additionally, custom properties for the location provider can be assigned in this section.</p></li>
+<li><p><a class="reference internal" href="#deep-hub-ui-fences"><span class="std std-ref">Fence Management</span></a> - allows users to locate numerous fences in one or multiple localization zones. Trackables entering and exiting fences would trigger an event. Different fences could be associated with different localization zones. The system operator and moderator would be responsible for creating and monitoring fences.</p></li>
+<li><p><a class="reference internal" href="#deep-hub-ui-zones"><span class="std std-ref">Zone Setup</span></a> - used to define the localization zones on the map for multiple positioning technologies (ex. WiFi, UWB, RFID, etc.). The individual responsible for installing and implementing the localization infrastructure would set up the zones based on localization techniques. Zones need to be set up once for each site.</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -259,8 +269,7 @@ Similarly, when a trackable leaves a fence, it is highlighted in red.</p>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Step 1</div>
-<p class="sd-card-text">To create a fence, click on “New Fence” from the option in the menu. This will launch a new pop-up window prompting for a name of the fence and the floor.</p>
-<p class="sd-card-text">Name the fence and specify the floor level. Click “Next” in the pop-up window.</p>
+<p class="sd-card-text">To access the Fences menu, click the gear icon at the top right corner of the DeepHub® UI to open the Configuration menu. Click on “Fences”.</p>
 <img alt="../_images/hub_i_fence_1.png" class="screenshot" src="../_images/hub_i_fence_1.png" />
 </div>
 </div>
@@ -268,8 +277,8 @@ Step 1</div>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Step 2</div>
-<p class="sd-card-text">Select points on the map to create a polygon-shaped fence. For example, select 4 points on the map to create a rectangular fence.</p>
-<p class="sd-card-text">Additionally, custom properties can be assign to fences, such as the name of the operation or the name of the material being stored in a fence.</p>
+<p class="sd-card-text">To create a fence, click on “New Fence” from the option in the menu. This will launch a new pop-up window prompting for a name of the fence and the floor.</p>
+<p class="sd-card-text">Name the fence and specify the floor level. Click “Next” in the pop-up window.</p>
 <img alt="../_images/hub_i_fence_2.png" class="screenshot" src="../_images/hub_i_fence_2.png" />
 </div>
 </div>
@@ -277,8 +286,17 @@ Step 2</div>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Step 3</div>
-<p class="sd-card-text">A new fence will appear on the map.</p>
+<p class="sd-card-text">Select points on the map to create a polygon-shaped fence. For example, select 4 points on the map to create a rectangular fence.</p>
+<p class="sd-card-text">Additionally, custom properties can be assigned to fences, such as the name of the operation or the name of the material being stored in a fence.</p>
 <img alt="../_images/hub_i_fence_3.png" class="screenshot" src="../_images/hub_i_fence_3.png" />
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Step 4</div>
+<p class="sd-card-text">A new fence will appear on the map.</p>
+<img alt="ui/images/hub_i_fence_4.png" class="screenshot" src="ui/images/hub_i_fence_4.png" />
 </div>
 </div>
 </div>
@@ -288,8 +306,8 @@ Step 3</div>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Step 1</div>
-<img alt="../_images/hub_i_add.png" class="screenshot" src="../_images/hub_i_add.png" />
-<p class="sd-card-text">Once a user is logged into the DeepHub®, the following user interface would appear with “Zone Setup”. Input the address of the desired site in the search bar. For example, “Emmendinger Straße 21, Teningen”.</p>
+<p class="sd-card-text">To access the Zones menu, click the gear icon at the top right corner of the DeepHub® UI to open the Configuration menu. Click on “Zones”.</p>
+<img alt="../_images/hub_i_zone_1.png" class="screenshot" src="../_images/hub_i_zone_1.png" />
 </div>
 </div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
@@ -297,8 +315,8 @@ Step 1</div>
 <div class="sd-card-title sd-font-weight-bold docutils">
 Step 2</div>
 <p class="sd-card-text">To create a new localization zone, click on “New Zone” and a new pop-up window will be launched to specify characteristics of the zone.</p>
-<img alt="../_images/hub_i_zone_1.png" class="screenshot" src="../_images/hub_i_zone_1.png" />
-<p class="sd-card-text">Fill in the name of the zone and the floor level on which the zone is supposed to be created.</p>
+<img alt="../_images/hub_i_zone_2.png" class="screenshot" src="../_images/hub_i_zone_2.png" />
+<p class="sd-card-text">Fill in the name of the zone and the floor level upon which the zone is to be created.</p>
 <p class="sd-card-text">Select the desired technology from the dropdown menu.</p>
 </div>
 </div>
@@ -307,7 +325,7 @@ Step 2</div>
 <div class="sd-card-title sd-font-weight-bold docutils">
 Step 3</div>
 <p class="sd-card-text">Select a method of creating a zone from the dropdown list and click on “Next”. There are 4 methods to create a zone.</p>
-<img alt="../_images/hub_i_zone_2.png" class="screenshot" src="../_images/hub_i_zone_2.png" />
+<img alt="../_images/hub_i_zone_3.png" class="screenshot" src="../_images/hub_i_zone_3.png" />
 </div>
 </div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
@@ -315,44 +333,44 @@ Step 3</div>
 <div class="sd-card-title sd-font-weight-bold docutils">
 Step 3.1</div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="942b7cbe-b518-4c83-bdeb-ab5954f8ac8b" name="30ec3eaa-4272-4534-b4f1-fc3529cb6d6e" type="radio">
-</input><label class="sd-tab-label" for="942b7cbe-b518-4c83-bdeb-ab5954f8ac8b">
+<input checked="checked" id="c4475518-0bbc-473a-a5f6-c031c81e28e3" name="4232dde2-7a59-46e3-b685-387139a0cd38" type="radio">
+</input><label class="sd-tab-label" for="c4475518-0bbc-473a-a5f6-c031c81e28e3">
 Extent based geometries</label><div class="sd-tab-content docutils">
-<p class="sd-card-text"><strong>Extent based geometries (width/height)</strong></p>
-<p class="sd-card-text">Enter the height and width of the zone rectangle in meters. It is also possible to enter the approximate address where the zone is supposed to be created.
-Click on “Next” and the zone will appear on the user interface or at the approximate location which was pre-specified.</p>
-<img alt="../_images/hub_i_zone_3.png" class="screenshot" src="../_images/hub_i_zone_3.png" />
-<p class="sd-card-text">Adjust the zone orientation by moving and rotating the zone on the interface and click on “Save” to locate the zone on the user interface.</p>
+<p class="sd-card-text"><strong>Extent based geometries (height/width)</strong></p>
+<p class="sd-card-text">Enter the height and width of the zone rectangle in meters. It is also possible to enter the approximate address where the zone is to be created.
+Click on “Next” and the zone will appear on the user interface or at the approximate location that was specified.</p>
 <img alt="../_images/hub_i_zone_4.png" class="screenshot" src="../_images/hub_i_zone_4.png" />
+<p class="sd-card-text">Adjust the zone orientation by moving and rotating the zone and click on “Save” to update the zone on the user interface.</p>
+<img alt="../_images/hub_i_zone_5.png" class="screenshot" src="../_images/hub_i_zone_5.png" />
 </div>
-<input id="3037f22b-211c-4984-b739-5809daa9969f" name="30ec3eaa-4272-4534-b4f1-fc3529cb6d6e" type="radio">
-</input><label class="sd-tab-label" for="3037f22b-211c-4984-b739-5809daa9969f">
+<input id="9461f743-03a0-47b8-8471-6b4a2057f234" name="4232dde2-7a59-46e3-b685-387139a0cd38" type="radio">
+</input><label class="sd-tab-label" for="9461f743-03a0-47b8-8471-6b4a2057f234">
 Local Position Input</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><strong>Local Position Input (Four-sided Polygon)</strong></p>
-<p class="sd-card-text">Enter the coordinates for each corner of a rectangular zone in meters. It is also possible to enter the approximate address where the zone is supposed to be created.
-Click on “Next” and the zone will appear on the user interface or at the approximate location which was pre-specified.</p>
+<p class="sd-card-text">Enter the coordinates for each corner of a rectangular zone in meters. It is also possible to enter the approximate address where the zone is to be created.
+Click on “Next” and the zone will appear on the user interface or at the approximate location that was specified.</p>
+<img alt="../_images/hub_i_zone_6.png" class="screenshot" src="../_images/hub_i_zone_6.png" />
+<p class="sd-card-text">Adjust the zone orientation by moving and rotating the zone and click on “Save” to update the zone on the user interface.</p>
 <img alt="../_images/hub_i_zone_5.png" class="screenshot" src="../_images/hub_i_zone_5.png" />
-<p class="sd-card-text">Adjust the zone orientation by moving and rotating the zone on the interface and click on “Save” to locate the zone on the user interface.</p>
-<img alt="../_images/hub_i_zone_4.png" class="screenshot" src="../_images/hub_i_zone_4.png" />
 </div>
-<input id="f12acd5c-11f2-4296-8ae6-4d5a4f1f3ffd" name="30ec3eaa-4272-4534-b4f1-fc3529cb6d6e" type="radio">
-</input><label class="sd-tab-label" for="f12acd5c-11f2-4296-8ae6-4d5a4f1f3ffd">
+<input id="9530ce84-5e7f-4c14-9386-31d951df1995" name="4232dde2-7a59-46e3-b685-387139a0cd38" type="radio">
+</input><label class="sd-tab-label" for="9530ce84-5e7f-4c14-9386-31d951df1995">
 GPS Position Input</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><strong>GPS Position Input (Four-sided Polygon)</strong></p>
 <p class="sd-card-text">Enter the geographic coordinates for each corner of a rectangular zone in the form of longitude and latitude.
-Click on “Next” and the zone with prescribed dimensions will appear on the user interface.</p>
-<img alt="../_images/hub_i_zone_6.png" class="screenshot" src="../_images/hub_i_zone_6.png" />
-<p class="sd-card-text">Adjust the zone orientation by moving and rotating the zone on the interface and click on “Save” to locate the zone on the user interface.</p>
-<img alt="../_images/hub_i_zone_4.png" class="screenshot" src="../_images/hub_i_zone_4.png" />
+Click on “Next” and the zone will appear on the user interface.</p>
+<img alt="../_images/hub_i_zone_7.png" class="screenshot" src="../_images/hub_i_zone_7.png" />
+<p class="sd-card-text">Adjust the zone orientation by moving and rotating the zone and click on “Save” to update the zone on the user interface.</p>
+<img alt="../_images/hub_i_zone_5.png" class="screenshot" src="../_images/hub_i_zone_5.png" />
 </div>
-<input id="3796f093-c66b-4dc8-9000-4dd1afd50fd2" name="30ec3eaa-4272-4534-b4f1-fc3529cb6d6e" type="radio">
-</input><label class="sd-tab-label" for="3796f093-c66b-4dc8-9000-4dd1afd50fd2">
+<input id="35cf3221-6218-4f0e-8edb-55b4791adab1" name="4232dde2-7a59-46e3-b685-387139a0cd38" type="radio">
+</input><label class="sd-tab-label" for="35cf3221-6218-4f0e-8edb-55b4791adab1">
 Drawing on map</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><strong>Drawing on map</strong></p>
-<p class="sd-card-text">Left click on the map to draw a polygonal zone in any shape. For example: Click 4 points to draw a rectangular zone.
+<p class="sd-card-text">Locate the desired site on the map using the search bar. Left click on the map to draw a polygonal zone in any shape. For example: Click 4 points to draw a rectangular zone.
 On the right side of the user interface, the local position for each point of the newly introduced zone can be modified.
 Click on the “Save” button to integrate the new zone into the map.</p>
-<img alt="../_images/hub_i_zone_7.png" class="screenshot" src="../_images/hub_i_zone_7.png" />
+<img alt="../_images/hub_i_zone_8.png" class="screenshot" src="../_images/hub_i_zone_8.png" />
 </div>
 </div>
 </div>
@@ -362,7 +380,7 @@ Click on the “Save” button to integrate the new zone into the map.</p>
 <div class="sd-card-title sd-font-weight-bold docutils">
 Step 4</div>
 <p class="sd-card-text">The newly created zone will appear on the map. On the left side pane, the list of created zones will appear.</p>
-<img alt="../_images/hub_i_zone_8.png" class="screenshot" src="../_images/hub_i_zone_8.png" />
+<img alt="ui/images/hub_i_zone_9.png" class="screenshot" src="ui/images/hub_i_zone_9.png" />
 </div>
 </div>
 </div>
@@ -406,6 +424,42 @@ Step 2</div>
 <img alt="../_images/hub_i_loc_pro_2.png" class="screenshot" src="../_images/hub_i_loc_pro_2.png" />
 <img alt="../_images/hub_i_loc_pro_3.png" class="screenshot" src="../_images/hub_i_loc_pro_3.png" />
 </div>
+</div>
+</div>
+<div class="section" id="subscription">
+<span id="deep-hub-ui-subscription"></span><h2>Subscription</h2>
+<p>Within the DeepHub® UI, there is a section called “License Information” that includes relevant details related to the license/subscription of your DeepHub instance.</p>
+<p>To access this menu, click the gear icon at the top right corner of the UI to open the Configuration menu. Click on “Subscription”.</p>
+<blockquote>
+<div><img alt="ui/images/hub_i_subscription_1.png" class="screenshot" src="ui/images/hub_i_subscription_1.png" />
+</div></blockquote>
+<p>The “License Information” page provides administrative information, such as the license type (Trial, Development, Production), customer email, a link to request a license key if needed, and a text box to enter and apply a license key. If the DeepHub instance has an active trial license, the end date and time of the trial period will be shown here as well.</p>
+<blockquote>
+<div><img alt="ui/images/hub_i_subscription_2.png" class="screenshot" src="ui/images/hub_i_subscription_2.png" />
+</div></blockquote>
+<p>For more information on DeepHub licenses, refer to the <a class="reference internal" href="../overview/licensing.html#deep-hub-ov-license-mechanism"><span class="std std-ref">License Mechanism</span></a> section.</p>
+</div>
+<div class="section" id="api-of-the-deephub-ui">
+<span id="deep-hub-ui-api"></span><h2>“API” of the DeepHub UI</h2>
+<p>The DeepHub UI offers several URL parameters to customize the <strong>Live View</strong>.</p>
+<p>Pan &amp; Zoom to a specific location by specifying:</p>
+<ul class="simple">
+<li><p><strong>lng</strong>: the longitude to which the map should pan.</p></li>
+<li><p><strong>lat</strong>: the latitude to which the map should pan.</p></li>
+<li><p><strong>zoom</strong>: the zoom level. Must be in the range [0,16], where 0 corresponds to a zoomed out view of the globe, and 16 corresponds to a detailed, zoomed in view. For more information, refer to MapTiler - our default mapping service provider: <a class="reference external" href="https://www.maptiler.com/google-maps-coordinates-tile-bounds-projection/">Tiles à la Google Maps</a>.</p></li>
+</ul>
+<p>OR:</p>
+<ul class="simple">
+<li><p><strong>id</strong>: pan &amp; zoom to the last known location of a <strong>trackable or location provider</strong> with the given id(s). If several ids are provided, they must be comma-separated.</p></li>
+<li><p><strong>filterid</strong>: only render <strong>trackables and location providers</strong> with the given id(s). If several ids are provided, they must be comma-separated.</p></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/map/system/live?lng=9.5367&amp;lat=49.4055&amp;zoom=9
+
+or
+
+/map/system/live?id=d49f0712-dcbd-4cbc-8b4f-c006b8555839
+</pre></div>
 </div>
 </div>
 <div class="section" id="changelog">

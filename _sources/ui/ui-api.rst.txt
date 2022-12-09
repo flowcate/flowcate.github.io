@@ -1,0 +1,26 @@
+
+"API" of the DeepHub UI
++++++++++++++++++++++++
+
+The DeepHub UI offers several URL parameters to customize the **Live View**.
+
+Pan & Zoom to a specific location by specifying:
+
+* **lng**: the longitude to which the map should pan.
+* **lat**: the latitude to which the map should pan.
+* **zoom**: the zoom level. Must be in the range [0,16], where 0 corresponds to a zoomed out view of the globe, and 16 corresponds to a detailed, zoomed in view. For more information, refer to MapTiler - our default mapping service provider: `Tiles à la Google Maps <https://www.maptiler.com/google-maps-coordinates-tile-bounds-projection/>`_.
+
+OR:
+
+* **id**: pan & zoom to the last known location of a **trackable or location provider** with the given id(s). If several ids are provided, they must be comma-separated.
+* **filterid**: only render **trackables and location providers** with the given id(s). If several ids are provided, they must be comma-separated. 
+
+Examples:
+
+.. code-block::
+
+  /map/system/live?lng=9.5367&lat=49.4055&zoom=9
+
+  or
+
+  /map/system/live?id=d49f0712-dcbd-4cbc-8b4f-c006b8555839

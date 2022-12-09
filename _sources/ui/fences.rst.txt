@@ -4,27 +4,35 @@ Fences
 
 .. card:: Step 1
 
-    To create a fence, click on “New Fence” from the option in the menu. This will launch a new pop-up window prompting for a name of the fence and the floor.
-
-    Name the fence and specify the floor level. Click “Next” in the pop-up window.
+    To access the Fences menu, click the gear icon at the top right corner of the DeepHub® UI to open the Configuration menu. Click on "Fences".
 
     .. image:: images/hub_i_fence_1.png
         :class: screenshot
 
-    
+
 .. card:: Step 2
 
-    Select points on the map to create a polygon-shaped fence. For example, select 4 points on the map to create a rectangular fence.
+    To create a fence, click on “New Fence” from the option in the menu. This will launch a new pop-up window prompting for a name of the fence and the floor.
 
-    Additionally, custom properties can be assign to fences, such as the name of the operation or the name of the material being stored in a fence.
+    Name the fence and specify the floor level. Click “Next” in the pop-up window.
 
     .. image:: images/hub_i_fence_2.png
         :class: screenshot
 
-
+    
 .. card:: Step 3
+
+    Select points on the map to create a polygon-shaped fence. For example, select 4 points on the map to create a rectangular fence.
+
+    Additionally, custom properties can be assigned to fences, such as the name of the operation or the name of the material being stored in a fence.
+
+    .. image:: images/hub_i_fence_3.png
+        :class: screenshot
+
+
+.. card:: Step 4
 
     A new fence will appear on the map.
 
-    .. image:: images/hub_i_fence_3.png
+    .. image:: images/hub_i_fence_4.png
         :class: screenshot

@@ -3,6 +3,24 @@
 Changelog
 +++++++++
 
+DeepHub® 2022 R2, 2.2.0
+-----------------------
+
+Features
+~~~~~~~~
+* New configuration menu: zones and fences live there now. The current subscription/license information can be found there as well.
+* New URL parameter to pan & zoom directly to trackables and/or location providers and to filter/show only the onces mentioned as parameter
+* The “transformation” button on the first page of the zone creation dialog got removed: it was UX-wise not obvious what it does and typically never used because working with a zone implies the use of a transformation of coordinates.
+
+
+
+Bugfixes
+~~~~~~~~
+* Filter toggle button immediately opens up the advanced filter dialog instead of the hard to use "right sidebar"
+* On touchscreen devices, tapping on a trackable or location provider to get detail information as tooltip did not work
+* Importing of custom properties of zones did not work: they got removed
+
+
 DeepHub® 2022 R1, 2.1.1
 -----------------------
 

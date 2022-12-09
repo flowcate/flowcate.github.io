@@ -21,6 +21,12 @@ DeepHub® UI
 .. _deep-hub-ui-location-providers:
 .. include:: locationProviders.rst
 
+.. _deep-hub-ui-subscription:
+.. include:: subscription.rst
+
+.. _deep-hub-ui-api:
+.. include:: ui-api.rst
+
 Changelog
 +++++++++
 
