@@ -6,6 +6,7 @@ The DeepHub® server can be configured in three different ways. Listed from most
 3. Configuration file
 
 Options provided multiple times via different ways will be overriden according to the aforementioned specificity.
+Additionally there can be a license_key YAML file stored in the data directory of the Docker container that will override the license_key. It can be added via the license/key REST API.
 
 The configuration file is a YAML based file, stored in the data directory of the Docker container (or in the directory provided with config\_path).
 The configuration is loaded once on startup. For every configuration option the respective environment variable is fully capitalized and prepended with DEEPHUB, separated by an underscore.

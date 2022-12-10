@@ -1,5 +1,18 @@
 # Changelog
 
+### DeepHub® 2022 R2, 2.2.0
+
+1. Fixed a bug where TrackableMotions could remain when the associated Trackable was deleted.
+2. Fixed a bug where circular fences could not be posted.
+3. Optimized internal event handling.
+4. Fixed an issue where under extreme load conditions some events would not be forwarded through the websocket interface.
+5. Added the API endpoint /license/key, to be able to update the key via an API call.
+6. Improved the restart behavior of DeepHub by restoring event timers based on the most recent persisted locations. Events in intermediate states, like tolerance areas or exit delays, are not restored.
+7. Fixed a bug where stationary trackables were not listed after a restart.
+8. Added DeepHub API version 2 for all endpoints, implementing a preview of omlox™ API version 2. If authentication is used, the permission.yaml needs to be updated for the new /v2/ targets to be accessible.
+9. Added the possibility to POST entities with a given id (i.e. without DeepHub generating a new id). This is only available for endpoints residing under API version 2 (e.g. /v2/zones).
+10. Fixed a bug which could lead to database corruption with sqlite3. The database file is therefore migrated to a new version. Furthermore, the database file is renamed to `data.dat` (previously `config.dat`). A backup of the database is created for each step before the migration: `config.dat.bak` and `data.dat.v1v2.timestamp.bak`.
+
 ### DeepHub® 2022 R1, 2.1.1
 
 1. Fixed a bug where subsequent location updates were rejected if their distance was close to floating point precision.
@@ -8,7 +21,7 @@
 ### DeepHub® 2022 R1, 2.1.0
 
 1. Removing a colliding trackable via the API now triggers a collision end event.
-2. Fixed a bug where event timers where not correctly removed.
+2. Fixed a bug where event timers were not correctly removed.
 
 ### DeepHub® 2022 R1, 2.0.0
 

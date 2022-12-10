@@ -150,6 +150,11 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deephub-2022-r2-2-2-0">
+   DeepHub® 2022 R2, 2.2.0
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#deephub-2022-r1-2-1-1">
    DeepHub® 2022 R1, 2.1.1
   </a>
@@ -265,6 +270,21 @@
         
   <div class="section" id="changelog">
 <h1>Changelog</h1>
+<div class="section" id="deephub-2022-r2-2-2-0">
+<h2>DeepHub® 2022 R2, 2.2.0</h2>
+<ol class="arabic simple">
+<li><p>Fixed a bug where TrackableMotions could remain when the associated Trackable was deleted.</p></li>
+<li><p>Fixed a bug where circular fences could not be posted.</p></li>
+<li><p>Optimized internal event handling.</p></li>
+<li><p>Fixed an issue where under extreme load conditions some events would not be forwarded through the websocket interface.</p></li>
+<li><p>Added the API endpoint /license/key, to be able to update the key via an API call.</p></li>
+<li><p>Improved the restart behavior of DeepHub by restoring event timers based on the most recent persisted locations. Events in intermediate states, like tolerance areas or exit delays, are not restored.</p></li>
+<li><p>Fixed a bug where stationary trackables were not listed after a restart.</p></li>
+<li><p>Added DeepHub API version 2 for all endpoints, implementing a preview of omlox™ API version 2. If authentication is used, the permission.yaml needs to be updated for the new /v2/ targets to be accessible.</p></li>
+<li><p>Added the possibility to POST entities with a given id (i.e. without DeepHub generating a new id). This is only available for endpoints residing under API version 2 (e.g. /v2/zones).</p></li>
+<li><p>Fixed a bug which could lead to database corruption with sqlite3. The database file is therefore migrated to a new version. Furthermore, the database file is renamed to <code class="docutils literal notranslate"><span class="pre">data.dat</span></code> (previously <code class="docutils literal notranslate"><span class="pre">config.dat</span></code>). A backup of the database is created for each step before the migration: <code class="docutils literal notranslate"><span class="pre">config.dat.bak</span></code> and <code class="docutils literal notranslate"><span class="pre">data.dat.v1v2.timestamp.bak</span></code>.</p></li>
+</ol>
+</div>
 <div class="section" id="deephub-2022-r1-2-1-1">
 <h2>DeepHub® 2022 R1, 2.1.1</h2>
 <ol class="arabic simple">
@@ -276,7 +296,7 @@
 <h2>DeepHub® 2022 R1, 2.1.0</h2>
 <ol class="arabic simple">
 <li><p>Removing a colliding trackable via the API now triggers a collision end event.</p></li>
-<li><p>Fixed a bug where event timers where not correctly removed.</p></li>
+<li><p>Fixed a bug where event timers were not correctly removed.</p></li>
 </ol>
 </div>
 <div class="section" id="deephub-2022-r1-2-0-0">

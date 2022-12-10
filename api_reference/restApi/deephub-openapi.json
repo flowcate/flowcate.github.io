@@ -2,8 +2,8 @@
   "openapi": "3.0.2",
   "info": {
     "title": "DeepHub®",
-    "description": "This is the DeepHub® API, compliant to the omlox™ hub API 1.2.1. You can find out more about omlox™ at <https://www.omlox.com>.",
-    "version": "2.1.1"
+    "description": "This is the DeepHub® API, compliant to the omlox™ hub API 1.2.1 and implementing a preview of the omlox™ hub API 2.0.0. You can find out more about omlox™ at <https://www.omlox.com>.",
+    "version": "2.2.0"
   },
   "externalDocs": {
     "description": "Find out more about Swagger",
@@ -15,25 +15,7 @@
       "description": "Local Reference Server",
       "variables": {
         "basePath": {
-          "default": "/deephub/v1"
-        }
-      }
-    },
-    {
-      "url": "dev.deephub.io",
-      "description": "BETA Shared AWS Cloud Instance",
-      "variables": {
-        "basePath": {
-          "default": "/deephub/v1"
-        }
-      }
-    },
-    {
-      "url": "api.deephub.io",
-      "description": "Shared AWS Cloud Instance",
-      "variables": {
-        "basePath": {
-          "default": "/deephub/v1"
+          "default": "/deephub/v2"
         }
       }
     }
@@ -207,16 +189,6 @@
         "responses": {
           "204": {
             "description": "All zones deleted."
-          },
-          "400": {
-            "description": "Zones not deleted. Check error message for details.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
           }
         }
       }
@@ -249,6 +221,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Zone"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -308,6 +290,16 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Zone not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         }
       },
@@ -336,7 +328,17 @@
             "description": "Zone deleted."
           },
           "400": {
-            "description": "Zone not deleted. Check error message for details.",
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Zone not found.",
             "content": {
               "application/json": {
                 "schema": {
@@ -584,16 +586,6 @@
                 }
               }
             }
-          },
-          "404": {
-            "description": "Rules not found. Check error message for details.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
           }
         }
       },
@@ -677,7 +669,7 @@
             "schema": {
               "type": "boolean"
             },
-            "description": "If true, re-processes the most recent Location of the Location Providers assigned to this Trackable. No Location data stored in the hub will be changed. Events will be only generated in case of an actual change, for example if the new TrackableMotion causes the Trackable to enter a fence."
+            "description": "If true, re-processes the most significant Location of the Location Providers assigned to this Trackable. No Location data stored in the hub will be changed. Events will be only generated in case of an actual change, for example if the new TrackableMotion causes the Trackable to enter a fence."
           }
         ],
         "requestBody": {
@@ -733,16 +725,6 @@
         "responses": {
           "204": {
             "description": "All trackables deleted."
-          },
-          "404": {
-            "description": "Trackable not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
           }
         }
       }
@@ -778,6 +760,26 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Trackable not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         }
       },
@@ -804,6 +806,16 @@
         "responses": {
           "204": {
             "description": "Trackable deleted."
+          },
+          "400": {
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           },
           "404": {
             "description": "Trackable not found.",
@@ -842,7 +854,7 @@
             "schema": {
               "type": "boolean"
             },
-            "description": "If true, re-processes the most recent Location of the Location Providers assigned to this Trackable. If this Location is more recent than the existing TrackableMotion, the Motion will be replaced. No Location data stored in the hub will be changed. Events will be only generated in case of an actual change, for example if the replaced TrackableMotion causes the Trackable to enter a fence."
+            "description": "If true, re-processes the most significant Location of the Location Providers assigned to this Trackable. If this Location is more significant than the existing TrackableMotion, the Motion will be replaced. No Location data stored in the hub will be changed. Events will be only generated in case of an actual change, for example if the replaced TrackableMotion causes the Trackable to enter a fence."
           }
         ],
         "requestBody": {
@@ -993,6 +1005,16 @@
               }
             }
           },
+          "400": {
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Trackable motion not found, or motion for this trackable has not yet been generated.",
             "content": {
@@ -1012,8 +1034,8 @@
           "Trackables"
         ],
         "summary": "Get a location.",
-        "description": "Returns the most recent location of the trackable with the given id, with consideration of all recent location updates from the trackable's location providers.",
-        "operationId": "getMostRecentTrackableLocation",
+        "description": "Returns the most significant location of the trackable with the given id, with consideration of all recent location updates from the trackable's location providers.",
+        "operationId": "getMostSignificantTrackableLocation",
         "parameters": [
           {
             "name": "trackable_id",
@@ -1148,6 +1170,16 @@
               }
             }
           },
+          "400": {
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Trackable not found, or location providers have not been configured for this trackable.",
             "content": {
@@ -1203,6 +1235,16 @@
               }
             }
           },
+          "400": {
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Trackable not found.",
             "content": {
@@ -1244,6 +1286,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AnyType"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -1543,8 +1595,8 @@
           "204": {
             "description": "Location accepted."
           },
-          "404": {
-            "description": "Location provider not found.",
+          "400": {
+            "description": "Location not updated. Check error message for details.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1792,7 +1844,7 @@
             }
           },
           "404": {
-            "description": "Sensor data not found.",
+            "description": "Location Provider not found.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1853,6 +1905,16 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Failed to get the locations. Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         }
       },
@@ -1879,6 +1941,16 @@
         "responses": {
           "204": {
             "description": "Locations accepted."
+          },
+          "400": {
+            "description": "Locations not updated. Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         }
       },
@@ -1931,8 +2003,8 @@
           "204": {
             "description": "Proximity accepted."
           },
-          "404": {
-            "description": "Location provider not found.",
+          "400": {
+            "description": "Failed to update the proximity. Check error message for details.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1968,6 +2040,16 @@
         "responses": {
           "204": {
             "description": "Proximities accepted."
+          },
+          "400": {
+            "description": "Failed to update the proximities. Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         }
       }
@@ -2018,6 +2100,16 @@
                   "items": {
                     "$ref": "#/components/schemas/Fence"
                   }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to get fences. Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -2086,6 +2178,16 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Fence not created. Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         }
       },
@@ -2099,6 +2201,16 @@
         "responses": {
           "204": {
             "description": "All fences deleted."
+          },
+          "404": {
+            "description": "Failed to access fences. Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         }
       }
@@ -2157,6 +2269,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Fence"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to get fence. Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -2253,6 +2375,16 @@
           "204": {
             "description": "Fence object deleted."
           },
+          "400": {
+            "description": "Fence not deleted. Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Fence not found.",
             "content": {
@@ -2309,6 +2441,16 @@
               }
             }
           },
+          "400": {
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Fence not found.",
             "content": {
@@ -2361,6 +2503,16 @@
                   "items": {
                     "$ref": "#/components/schemas/Trackable"
                   }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -2448,6 +2600,16 @@
               }
             }
           },
+          "400": {
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Fence not found.",
             "content": {
@@ -2527,6 +2689,16 @@
                   "items": {
                     "$ref": "#/components/schemas/Location"
                   }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -2634,6 +2806,16 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Erroneous parameters. Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         }
       }
@@ -2681,6 +2863,38 @@
           },
           "400": {
             "description": "The trial period expired, the license is not valid or the license server was not reachable. Refer to the error message for a description of the actual problem that occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/license/key": {
+      "put": {
+        "tags": [
+          "License"
+        ],
+        "summary": "Updates the license key.",
+        "description": "Update the license key if it is valid. ",
+        "operationId": "updateLicenseKey",
+        "responses": {
+          "204": {
+            "description": "The license key was updated successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LicenseKey"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The json or the license key is not valid or the license server was not reachable. Refer to the error message for a description of the actual problem that occurred.",
             "content": {
               "application/json": {
                 "schema": {
@@ -2778,6 +2992,16 @@
         "responses": {
           "204": {
             "description": "Location data processed successfully."
+          },
+          "400": {
+            "description": "Location was not processed. Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         }
       },
@@ -2803,7 +3027,7 @@
             "description": "Location data processed successfully."
           },
           "400": {
-            "description": "Zone not created. Check error message for details.",
+            "description": "Location was not processed. Check error message for details.",
             "content": {
               "application/json": {
                 "schema": {
@@ -3038,6 +3262,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HealthSource"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -3587,6 +3821,7 @@
       "Lease": {
         "required": [
           "hub_instance_id",
+          "customer_email",
           "lease_end_timestamp",
           "grace_period_timestamp"
         ],
@@ -3596,6 +3831,10 @@
             "type": "string",
             "format": "uuid",
             "description": "The hub's instance UUID which requested the lease."
+          },
+          "customer_email": {
+            "type": "string",
+            "description": "The subscription owner's email address."
           },
           "lease_end_timestamp": {
             "type": "string",
@@ -3679,6 +3918,19 @@
           "custom_info": {
             "type": "string",
             "description": "Optional information."
+          }
+        }
+      },
+      "LicenseKey": {
+        "required": [
+          "license_key"
+        ],
+        "type": "object",
+        "properties": {
+          "license_key": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The license key that belongs to this hub instance."
           }
         }
       },

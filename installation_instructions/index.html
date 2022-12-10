@@ -871,7 +871,8 @@ Similarly, the version of DeepHub® UI can be adapted accordingly.</p>
 <li><p>Command line arguments</p></li>
 <li><p>Configuration file</p></li>
 </ol>
-<p>Options provided multiple times via different ways will be overriden according to the aforementioned specificity.</p>
+<p>Options provided multiple times via different ways will be overriden according to the aforementioned specificity.
+Additionally there can be a license_key YAML file stored in the data directory of the Docker container that will override the license_key. It can be added via the license/key REST API.</p>
 <p>The configuration file is a YAML based file, stored in the data directory of the Docker container (or in the directory provided with config_path).
 The configuration is loaded once on startup. For every configuration option the respective environment variable is fully capitalized and prepended with DEEPHUB, separated by an underscore.</p>
 <p>As an example, <strong>license_key</strong> becomes <strong>DEEPHUB_LICENSE_KEY</strong>.</p>

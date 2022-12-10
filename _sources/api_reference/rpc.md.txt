@@ -2,9 +2,6 @@
 
 The DeepHub® can act as a Remote Procedure Call (RPC) gateway via WebSocket, allowing local devices or services to connect with other devices or services over a local network infrastructure and the internet (which are normally separate from each other and not reachable). This allows for querying of sensor data and device capabilities, or initiating firmware updates as well as other types of information exchange which can be handled via RPC. The DeepHub RPC interface is based on the JSON-RPC exchange format version 2.0 [1]. 
 
-The image below illustrates the building blocks of the architecture with a simple example data flow:
-![](rpc_architecture.png)
-
 The endpoint for the DeepHub RPC interface is: **/v1/ws/rpc**.
 
 The general data flow is as follows:
