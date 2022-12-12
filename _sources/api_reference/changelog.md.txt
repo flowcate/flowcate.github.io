@@ -12,6 +12,7 @@
 8. Added DeepHub API version 2 for all endpoints, implementing a preview of omlox™ API version 2. If authentication is used, the permission.yaml needs to be updated for the new /v2/ targets to be accessible.
 9. Added the possibility to POST entities with a given id (i.e. without DeepHub generating a new id). This is only available for endpoints residing under API version 2 (e.g. /v2/zones).
 10. Fixed a bug which could lead to database corruption with sqlite3. The database file is therefore migrated to a new version. Furthermore, the database file is renamed to `data.dat` (previously `config.dat`). A backup of the database is created for each step before the migration: `config.dat.bak` and `data.dat.v1v2.timestamp.bak`.
+11. Fixed an issue with temporary files from sqlite for read-only Docker containers. For these, it is required to set the environment variable SQLITE_TMPDIR to a writable folder, e.g., the mounted folder with the sqlite database.
 
 ### DeepHub® 2022 R1, 2.1.1
 
