@@ -192,6 +192,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#details-of-the-docker-compose-file-explained">
+     Details of the Docker Compose file explained
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#start-a-deephub">
      Start a DeepHub®
     </a>
@@ -584,19 +589,56 @@ the overall usage and interaction of these components.</p>
 </div>
 <div class="section" id="getting-the-latest-docker-compose-file">
 <h3>Getting the Latest Docker Compose File</h3>
-<p>We provide a docker-compose.yml file and additional configuration files for orchestration of the DeepHub® itself, as well as the corresponding DeepHub® UI, in our Github repository:  <a class="reference external" href="https://github.com/Flowcate">Flowcate&#64;github</a>.</p>
-<p>We recommend creating a dedicated local directory on your filesystem where you store the docker-compose.yml and the aforementioned configuration files. The DeepHub® needs to create some additional files during operations and
-writes them to directories mounted from your host filesystem. This is done relative to the location of the docker-compose.yml file.</p>
+<p>We provide a docker-compose.yml file and additional configuration files for orchestration of the DeepHub® itself, as well as the corresponding DeepHub® UI, in our Github repository:  <a class="reference external" href="https://github.com/flowcate/deephub-basic-setup">deephub-basic-setup by Flowcate&#64;github</a>.</p>
+<p>We recommend creating a dedicated local directory on your filesystem where you store the docker-compose.yml and the aforementioned configuration files which is what happens if you use git clone to pull the complete repository.</p>
+<p>The DeepHub® needs to create some additional files during operations and writes them to directories mounted from your host filesystem. This is done relative to the location of the docker-compose.yml file and will therefore happen within some of the directories that are part of the deephub-basic-setup repository.</p>
+</div>
+<div class="section" id="details-of-the-docker-compose-file-explained">
+<h3>Details of the Docker Compose file explained</h3>
+<p>Our Docker Compose file consists in essence of three “services”, as they are called:</p>
+<ul class="simple">
+<li><p>“deephub”</p></li>
+<li><p>“deephub-ui”</p></li>
+<li><p>“deephub-apache”</p></li>
+</ul>
+<p>Each of them corresponds to exactly one docker container. The names already indicate to which ones.
+Within each service section, docker specific details can be configured as well as environment variables for the processes running within a container. Let’s pick an example section:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>deephub:
+  image: flowcate/deephub:latest
+  container_name: <span class="m">8081</span>-deephub
+  restart: unless-stopped
+  read_only: <span class="nb">true</span>
+  logging:
+    driver: <span class="s2">&quot;json-file&quot;</span>
+    options:
+      max-file: <span class="s2">&quot;2&quot;</span>
+      max-size: <span class="s2">&quot;10m&quot;</span>
+  environment:
+    - <span class="nv">DEEPHUB_PORT</span><span class="o">=</span><span class="m">7081</span>
+    - <span class="nv">DEEPHUB_CORS</span><span class="o">=</span><span class="nb">true</span>
+    - <span class="nv">DEEPHUB_LICENSE_KEY</span><span class="o">=</span>50f7eb6d-4b4c-4a7b-8d60-0c439328214c
+    - <span class="nv">SQLITE_TMPDIR</span><span class="o">=</span>/data
+  ports:
+    - <span class="s2">&quot;7081&quot;</span>
+  volumes:
+    - <span class="s2">&quot;./hub-data/:/data&quot;</span>
+  networks:
+    - deephub-net
+</pre></div>
+</div>
+<p>First of all, there is the name of a service. In this case it is “deephub”. Next are docker specific parameters like docker image name and tag, name of the container that is build from it, the restart policy and whether the container should run in read-only mode which means that no process running within the container is allowed to write to the docker container’s own filesystem. Next there are docker parameters for logging.</p>
+<p>The <strong>environment</strong> key starts the section containing the environment variables that are made available within the docker container. You’ll notice DeepHub-specific ones, of course, like e.g. the port on which the DeepHub should listen. <strong>All DeepHub-specific environment variables start with the capital letters DEEPHUB, an underscore, and the capital spelling of the parameter</strong> as specified in the “Server Configuration” section further down this documentation.
+Note the <strong>SQLITE_TMPDIR</strong> variable: it is necessary to specify a path to which the SQlite DB can write temporary information. The  path has to be a known path from the point of view of the container and has to be writable.</p>
+<p>Note concerning the port number specified: this is the port number within the docker container. It is not necessarily identical to the port on which the process is reachable from outside of the container though. It is the following section called <strong>ports</strong> that make this port available from the outside. In this case, it is the same port as the DeepHub process uses within the container. Instead of that simple entry, a “port mapping” could have been specified. The latter is nothing more than specifying the outside port number and the corresponding inside port number to which it should be mapped. For more details please refer to the Docker and Docker Compose documentation.</p>
+<p>The <strong>volumes</strong> section is important to mention because it presents the mapping/mounting of external directories to container internal ones. In the example above, the external/host directory called “hub-data”, relative to the location of the docker-compose.yml, is mapped to the absolute path /data within the container. <strong>The read-only container can write to this external directory in case the user and group permissions on the host filesystem are set appropriately.</strong></p>
 </div>
 <div class="section" id="start-a-deephub">
 <span id="id1"></span><h3>Start a DeepHub®</h3>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>Open a shell (PowerShell or Command Prompt on Windows, a terminal on Linux)</p></li>
 <li><p>Change to the directory where your docker-compose.yml file resides. <strong>Docker Compose won’t work if invoked outside this directory.</strong></p></li>
 <li><p>Invoke Docker Compose. It will take a few minutes to download the Docker images and set up the DeepHub®.</p></li>
 </ul>
-</div></blockquote>
 <p>Example:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;directory where the docker-compose.yml is&gt;
 docker-compose up -d
