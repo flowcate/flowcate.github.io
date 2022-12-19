@@ -319,6 +319,7 @@
 <li><p>New configuration menu: zones and fences live there now. The current subscription/license information can be found there as well.</p></li>
 <li><p>New URL parameter to pan &amp; zoom directly to trackables and/or location providers and to filter/show only the onces mentioned as parameter</p></li>
 <li><p>The “transformation” button on the first page of the zone creation dialog got removed: it was UX-wise not obvious what it does and typically never used because working with a zone implies the use of a transformation of coordinates.</p></li>
+<li><p>The UI docker image is now based on the nginx-unprivileged base image thus allows to be used in restrictive kubernetes policy environments. The web server serving the UI therefore now runs on port 8080 which has to be taken care of in e.g. docker-compose.yml files orchestrating the DeepHub and its UI container.</p></li>
 </ul>
 </div>
 <div class="section" id="bugfixes">
