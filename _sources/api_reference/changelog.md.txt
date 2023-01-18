@@ -1,5 +1,9 @@
 # Changelog
 
+### DeepHub® 2022 R2, 2.2.1
+
+1. Fixed a bug where duplicated data might accumulate in a Cassandra database. An affected database will be cleaned during the first start of this version.
+
 ### DeepHub® 2022 R2, 2.2.0
 
 1. Fixed a bug where TrackableMotions could remain when the associated Trackable was deleted.
