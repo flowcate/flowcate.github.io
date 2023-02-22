@@ -1,5 +1,11 @@
 # Changelog
 
+### DeepHub® 2022 R2, 2.2.3
+
+1. Fix error handling for rate limit errors for Amazon Keyspaces and Azure Cosmos DB.
+2. Added new configuration parameters `cassandra_rate` and `cassandra_burst_size`.
+3. Fixed count of active trackables and location providers for consumption reporting.
+
 ### DeepHub® 2022 R2, 2.2.2
 
 1. Added Cassandra support for Amazon Keyspaces and Azure Cosmos DB.

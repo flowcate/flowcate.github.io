@@ -347,7 +347,7 @@ Default: true
 Number of Cassandra IO threads.
 
 Expected value type: number<br>
-Default: 4
+Default: 1
 
 ### cassandra_replication_strategy
 Cassandra replication strategy.
@@ -366,6 +366,18 @@ Path to the PEM file for a TLS enabled connection to Cassandra.
 
 Expected value type: string<br>
 Default: not set
+
+### cassandra_rate
+The targeted throughput to the Cassandra database in kB/s. This is a combined value for read and write operations, though, during operation DeepHub will almost exclusively write to the database. The size of the database operations can only be estimated, which is why this throughput is only approximate.
+
+Expected value type: number<br>
+Default: 0 (unlimited)
+
+### cassandra_burst_size
+Shaping parameter for the throughput to the Cassandra database in kB. This parameter allows to momentarily exceed the limit set by `cassandra_rate`. The DeepHub will send up to this much data to the database without rate limitation before throttling. The DeepHub will allow transactions in cases where the size of a single transaction exceeds this parameter.
+
+Expected value type: number<br>
+Default: 10000
 
 ### iso_24730_connections
 A list of configurations for connections to ISO-24730 RTLS systems. The following properties are used for a connection:<br>

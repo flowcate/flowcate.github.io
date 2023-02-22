@@ -480,6 +480,16 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-rate">
+       cassandra_rate
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cassandra-burst-size">
+       cassandra_burst_size
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#iso-24730-connections">
        iso_24730_connections
       </a>
@@ -1278,7 +1288,7 @@ Default: true</p>
 <h4>cassandra_io_threads</h4>
 <p>Number of Cassandra IO threads.</p>
 <p>Expected value type: number<span class="raw-html-m2r"><br></span>
-Default: 4</p>
+Default: 1</p>
 </div>
 <div class="section" id="cassandra-replication-strategy">
 <h4>cassandra_replication_strategy</h4>
@@ -1297,6 +1307,18 @@ Default: false</p>
 <p>Path to the PEM file for a TLS enabled connection to Cassandra.</p>
 <p>Expected value type: string<span class="raw-html-m2r"><br></span>
 Default: not set</p>
+</div>
+<div class="section" id="cassandra-rate">
+<h4>cassandra_rate</h4>
+<p>The targeted throughput to the Cassandra database in kB/s. This is a combined value for read and write operations, though, during operation DeepHub will almost exclusively write to the database. The size of the database operations can only be estimated, which is why this throughput is only approximate.</p>
+<p>Expected value type: number<span class="raw-html-m2r"><br></span>
+Default: 0 (unlimited)</p>
+</div>
+<div class="section" id="cassandra-burst-size">
+<h4>cassandra_burst_size</h4>
+<p>Shaping parameter for the throughput to the Cassandra database in kB. This parameter allows to momentarily exceed the limit set by <code class="docutils literal notranslate"><span class="pre">cassandra_rate</span></code>. The DeepHub will send up to this much data to the database without rate limitation before throttling. The DeepHub will allow transactions in cases where the size of a single transaction exceeds this parameter.</p>
+<p>Expected value type: number<span class="raw-html-m2r"><br></span>
+Default: 10000</p>
 </div>
 <div class="section" id="iso-24730-connections">
 <h4>iso_24730_connections</h4>

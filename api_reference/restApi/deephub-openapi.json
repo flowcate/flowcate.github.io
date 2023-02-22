@@ -3,7 +3,7 @@
   "info": {
     "title": "DeepHub®",
     "description": "This is the DeepHub® API, compliant to the omlox™ hub API 1.2.1 and implementing a preview of the omlox™ hub API 2.0.0. You can find out more about omlox™ at <https://www.omlox.com>.",
-    "version": "2.2.2"
+    "version": "2.2.3"
   },
   "externalDocs": {
     "description": "Find out more about Swagger",
