@@ -1,8 +1,0 @@
-.. _deep-hub-api-changelog:
-
-.. mdinclude:: changelog.md
-
-.. toctree::
-    :hidden:
-
-    changelog.md
