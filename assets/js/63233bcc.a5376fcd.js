@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdeephub_doc=self.webpackChunkdeephub_doc||[]).push([[7667],{96457:e=>{e.exports=JSON.parse('{"label":"changelog","permalink":"/docs/tags/changelog","allTagsPath":"/docs/tags","count":1,"items":[{"id":"version-DeepHub 2023 R1 - 2.3.0/release-note","title":"Changelog","description":"","permalink":"/docs/release-note"}]}')}}]);

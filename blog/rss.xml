@@ -24,7 +24,7 @@
             <pubDate>Tue, 02 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to the new DeepHub docu page. We switched to a new docu framework called Docusaurus and it works like a charm.]]></description>
             <content:encoded><![CDATA[<p>Welcome to the new DeepHub docu page. We switched to a new docu framework called <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a> and it works like a charm.</p><p>One of the main interesting features of Docusaurus for us, is to be able to easily host documentation for several versions of a product. Therefore we incorporated
-this feature to provide the DeepHub documentation for the latest stable version, currently the <a href="/docs/overview">DeepHub 2022 R2 - 2.2.3</a>, as well as for the <a href="/docs/next/overview">latest beta version</a> at the same time.
+this feature to provide the DeepHub documentation for the latest stable version, currently the <a href="/docs/DeepHub 2022 R2 - 2.2.3/overview">DeepHub 2022 R2 - 2.2.3</a>, as well as for the <a href="/docs/overview">upcoming release</a> at the same time.
 To switch between the different versions, just use the pull-down menu on the top-right of this page.</p>]]></content:encoded>
             <category>docusaurus</category>
         </item>
