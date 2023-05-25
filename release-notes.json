@@ -2,6 +2,7 @@
   {
     "version": "DeepHub® 2023 R1, 2.3.1",
     "fixes": [
+      "**[Core]** Fixed a bug, where filtering fence events by object_type location_provider was not working properly.",
       "**[Core]** Fixed a bug, where implicitly created location providers did not trigger change events."
     ]
   },
