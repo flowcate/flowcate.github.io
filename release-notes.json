@@ -1,5 +1,11 @@
 [
   {
+    "version": "DeepHub® 2023 R1, 2.3.1",
+    "fixes": [
+      "**[Core]** Fixed a bug, where implicitly created location providers did not trigger change events."
+    ]
+  },
+  {
     "version": "DeepHub® 2023 R1, 2.3.0",
     "features": [
       "**[Core]** Added new API targets `/trackables/:trackable_id/providers` and `/providers/:trackable_id/trackables` to get a list of providers associated with trackables and vice versa.",
