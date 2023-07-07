@@ -1,5 +1,18 @@
 [
   {
+    "version": "DeepHub® 2023 R1, 2.3.2",
+    "fixes": [
+      "**[Core]** Fixed health check for ARM based environments.",
+      "**[Core]** Fixed a bug, where /trackables/:id/providers returned a broken json in case of an empty result.",
+      "**[Core]** Improved error handling for zone transformations.",
+      "**[Core]** Reduce time limit of timeout to send keep-alive packages for websocket connections earlier.",
+      "**[Core]** Fixed escaping of special characters in error descriptions for rules validator api.",
+      "**[Core]** Fixed error handling for defective websocket connections.",
+      "**[UI]** Send the correct token after the token refresh.",
+      "**[UI]** Return to login page in case OAuth session has expired or user has logged out."
+    ]
+  },
+  {
     "version": "DeepHub® 2023 R1, 2.3.1",
     "fixes": [
       "**[Core]** Fixed a bug, where filtering fence events by object_type location_provider was not working properly.",

@@ -4,10 +4,19 @@
         <title>DeepHub® Blog</title>
         <link>https://docs.deephub.io/blog</link>
         <description>DeepHub® Blog</description>
-        <lastBuildDate>Tue, 09 May 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 16 Jun 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[The one and only "changelog"]]></title>
+            <link>https://docs.deephub.io/blog/changelog</link>
+            <guid>https://docs.deephub.io/blog/changelog</guid>
+            <pubDate>Fri, 16 Jun 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[A bit of marketing for the changelog of the DeepHub, which can be found here: changelog. It contains the changes made]]></description>
+            <content:encoded><![CDATA[<p>A bit of marketing for the changelog of the DeepHub, which can be found here: <a href="/docs/release-note">changelog</a>. It contains the changes made
+in every version of the DeepHub and not only the one for the specific version that you have currently selected here on this documentation page!</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[DeepHub 2023 R1 - 2.3.0 released]]></title>
             <link>https://docs.deephub.io/blog/new-release</link>

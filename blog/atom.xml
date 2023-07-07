@@ -2,11 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.deephub.io/blog</id>
     <title>DeepHub® Blog</title>
-    <updated>2023-05-09T00:00:00.000Z</updated>
+    <updated>2023-06-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.deephub.io/blog"/>
     <subtitle>DeepHub® Blog</subtitle>
     <icon>https://docs.deephub.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[The one and only "changelog"]]></title>
+        <id>https://docs.deephub.io/blog/changelog</id>
+        <link href="https://docs.deephub.io/blog/changelog"/>
+        <updated>2023-06-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A bit of marketing for the changelog of the DeepHub, which can be found here: changelog. It contains the changes made]]></summary>
+        <content type="html"><![CDATA[<p>A bit of marketing for the changelog of the DeepHub, which can be found here: <a href="/docs/release-note">changelog</a>. It contains the changes made
+in every version of the DeepHub and not only the one for the specific version that you have currently selected here on this documentation page!</p>]]></content>
+        <author>
+            <name>Wolfgang Römer</name>
+            <uri>https://www.flowcate.com/deephub</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[DeepHub 2023 R1 - 2.3.0 released]]></title>
         <id>https://docs.deephub.io/blog/new-release</id>
