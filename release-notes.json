@@ -11,6 +11,7 @@
       "**[Core]** Fixed permission handling for sending location_update messages.",
       "**[Core]** Fixed a bug, where it was not possible to subscribe without a filter to get notified about owned resources.",
       "**[Core]** Fixed permission handling for the trackable motion topic.",
+      "**[Core]** Fixed a bug, where a provider id could be an empty string.",
       "**[Kiosk UI]** Searching for information in arrays is now possible."
     ],
     "refactor": [
