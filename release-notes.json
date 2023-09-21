@@ -1,17 +1,21 @@
 [
   {
-    "version": "DeepHub® 2023 R2, 2.4.0-beta.1",
+    "version": "DeepHub® 2023 R2, 2.4.0-beta.2",
     "features": [
       "**[UI KIOSK]** Added dialog to be able to choose between rendering options for location providers, trackables, fences, and zones.",
+      "**[UI KIOSK]** Added barcode scanning.",
       "**[UI ADMIN]** Points that define fences and zones are now removable.",
       "**[UI ADMIN]** Added feedback when trying to create a location provider, trackable, fence, or zone with an id that already exists.",
+      "**[UI ADMIN]** Added warnings for assigning location provider ids with special characters.",
       "**[UI]** Added webp images support for mapbox raster tiles."
     ],
     "fixes": [
       "**[Core]** Fixed permission handling for sending location_update messages.",
       "**[Core]** Fixed a bug, where it was not possible to subscribe without a filter to get notified about owned resources.",
       "**[Core]** Fixed permission handling for the trackable motion topic.",
-      "**[Kiosk UI]** Searching for information in arrays is now possible."
+      "**[Core]** Fixed a bug, where a provider id could be an empty string.",
+      "**[UI KIOSK]** Searching for information in arrays is now possible.",
+      "**[UI]** Special characters are now encoded correctly."
     ],
     "refactor": [
       "**[Core]** Reworked internal handling of API calls by using events."
