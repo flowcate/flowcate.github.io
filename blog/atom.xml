@@ -2,11 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.deephub.io/blog</id>
     <title>DeepHub® Blog</title>
-    <updated>2023-06-16T00:00:00.000Z</updated>
+    <updated>2023-11-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.deephub.io/blog"/>
     <subtitle>DeepHub® Blog</subtitle>
     <icon>https://docs.deephub.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[DeepHub 2023 R2 - 2.4.0 released]]></title>
+        <id>https://docs.deephub.io/blog/new-release-2.4.0</id>
+        <link href="https://docs.deephub.io/blog/new-release-2.4.0"/>
+        <updated>2023-11-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[DeepHub 2023 R2 - 2.4.0 was released today!]]></summary>
+        <content type="html"><![CDATA[<p>DeepHub 2023 R2 - 2.4.0 was released today! </p><p>One noteworthy change is a new property for trackables that allows their participation in collision handling to be enabled or disabled. Not only can this significantly save CPU power if collision handling is not needed,
+but it also allows for easy handling of use cases where a huge amount of tracked assets are close to each other, resulting in a bulk of collisions happening at the same time.</p><p>Example: a forklift moves a pallet with a lot of RFID-tagged assets. All these assets are within close proximity to each other while they reside on the pallet. They are colliding but the information that this is happening is not relevant.
+Collision handling for the forklift itself is nevertheless very relevant and so the trackable representing the forklift has the option to "participate in collision handling" set to true, while it stays
+off for all the RFID-tagged assets on the pallet. Only collision events for the forklift would be delivered to listeners subscribed to these events.</p><p>Have a look at the <a href="/docs/release-note">changelog</a> for all the details.</p>]]></content>
+        <author>
+            <name>Wolfgang Römer</name>
+            <uri>https://www.flowcate.com/deephub</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The new version of the omlox standard is here]]></title>
+        <id>https://docs.deephub.io/blog/omlox-v2</id>
+        <link href="https://docs.deephub.io/blog/omlox-v2"/>
+        <updated>2023-08-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The omlox v2 specification was finalized and approved. It contains many enhancements to the "omlox core zone" and the "omlox hub". The former now complies to IEEE 802.15.4z, offers a new "Uplink-Time Difference of Arrival (UL- TDoA)" mode, and supports UWB channel #9 (~8 GHz) - allowing for global coverage, as this is currently the only channel that can be used worldwide without any local restrictions.]]></summary>
+        <content type="html"><![CDATA[<p>The omlox v2 specification was finalized and approved. It contains many enhancements to the "omlox core zone" and the "omlox hub". The former now complies to IEEE 802.15.4z, offers a new "Uplink-Time Difference of Arrival (UL- TDoA)" mode, and supports UWB channel #9 (~8 GHz) - allowing for global coverage, as this is currently the only channel that can be used worldwide without any local restrictions.</p><p>The omlox hub specification v2 includes a "rule engine" (the DeepHub has had a <a href="/docs/deephub/LocatingRuleExtension">Locating Rule Engine</a> for over a year), support for uninitialized zones, a "fence_timeout" property for trackables and location providers to overrule timeout settings of a fence, and several new REST API endpoints for greater convenience.</p>]]></content>
+        <author>
+            <name>Wolfgang Römer</name>
+            <uri>https://www.flowcate.com/deephub</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The one and only "changelog"]]></title>
         <id>https://docs.deephub.io/blog/changelog</id>

@@ -1,24 +1,32 @@
 [
   {
-    "version": "DeepHub® 2023 R2, 2.4.0-beta.2",
+    "version": "DeepHub® 2023 R2, 2.4.0",
     "features": [
+      "**[Core]** Added an id to the databases to uniquely identify each database.",
+      "**[Core]** Added new trackable property 'calculate_collisions' and configuration parameter 'calculate_collisions_default' to control the collision behavior of individual trackables.",
       "**[UI KIOSK]** Added dialog to be able to choose between rendering options for location providers, trackables, fences, and zones.",
       "**[UI KIOSK]** Added barcode scanning.",
+      "**[UI KIOSK]** If a user clicks on a trackable without a location from a search result, a pop-up will now display informing them of this.",
       "**[UI ADMIN]** Points that define fences and zones are now removable.",
       "**[UI ADMIN]** Added feedback when trying to create a location provider, trackable, fence, or zone with an id that already exists.",
       "**[UI ADMIN]** Added warnings for assigning location provider ids with special characters.",
-      "**[UI]** Added webp images support for mapbox raster tiles."
+      "**[UI ADMIN]** Add controls for 'calculate_collisions' to trackable view.",
+      "**[UI]** Added support for webp images for Mapbox raster tiles."
     ],
     "fixes": [
       "**[Core]** Fixed permission handling for sending location_update messages.",
-      "**[Core]** Fixed a bug, where it was not possible to subscribe without a filter to get notified about owned resources.",
       "**[Core]** Fixed permission handling for the trackable motion topic.",
-      "**[Core]** Fixed a bug, where a provider id could be an empty string.",
+      "**[Core]** Fixed a bug where it was not possible to subscribe without a filter to get notified about owned resources.",
+      "**[Core]** Fixed a bug where a provider id could be an empty string.",
+      "**[Core]** Fixed rfid providers not being reported in consumptions.",
+      "**[Core]** Removed `need_transformation` in API version 2 JSON response for zones.",
       "**[UI KIOSK]** Searching for information in arrays is now possible.",
+      "**[UI ADMIN]** Fixed a bug where adding location providers via the trackable view could add providers with non-existing ids.",
       "**[UI]** Special characters are now encoded correctly."
     ],
     "refactor": [
-      "**[Core]** Reworked internal handling of API calls by using events."
+      "**[Core]** Reworked internal handling of API calls by using events.",
+      "**[UI ADMIN]** Reworking of import and export."
     ]
   },
   {
