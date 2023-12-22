@@ -1,5 +1,13 @@
 [
   {
+    "version": "DeepHub® 2023 R2, 2.4.1",
+    "fixes": [
+      "**[Core]** Fixed handling for trackables with polygonal geometry. The coordinates of the polygon are interpreted as meters and the geometry is rotated based on the course of the last location.",
+      "**[UI KIOSK]** Viewing Options dialog can be triggered again.",
+      "**[UI ADMIN]** More descriptive error messages for entities importer."
+    ]
+  },
+  {
     "version": "DeepHub® 2023 R2, 2.4.0",
     "features": [
       "**[Core]** Added an id to the databases to uniquely identify each database.",
