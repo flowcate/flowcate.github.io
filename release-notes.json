@@ -1,5 +1,11 @@
 [
   {
+    "version": "DeepHub® 2023 R2, 2.4.2",
+    "fixes": [
+      "**[Core]** Fixed verify_authserver configuration parameter."
+    ]
+  },
+  {
     "version": "DeepHub® 2023 R2, 2.4.1",
     "fixes": [
       "**[Core]** Fixed handling for trackables with polygonal geometry. The coordinates of the polygon are interpreted as meters and the geometry is rotated based on the course of the last location.",
