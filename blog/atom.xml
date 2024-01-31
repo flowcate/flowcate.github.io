@@ -13,10 +13,13 @@
         <link href="https://docs.deephub.io/blog/new-release-2.4.0"/>
         <updated>2023-11-30T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[DeepHub 2023 R2 - 2.4.0 was released today!]]></summary>
-        <content type="html"><![CDATA[<p>DeepHub 2023 R2 - 2.4.0 was released today! </p><p>One noteworthy change is a new property for trackables that allows their participation in collision handling to be enabled or disabled. Not only can this significantly save CPU power if collision handling is not needed,
-but it also allows for easy handling of use cases where a huge amount of tracked assets are close to each other, resulting in a bulk of collisions happening at the same time.</p><p>Example: a forklift moves a pallet with a lot of RFID-tagged assets. All these assets are within close proximity to each other while they reside on the pallet. They are colliding but the information that this is happening is not relevant.
+        <content type="html"><![CDATA[<p>DeepHub 2023 R2 - 2.4.0 was released today!</p>
+<p>One noteworthy change is a new property for trackables that allows their participation in collision handling to be enabled or disabled. Not only can this significantly save CPU power if collision handling is not needed,
+but it also allows for easy handling of use cases where a huge amount of tracked assets are close to each other, resulting in a bulk of collisions happening at the same time.</p>
+<p>Example: a forklift moves a pallet with a lot of RFID-tagged assets. All these assets are within close proximity to each other while they reside on the pallet. They are colliding but the information that this is happening is not relevant.
 Collision handling for the forklift itself is nevertheless very relevant and so the trackable representing the forklift has the option to "participate in collision handling" set to true, while it stays
-off for all the RFID-tagged assets on the pallet. Only collision events for the forklift would be delivered to listeners subscribed to these events.</p><p>Have a look at the <a href="/docs/release-note">changelog</a> for all the details.</p>]]></content>
+off for all the RFID-tagged assets on the pallet. Only collision events for the forklift would be delivered to listeners subscribed to these events.</p>
+<p>Have a look at the <a href="https://docs.deephub.io/docs/release-note">changelog</a> for all the details.</p>]]></content>
         <author>
             <name>Wolfgang Römer</name>
             <uri>https://www.flowcate.com/deephub</uri>
@@ -28,7 +31,8 @@ off for all the RFID-tagged assets on the pallet. Only collision events for the 
         <link href="https://docs.deephub.io/blog/omlox-v2"/>
         <updated>2023-08-23T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[The omlox v2 specification was finalized and approved. It contains many enhancements to the "omlox core zone" and the "omlox hub". The former now complies to IEEE 802.15.4z, offers a new "Uplink-Time Difference of Arrival (UL- TDoA)" mode, and supports UWB channel #9 (~8 GHz) - allowing for global coverage, as this is currently the only channel that can be used worldwide without any local restrictions.]]></summary>
-        <content type="html"><![CDATA[<p>The omlox v2 specification was finalized and approved. It contains many enhancements to the "omlox core zone" and the "omlox hub". The former now complies to IEEE 802.15.4z, offers a new "Uplink-Time Difference of Arrival (UL- TDoA)" mode, and supports UWB channel #9 (~8 GHz) - allowing for global coverage, as this is currently the only channel that can be used worldwide without any local restrictions.</p><p>The omlox hub specification v2 includes a "rule engine" (the DeepHub has had a <a href="/docs/deephub/LocatingRuleExtension">Locating Rule Engine</a> for over a year), support for uninitialized zones, a "fence_timeout" property for trackables and location providers to overrule timeout settings of a fence, and several new REST API endpoints for greater convenience.</p>]]></content>
+        <content type="html"><![CDATA[<p>The omlox v2 specification was finalized and approved. It contains many enhancements to the "omlox core zone" and the "omlox hub". The former now complies to IEEE 802.15.4z, offers a new "Uplink-Time Difference of Arrival (UL- TDoA)" mode, and supports UWB channel #9 (~8 GHz) - allowing for global coverage, as this is currently the only channel that can be used worldwide without any local restrictions.</p>
+<p>The omlox hub specification v2 includes a "rule engine" (the DeepHub has had a <a href="https://docs.deephub.io/docs/deephub/LocatingRuleExtension">Locating Rule Engine</a> for over a year), support for uninitialized zones, a "fence_timeout" property for trackables and location providers to overrule timeout settings of a fence, and several new REST API endpoints for greater convenience.</p>]]></content>
         <author>
             <name>Wolfgang Römer</name>
             <uri>https://www.flowcate.com/deephub</uri>
@@ -40,7 +44,7 @@ off for all the RFID-tagged assets on the pallet. Only collision events for the 
         <link href="https://docs.deephub.io/blog/changelog"/>
         <updated>2023-06-16T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A bit of marketing for the changelog of the DeepHub, which can be found here: changelog. It contains the changes made]]></summary>
-        <content type="html"><![CDATA[<p>A bit of marketing for the changelog of the DeepHub, which can be found here: <a href="/docs/release-note">changelog</a>. It contains the changes made
+        <content type="html"><![CDATA[<p>A bit of marketing for the changelog of the DeepHub, which can be found here: <a href="https://docs.deephub.io/docs/release-note">changelog</a>. It contains the changes made
 in every version of the DeepHub and not only the one for the specific version that you have currently selected here on this documentation page!</p>]]></content>
         <author>
             <name>Wolfgang Römer</name>
@@ -53,7 +57,9 @@ in every version of the DeepHub and not only the one for the specific version th
         <link href="https://docs.deephub.io/blog/new-release"/>
         <updated>2023-05-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[The new release DeepHub 2023 R1 - 2.3.0 was released today!]]></summary>
-        <content type="html"><![CDATA[<p>The new release DeepHub 2023 R1 - 2.3.0 was released today! </p><p>Have a look at the <a href="/docs/release-note">changelog</a> to get an idea of the features and bug-fixes that have been incorporated into this version.</p><div class="theme-admonition theme-admonition-note alert alert--secondary admonition_LlT9"><div class="admonitionHeading_tbUL"><span class="admonitionIcon_kALy"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_S0QG"><p>There are now two DeepHub UIs, the former DeepHub UI, called "Admin UI" from now on, and the brand new "Kiosk UI". In the changelog there are therefore now references to <!-- -->[UI Admin]<!-- --> and <!-- -->[UI Kiosk]<!-- -->.</p></div></div>]]></content>
+        <content type="html"><![CDATA[<p>The new release DeepHub 2023 R1 - 2.3.0 was released today!</p>
+<p>Have a look at the <a href="https://docs.deephub.io/docs/release-note">changelog</a> to get an idea of the features and bug-fixes that have been incorporated into this version.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>There are now two DeepHub UIs, the former DeepHub UI, called "Admin UI" from now on, and the brand new "Kiosk UI". In the changelog there are therefore now references to [UI Admin] and [UI Kiosk].</p></div></div>]]></content>
         <author>
             <name>Wolfgang Römer</name>
             <uri>https://www.flowcate.com/deephub</uri>
@@ -66,8 +72,9 @@ in every version of the DeepHub and not only the one for the specific version th
         <link href="https://docs.deephub.io/blog/docusaurus"/>
         <updated>2023-05-02T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Welcome to the new DeepHub docu page. We switched to a new docu framework called Docusaurus and it works like a charm.]]></summary>
-        <content type="html"><![CDATA[<p>Welcome to the new DeepHub docu page. We switched to a new docu framework called <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a> and it works like a charm.</p><p>One of the main interesting features of Docusaurus for us, is to be able to easily host documentation for several versions of a product. Therefore we incorporated
-this feature to provide the DeepHub documentation for the latest stable version, currently the <a href="/docs/DeepHub 2022 R2 - 2.2.3/overview">DeepHub 2022 R2 - 2.2.3</a>, as well as for the <a href="/docs/overview">upcoming release</a> at the same time.
+        <content type="html"><![CDATA[<p>Welcome to the new DeepHub docu page. We switched to a new docu framework called <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a> and it works like a charm.</p>
+<p>One of the main interesting features of Docusaurus for us, is to be able to easily host documentation for several versions of a product. Therefore we incorporated
+this feature to provide the DeepHub documentation for the latest stable version, currently the <a href="https://docs.deephub.io/docs/DeepHub%202022%20R2%20-%202.2.3/overview">DeepHub 2022 R2 - 2.2.3</a>, as well as for the <a href="https://docs.deephub.io/docs/overview">upcoming release</a> at the same time.
 To switch between the different versions, just use the pull-down menu on the top-right of this page.</p>]]></content>
         <author>
             <name>Wolfgang Römer</name>
