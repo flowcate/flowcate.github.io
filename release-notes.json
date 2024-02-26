@@ -10,7 +10,7 @@
       "**[Core]** Added Anchor API.",
       "**[Core]** Added zone property `anchor_ids` to associate anchors with a zone. Anchors which have both, georeferenced and local positions, overwrite the zone's ground control points.",
       "**[Core]** Added endpoint /version for /v1 and /v2.",
-      "**[Core]** Added notifications about MZE zone updates to the `zones_changes` WebSocket topic.",
+      "**[Core]** Added notifications about MZE zone updates to the `zone_changes` WebSocket topic.",
       "**[UI]** Added zone and location provider types `ble-aoa` and `ble-mesh`.",
       "**[UI]** Added new floorplan upload functionality.",
       "**[UI]** The colors of zones and providers have been changed. Only proximity and non-proximity zones are differentiated and displayed in different colors.",
