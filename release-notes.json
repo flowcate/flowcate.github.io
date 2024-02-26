@@ -1,14 +1,23 @@
 [
   {
-    "version": "DeepHub® 2024 R1, 2.5.0-beta.1",
+    "version": "DeepHub® 2024 R1, 2.5.0-beta.2",
     "features": [
       "**[Core]** Added zone and location provider types `ble-aoa` and `ble-mesh`.",
-      "**[Core]** Added new endpoint /zones/fromlocal to construct a minimal zone from a set of local coordinates.",
+      "**[Core]** Added new endpoint /zones/fromlocal to construct a minimal zone from CreationParameters.",
+      "**[Core]** Added new endpoint /fences/fromlocal to construct a minimal fence from CreationParameters.",
       "**[Core]** Added a new zone type `generic` and an additional way to create zones that use the benchmark based transformation.",
-      "**[Core]** Added zone property `transformation_type`, which can be one of `gcp`, `proximity`, `benchmark` or 'none'.",
+      "**[Core]** Added zone property `transformation_type`, which can be one of `gcp`, `proximity`, `benchmark` or `none`.",
+      "**[Core]** Added Anchor API.",
+      "**[Core]** Added zone property `anchor_ids` to associate anchors with a zone. Anchors which have both, georeferenced and local positions, overwrite the zone's ground control points.",
+      "**[Core]** Added endpoint /version for /v1 and /v2.",
+      "**[Core]** Added notifications about MZE zone updates to the `zones_changes` WebSocket topic.",
       "**[UI]** Added zone and location provider types `ble-aoa` and `ble-mesh`.",
       "**[UI]** Added new floorplan upload functionality.",
-      "**[UI]** The colors of zones and providers have been changed. Only proximity and non-proximity zones are differentiated and displayed in different colors."
+      "**[UI]** The colors of zones and providers have been changed. Only proximity and non-proximity zones are differentiated and displayed in different colors.",
+      "**[UI ADMIN]** Added functionality to create anchors."
+    ],
+    "fixes": [
+      "**[Core]** Prevent fences from having corrupt polygon regions."
     ],
     "refactor": [
       "**[UI]** Implemented new code base for Admin UI. First release with limited feature set."
