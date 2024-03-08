@@ -1,6 +1,6 @@
 [
   {
-    "version": "DeepHub® 2024 R1, 2.5.0-beta.2",
+    "version": "DeepHub® 2024 R1, 2.5.0-beta.3",
     "features": [
       "**[Core]** Added zone and location provider types `ble-aoa` and `ble-mesh`.",
       "**[Core]** Added new endpoint /zones/fromlocal to construct a minimal zone from CreationParameters.",
@@ -14,20 +14,17 @@
       "**[UI]** Added zone and location provider types `ble-aoa` and `ble-mesh`.",
       "**[UI]** Added new floorplan upload functionality.",
       "**[UI]** The colors of zones and providers have been changed. Only proximity and non-proximity zones are differentiated and displayed in different colors.",
-      "**[UI ADMIN]** Added functionality to create anchors."
+      "**[UI ADMIN]** Added functionality to create anchors.",
+      "**[UI KIOSK]** Added indirect asset tracking."
     ],
-    "fixes": [
-      "**[Core]** Prevent fences from having corrupt polygon regions."
-    ],
+    "fixes": ["**[Core]** Prevent fences from having corrupt polygon regions."],
     "refactor": [
       "**[UI]** Implemented new code base for Admin UI. First release with limited feature set."
     ]
   },
   {
     "version": "DeepHub® 2023 R2, 2.4.2",
-    "fixes": [
-      "**[Core]** Fixed verify_authserver configuration parameter."
-    ]
+    "fixes": ["**[Core]** Fixed verify_authserver configuration parameter."]
   },
   {
     "version": "DeepHub® 2023 R2, 2.4.1",
@@ -171,9 +168,7 @@
   },
   {
     "version": "DeepHub® 2022 R1, 2.1.1",
-    "features": [
-      "**[Core]** Enhanced the performance of SQlite operations."
-    ],
+    "features": ["**[Core]** Enhanced the performance of SQlite operations."],
     "fixes": [
       "**[Core]** Fixed a bug where subsequent location updates were rejected if their distance was close to floating point precision.",
       "**[UI Admin]** Allow to use separate image files as site map per floor level."
@@ -224,9 +219,7 @@
   },
   {
     "version": "DeepHub® 2021 R2, 1.3.1",
-    "features": [
-      "**[Core]** Updated error handling for environment variables."
-    ]
+    "features": ["**[Core]** Updated error handling for environment variables."]
   },
   {
     "version": "DeepHub® 2021 R2, 1.3.0",
@@ -330,9 +323,7 @@
   },
   {
     "version": "1.1.7",
-    "features": [
-      "**[UI Admin]** First public release."
-    ],
+    "features": ["**[UI Admin]** First public release."],
     "fixes": [
       "**[Core]** Fixed an issue caused by an external library where the docker container might get into a startup loop.",
       "**[Core]** Fixed an issue where trackable motions did not get certain values assigned from the related trackable."
@@ -423,8 +414,6 @@
   },
   {
     "version": "0.9.0",
-    "features": [
-      "**[Core]** First public release"
-    ]
+    "features": ["**[Core]** First public release"]
   }
 ]
