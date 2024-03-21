@@ -4,10 +4,23 @@
         <title>DeepHub® Blog</title>
         <link>https://docs.deephub.io/blog</link>
         <description>DeepHub® Blog</description>
-        <lastBuildDate>Thu, 30 Nov 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 22 Mar 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Indirect Asset Tracking - Simple Search and Find]]></title>
+            <link>https://docs.deephub.io/blog/indirect-asset-tracking</link>
+            <guid>https://docs.deephub.io/blog/indirect-asset-tracking</guid>
+            <pubDate>Fri, 22 Mar 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Indirect Asset Tracking with the DeepHub - The simple, elegant and cost-effective asset tracking solution]]></description>
+            <content:encoded><![CDATA[<p>Indirect Asset Tracking with the DeepHub - The simple, elegant and cost-effective asset tracking solution</p>
+<p>Consider a typical warehouse where all your workers are equipped with a barcode scanning device. These devices typically have an embedded Android smartphone, therefore the DeepHub Kiosk UI can run on them out-of-the-box. Conveniently, the Kiosk UI now includes barcode scanning functionality as well. Scan a barcode and if an asset, A.K.A a trackable, is not found,
+simply create one with one tap of your finger. Now let's consider that you invested into a locating system but don't want to attach a tag to each asset because that would be costly (assuming you have thousands of assets in your warehouse). Instead, just have every worker wear a tag while working in the warehouse. Within the Kiosk UI,
+a tag, A.K.A a location provider, can be paired with our Kiosk UI instance, ensuring the position of the worker's tag becomes the position of the Kiosk UI. When a barcode is
+scanned, the position of your device can be used and associated with the scanned asset, ensuring the asset gets a location. That's it. With just a handful of tags for
+your workers, all your assets can be tracked.</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[DeepHub 2023 R2 - 2.4.0 released]]></title>
             <link>https://docs.deephub.io/blog/new-release-2.4.0</link>
