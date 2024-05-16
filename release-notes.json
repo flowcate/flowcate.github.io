@@ -1,6 +1,6 @@
 [
   {
-    "version": "DeepHub® 2024 R1, 2.5.0-beta.5",
+    "version": "DeepHub® 2024 R1, 2.5.0",
     "features": [
       "**[Core]** Added zone and location provider types `ble-aoa` and `ble-mesh`.",
       "**[Core]** Added new endpoint /zones/fromlocal to construct a minimal zone from CreationParameters.",
@@ -12,22 +12,24 @@
       "**[Core]** Added endpoint /version for /v1 and /v2.",
       "**[Core]** Added notifications about MZE zone updates to the `zone_changes` WebSocket topic.",
       "**[Core]** Reject zones with duplicate ground control points and improve error messages for certain invalid cases.",
-      "**[Core]** Added crs property to SimpleTransform to allow for reverse coordinate transformation .",
+      "**[Core]** Added crs property to SimpleTransform to allow for reverse coordinate transformation.",
+      "**[Core]** Added parameter `subdivide` to POST and PUT for trackables and fences.",
       "**[UI]** Added zone and location provider types `ble-aoa` and `ble-mesh`.",
       "**[UI]** Added new floorplan upload functionality.",
       "**[UI]** The colors of zones and providers have been changed. Only proximity and non-proximity zones are differentiated and displayed in different colors.",
       "**[UI]** Added version information to settings view.",
-      "**[UI ADMIN]** Added functionality to create anchors.",
-      "**[UI ADMIN]** Added the option to display anchors and their ranges and distances on the map.",
+      "**[UI ADMIN]** Added functionality to create anchors and to display them on the map.",
       "**[UI KIOSK]** Added indirect asset tracking."
     ],
     "fixes": [
-      "**[Core]** Prevented fences from having corrupt polygon regions.",
+      "**[Core]** Corrected polygons to always have ccw orientation and require large polygons to have additional coordinates.",
+      "**[Core]** Fixed a bug with querying contents for large polygons.",
+      "**[Core]** Fixed infinity values of fences for GeoJSON queries.",
       "**[Core]** Fixed a bug where the mobile zone didn't move with its assigned provider or trackable after a restart of the hub."
     ],
     "refactor": [
-      "**[Core]** Refactored the start up phase of the hub.",
-      "**[UI]** Implemented new code base for Admin UI. First release with limited feature set."
+      "**[Core]** Refactored the startup phase of the hub.",
+      "**[UI ADMIN]** Admin UI and Kiosk UI share the same code base."
     ]
   },
   {
