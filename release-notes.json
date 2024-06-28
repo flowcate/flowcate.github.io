@@ -1,5 +1,16 @@
 [
   {
+    "version": "DeepHub® 2024 R1, 2.5.1",
+    "fixes": [
+      "**[Core]** Enhance error messages for invalid objects detected while migrating the database.",
+      "**[UI]** Fixed login loop with OAuth2 due to a race condition.",
+      "**[UI]** Added field to license error page to be able to enter a license key.",
+      "**[UI ADMIN]** Change some fields with wrong unit.",
+      "**[UI ADMIN]** Remove all tooltips.",
+      "**[UI ADMIN]** Added file upload limitations of floorplan images."
+    ]
+  },
+  {
     "version": "DeepHub® 2024 R1, 2.5.0",
     "features": [
       "**[Core]** Added zone and location provider types `ble-aoa` and `ble-mesh`.",
