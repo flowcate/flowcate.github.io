@@ -1,5 +1,11 @@
 [
   {
+    "version": "DeepHub® 2024 R1, 2.5.2",
+    "fixes": [
+      "**[Core]** Fixed an issue with trackable events after a restart."
+    ]
+  },
+  {
     "version": "DeepHub® 2024 R1, 2.5.1",
     "fixes": [
       "**[Core]** Enhance error messages for invalid objects detected while migrating the database.",
