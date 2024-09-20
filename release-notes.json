@@ -1,5 +1,32 @@
 [
   {
+    "version": "DeepHub® 2024 R1, 2.5.3",
+    "fixes": [
+      "**[Core]** Added option to filter WebSocket messages by multiple ids.",
+      "**[Core]** Added filtering trackable_motion events by `trackable_id` (this is an alternative name for the filter `id`).",
+      "**[Core]** Added filtering collision_events events by `object_id_x` (this is an alternative name for the filter `collision_id_x`).",
+      "**[Core]** Fixed permission handling when subscribing to WebSocket topics without filter.",
+      "**[Core]** Fixed filtering fence_event messages by `foreign_id`.",
+      "**[Core]** Fixed fence updates not updating overlaps.",
+      "**[Core]** Fixed race condition during implicit creation of providers via a first location update.",
+      "**[Core]** Fixed multiple race conditions during deletion of entities.",
+      "**[Core]** Fixed motion change events.",
+      "**[Core]** Require property `id` when posting anchors.",
+      "**[UI]** Fixed switching to the relevant floor level when clicking on a search result.",
+      "**[UI]** Fixed the display of the license type in the license info view.",
+      "**[UI]** Fixed json objects in tooltip.",
+      "**[UI]** Rendering performance has been improved for maps with many entities.",
+      "**[UI]** Show updated entity properties on the map and in the side panel immediately.",
+      "**[UI]** Fixed redirect loop between license error and login page.",
+      "**[UI]** Immediately show the login page for authentication when OAuth is used.",
+      "**[UI ADMIN]** Fixed error message for exit tolerance field.",
+      "**[UI ADMIN]** Fixed hiding fence previews based on zone visibility setting.",
+      "**[UI ADMIN]** Improved process feedback during floorplan creation.",
+      "**[UI ADMIN]** Preventing deletion and editing of floorplans still in creation.",
+      "**[UI ADMIN]** The radius field is not displayed anymore for trackables that have a geometry."
+    ]
+  },
+  {
     "version": "DeepHub® 2024 R1, 2.5.2",
     "fixes": [
       "**[Core]** Fixed an issue with trackable events after a restart."
