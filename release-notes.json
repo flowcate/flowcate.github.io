@@ -1,5 +1,23 @@
 [
   {
+    "version": "DeepHub® 2024 R2, 2.6.0-beta.1",
+    "features": [
+      "**[Core]** Added first support for MQTT messaging and unified namespace.",
+      "**[Core]** Added fence entry behavior equivalent to fence exit with timeouts and tolerance.",
+      "**[Core]** Added properties `entry_tolerance`, `entry_tolerance_timeout`, `entry_delay` to fences.",
+      "**[Core]** Added properties `entry_tolerance_timeout`, `entry_delay` to location providers and trackables.",
+      "**[Core]** Added trackable properties `parent` and `children` to be able to create a hierarchy between trackables. Trackables inherit the location of their parent.",
+      "**[Core]** Added option to patch entities with the operations `add`, `replace` and `remove` based on JSON Patch.",
+      "**[UI ADMIN]** Added properties `entry_tolerance`, `entry_tolerance_timeout`, `entry_delay` to fences.",
+      "**[UI ADMIN]** Added properties `entry_tolerance_timeout`, `entry_delay` to location providers and trackables.",
+      "**[UI ADMIN]** Added option to import and export entities.",
+      "**[UI ADMIN]** Added option to add a parent trackable to a trackable."
+    ],
+    "fixes": [
+      "**[Core]** Require `properties` to be valid JSON objects or null if set."
+    ]
+  },
+  {
     "version": "DeepHub® 2024 R1, 2.5.3",
     "fixes": [
       "**[Core]** Added option to filter WebSocket messages by multiple ids.",
@@ -19,6 +37,7 @@
       "**[UI]** Show updated entity properties on the map and in the side panel immediately.",
       "**[UI]** Fixed redirect loop between license error and login page.",
       "**[UI]** Immediately show the login page for authentication when OAuth is used.",
+      "**[UI]** Provider names are displayed on the map.",
       "**[UI ADMIN]** Fixed error message for exit tolerance field.",
       "**[UI ADMIN]** Fixed hiding fence previews based on zone visibility setting.",
       "**[UI ADMIN]** Improved process feedback during floorplan creation.",
