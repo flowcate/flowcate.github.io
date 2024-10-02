@@ -18,6 +18,12 @@
     ]
   },
   {
+    "version": "DeepHub® 2024 R1, 2.5.4",
+    "fixes": [
+      "**[Core]** Fixed timeout selection for collisions. Now the maximum timeout of the two trackables will be used."
+    ]
+  },
+  {
     "version": "DeepHub® 2024 R1, 2.5.3",
     "fixes": [
       "**[Core]** Added option to filter WebSocket messages by multiple ids.",
