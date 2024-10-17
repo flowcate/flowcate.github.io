@@ -1,6 +1,6 @@
 [
   {
-    "version": "DeepHub® 2024 R2, 2.6.0-beta.2",
+    "version": "DeepHub® 2024 R2, 2.6.0-beta.3",
     "features": [
       "**[Core]** Added first support for MQTT messaging and unified namespace.",
       "**[Core]** Added fence entry behavior equivalent to fence exit with timeouts and tolerance.",
@@ -9,10 +9,13 @@
       "**[Core]** Added trackable properties `parent` and `children` to be able to create a hierarchy between trackables. Trackables inherit the location of their parent.",
       "**[Core]** Added option to patch entities with the operations `add`, `replace` and `remove` based on JSON Patch.",
       "**[Core]** Fixed exit events being falsely generated in exit tolerance areas. (only affected 2.6.0-beta.1)",
+      "**[UI]** Updated style-spec to version 20.3.1",
       "**[UI ADMIN]** Added properties `entry_tolerance`, `entry_tolerance_timeout`, `entry_delay` to fences.",
       "**[UI ADMIN]** Added properties `entry_tolerance_timeout`, `entry_delay` to location providers and trackables.",
       "**[UI ADMIN]** Added option to import and export entities.",
-      "**[UI ADMIN]** Added option to add a parent trackable to a trackable."
+      "**[UI ADMIN]** Added option to add a parent trackable to a trackable.",
+      "**[UI ADMIN]** Added anchor labels.",
+      "**[UI ADMIN]** Added anchor labels and accuracy to the viewing options."
     ],
     "fixes": [
       "**[Core]** Require `properties` to be valid JSON objects or null if set."
