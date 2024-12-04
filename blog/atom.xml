@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.deephub.io/blog</id>
     <title>DeepHub® Blog</title>
-    <updated>2024-03-22T00:00:00.000Z</updated>
+    <updated>2024-11-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.deephub.io/blog"/>
     <subtitle>DeepHub® Blog</subtitle>
     <icon>https://docs.deephub.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Modelling the Real World 1:1]]></title>
+        <id>https://docs.deephub.io/blog/trackable_hierarchy</id>
+        <link href="https://docs.deephub.io/blog/trackable_hierarchy"/>
+        <updated>2024-11-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The new DeepHub 2024 R2 - 2.6.0 features a mighty new concept: trackable hierarchy! Until now, only location providers delivered location information for a trackable.]]></summary>
+        <content type="html"><![CDATA[<p>The new DeepHub 2024 R2 - 2.6.0 features a mighty new concept: trackable hierarchy! Until now, only location providers delivered location information for a trackable.</p>
+<p>With the new concept, trackables can be put into a hierarchy whereby a child trackable can receive location information from a parent trackable. This resembles the typical indirect tracking approach used in many industries where
+a location providing tag is not put onto each asset, but where the vehicles that transport the assets are tracked. Assets are placed on pallets, pallets are placed on a forklift. Only
+the forklift is actually physically tracked. The location information of the forklift is used as the location information for the moved assets. The forklift, the pallet and the assets form
+a hierarchy that can now be modelled exactly like that within the DeepHub.</p>
+<p>More details can be found here: <a href="https://docs.deephub.io/docs/deephub/trackable_hierarchy">Trackable Hierarchy</a></p>]]></content>
+        <author>
+            <name>Wolfgang Römer</name>
+            <uri>https://www.flowcate.com/deephub</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Indirect Asset Tracking - Simple Search and Find]]></title>
         <id>https://docs.deephub.io/blog/indirect-asset-tracking</id>

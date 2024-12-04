@@ -4,10 +4,23 @@
         <title>DeepHub® Blog</title>
         <link>https://docs.deephub.io/blog</link>
         <description>DeepHub® Blog</description>
-        <lastBuildDate>Fri, 22 Mar 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 20 Nov 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Modelling the Real World 1:1]]></title>
+            <link>https://docs.deephub.io/blog/trackable_hierarchy</link>
+            <guid>https://docs.deephub.io/blog/trackable_hierarchy</guid>
+            <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[The new DeepHub 2024 R2 - 2.6.0 features a mighty new concept: trackable hierarchy! Until now, only location providers delivered location information for a trackable.]]></description>
+            <content:encoded><![CDATA[<p>The new DeepHub 2024 R2 - 2.6.0 features a mighty new concept: trackable hierarchy! Until now, only location providers delivered location information for a trackable.</p>
+<p>With the new concept, trackables can be put into a hierarchy whereby a child trackable can receive location information from a parent trackable. This resembles the typical indirect tracking approach used in many industries where
+a location providing tag is not put onto each asset, but where the vehicles that transport the assets are tracked. Assets are placed on pallets, pallets are placed on a forklift. Only
+the forklift is actually physically tracked. The location information of the forklift is used as the location information for the moved assets. The forklift, the pallet and the assets form
+a hierarchy that can now be modelled exactly like that within the DeepHub.</p>
+<p>More details can be found here: <a href="https://docs.deephub.io/docs/deephub/trackable_hierarchy">Trackable Hierarchy</a></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Indirect Asset Tracking - Simple Search and Find]]></title>
             <link>https://docs.deephub.io/blog/indirect-asset-tracking</link>
