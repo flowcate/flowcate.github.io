@@ -14,6 +14,8 @@
       "**[UI]** Changed UX for search result list to infinity scroll.",
       "**[UI]** Added popup notification in case of high load scenarios.",
       "**[UI]** Added content of location to location provider tool tip.",
+      "**[UI]** Added option to show/hide anchor labels and accuracy within the viewing options.",
+      "**[UI]** Added URL parameters to fine-tune visualization of objects and e.g. only render some entities.",
       "**[UI]** Added DEEPHUB_AUTH_REQUIRE_HTTPS environment variable for the OAuth2 config.",
       "**[UI]** Added support for newer Keycloak OpenID server versions that use ISS parameter in authorization response.",
       "**[UI]** Updated MapLibre style-spec to version 20.3.1.",
@@ -23,8 +25,7 @@
       "**[UI ADMIN]** Added properties `entry_tolerance_timeout`, `entry_delay` to location providers and trackables.",
       "**[UI ADMIN]** Added properties to add a parent trackable to a trackable.",
       "**[UI ADMIN]** Added anchor labels.",
-      "**[UI ADMIN]** Simplified UX for drawing on the map during entity creation.",
-      "**[UI ADMIN]** Added option to show/hide anchor labels and accuracy within the viewing options."
+      "**[UI ADMIN]** Simplified UX for drawing on the map during entity creation."
     ],
     "fixes": [
       "**[Core]** Require `properties` to be valid JSON objects or null if set.",
