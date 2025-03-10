@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdeephub_doc=self.webpackChunkdeephub_doc||[]).push([[4515],{29652:e=>{e.exports=JSON.parse('{"tags":[{"label":"changelog","permalink":"/docs/DeepHub 2024 R1 - 2.5.4/tags/changelog","count":1}]}')}}]);
