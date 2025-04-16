@@ -1,5 +1,19 @@
 [
   {
+    "version": "DeepHub® 2024 R2, 2.6.1",
+    "features": [
+      "**[Core]** Added new configuration parameter `client_max_body_size`.",
+      "**[UI]** Display link to external URL, specified in property `com.flowcate.external_url` of an entity."
+    ],
+    "fixes": [
+      "**[Core]** The value for `exit_delay` will be used again without setting `exit_tolerance_timeout`. The same applies for `entry_delay`.",
+      "**[Core]** Reject fences with holes if entry tolerance or exit tolerance are set."
+    ],
+    "refactor": [
+      "**[Core]** Removed command line arguments as a configuration option."
+    ]
+  },
+  {
     "version": "DeepHub® 2024 R2, 2.6.0",
     "features": [
       "**[Core]** Added support for MQTT messaging and Unified Namespace.",
