@@ -1,5 +1,23 @@
 [
   {
+    "version": "DeepHub® 2024 R2, 2.6.2",
+    "features": [
+      "**[UI]** Use authentication for tiling server.",
+      "**[UI]** Added environment variables `DEEPHUB_AUTH_ISSUER_ALT_NAME` and `DEEPHUB_AUTH_SKIP_ISSUER_VALIDATION` for testing environments.",
+      "**[UI ADMIN]** Added edit button in info panel.",
+      "**[Core]** Allow to connect to mqtt broker with tls encryption. Added config parameters `mqtt_tls`, `mqtt_ca_cert`, and `mqtt_verify_peer`.",
+      "**[Core]** Added check to validate the issuer of an openID access token. Also added config parameter `openid_skip_issuer_verification`."
+    ],
+    "fixes": [
+      "**[UI]** Changed the display of long search terms.",
+      "**[UI]** Fixed handling of URI redirects that use curly brackets.",
+      "**[UI ADMIN]** When creating or editing entities, tooltips no longer pop up when clicking on the map.",
+      "**[Core]** Use precise timestamp for fence exit event."
+    ],
+    "refactor": [
+    ]
+  },
+  {
     "version": "DeepHub® 2024 R2, 2.6.1",
     "features": [
       "**[Core]** Added new configuration parameter `client_max_body_size`.",
