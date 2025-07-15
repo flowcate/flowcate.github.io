@@ -4,7 +4,7 @@
     "features": [
       "**[UI]** Use authentication for tiling server.",
       "**[UI]** Added environment variables `DEEPHUB_AUTH_ISSUER_ALT_NAME` and `DEEPHUB_AUTH_SKIP_ISSUER_VALIDATION` for testing environments.",
-      "**[UI ADMIN]** Added edit button in info panel.",
+      "**[UI ADMIN]** Added edit button to tooltips.",
       "**[Core]** Allow to connect to mqtt broker with tls encryption. Added config parameters `mqtt_tls`, `mqtt_ca_cert`, and `mqtt_verify_peer`.",
       "**[Core]** Added check to validate the issuer of an openID access token. Also added config parameter `openid_skip_issuer_verification`."
     ],
