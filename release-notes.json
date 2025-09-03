@@ -1,5 +1,18 @@
 [
   {
+    "version": "DeepHub® 2024 R2, 2.6.3",
+    "features": [
+    ],
+    "fixes": [
+      "**[Core]** Fix occasionally wrong trackables array in locations objects retrieved via /providers/locations API.",
+      "**[Core]** Fix missing trackable ids from websocket location updates.",
+      "**[UI]** Fixed processing of geo encoder search results.",
+      "**[UI]** The Viewing Options window correctly filters entities again."
+    ],
+    "refactor": [
+    ]
+  },
+  {
     "version": "DeepHub® 2024 R2, 2.6.2",
     "features": [
       "**[UI]** Use authentication for tiling server.",
