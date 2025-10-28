@@ -1,4 +1,20 @@
 [
+   {
+    "version": "DeepHub® 2025 R1, 2.7.0",
+    "features": [
+      "**[UI]** Added new Viewing Options window."
+    ],
+    "fixes": [
+      "**[Core]** Fixed an issue resulting in occasional regeneration of trackable motions for old locations when new locations were rejected by locating rules.",
+      "**[UI]** Fixed formating in the permission view.",
+      "**[UI]** Adjusted buttons and colors for better accessibility.",
+      "**[UI]** Remove default value from exit_delay."
+    ],
+    "refactor": [
+      "**[UI]** Renamed `filters` url parameters to `layerfilters`, but with different values. Not a 1:1 replacement value.",
+      "**[UI ADMIN]** Improved the usability of the location provider input field."
+    ]
+  },
   {
     "version": "DeepHub® 2024 R2, 2.6.3",
     "features": [
