@@ -1,4 +1,10 @@
 [
+  {
+    "version": "DeepHub® 2025 R2, 2.7.1",
+    "fixes": [
+      "**[UI & Core]** Stabilization update."
+    ]
+  },
    {
     "version": "DeepHub® 2025 R1, 2.7.0",
     "features": [
