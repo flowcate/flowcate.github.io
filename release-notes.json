@@ -1,11 +1,31 @@
 [
   {
+    "version": "DeepHub® 2026 R1, 2.8.0",
+    "features": [
+      "**[Core]** Add timescaledb support.",
+      "**[Core]** Add possibility to connect to an mqtt broker via websocket and authenticate with a client certificate.",
+      "**[Core]** Add possibility to add proximity zones into a hierarchy. Zones now have the optional property `parent`. This property can not be used in combination with the mobile zone extension.",
+      "**[UI Admin]** Added the ability to set an entity as the parent of a zone; the entity's location updates the zone's location."
+    ],
+    "fixes": [
+      "**[Core]** When subscribing to an unknown WebSocket topic, the correct error code is now returned.",
+      "**[Core]** Fixed WebSocket GeoJSON payload format for omlox compliance. The `location_updates:geojson`, `trackable_motions:geojson`, and `fence_events:geojson` topics now return payloads as an array.",
+      "**[UI]** Clicking an entity on the map correctly zooms in to that entity again."
+    ],
+    "refactor": [
+      "**[Core]** The mobile zone extension is now marked as deprecated.",
+      "**[UI]** Renamed the `DEEPHUB_MAP_DEFAULT_STYLE` environment variable to `DEEPHUB_MAP_STYLE_URL`. An access token or key is needed in the URL if required by the style.",
+      "**[UI]** Added the `DEEPHUB_MAP_GEOCODER_PROVIDER` and `DEEPHUB_MAP_GEOCODER_TOKEN` environment variables. If both are set, the geocoder will be activated.",
+      "**[UI]** Removed the `DEEPHUB_MAP_DEFAULT_STYLE`, `DEEPHUB_MAP_ENABLE_GEOENCODER_SEARCH_FIELD`, `DEEPHUB_MAP_ACCESS_TOKEN` and `DEEPHUB_MAP_PROVIDER` environment variables."
+    ]
+  },
+  {
     "version": "DeepHub® 2025 R2, 2.7.1",
     "fixes": [
       "**[UI & Core]** Stabilization update."
     ]
   },
-   {
+  {
     "version": "DeepHub® 2025 R1, 2.7.0",
     "features": [
       "**[UI]** Added new Viewing Options window."
